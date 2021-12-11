@@ -1,7 +1,5 @@
 <section id="left">
-  <div class="container">
-    Left
-  </div>
+	<div class="container">Left</div>
 </section>
 
 <style lang="sass">

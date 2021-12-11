@@ -1,7 +1,5 @@
 <section id="manipulator">
-  <div class="container">
-    Manipulator
-  </div>
+	<div class="container">Manipulator</div>
 </section>
 
 <style lang="sass">

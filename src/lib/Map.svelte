@@ -1,7 +1,5 @@
 <section id="map">
-  <div class="container">
-    Map
-  </div>
+	<div class="container">Map</div>
 </section>
 
 <style lang="sass">
