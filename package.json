@@ -25,6 +25,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@types/two.js": "^0.7.5",
 		"two.js": "^0.7.12"
 	}
 }

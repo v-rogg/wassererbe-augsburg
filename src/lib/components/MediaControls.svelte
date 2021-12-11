@@ -1,6 +1,4 @@
-<div class="media-controls">
-	Media Controls
-</div>
+<div class="media-controls">Media Controls</div>
 
 <style lang="sass">
   .media-controls

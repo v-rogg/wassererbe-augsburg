@@ -5,7 +5,7 @@
 </script>
 
 <section id="manipulator">
-<!--	<div class="container">Manipulator</div>-->
+	<!--	<div class="container">Manipulator</div>-->
 	<div class="mode-selector">
 		<Button>Button</Button>
 		<Button>Button</Button>
