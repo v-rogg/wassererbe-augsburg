@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+  import { _ } from "$lib/actions/helpers";
 
 	let svgMap = null;
   let dataMap = null;
@@ -23,17 +24,12 @@
       .catch((error) => console.log(error));
   }
 
-  function _(query: string): HTMLElement {
-    return document.querySelector(query);
-  }
-
 	onMount(async () => {
     await init();
 
-    let hex = _(`#_${0}-${13}`).style.fill = dataMap.map[0][13]["1600"].toString();
+    _(`#_${0}-${13}`).style.fill = dataMap.map[0][13]["1600"].toString();
     _(`#_${0}-${4}`).style.fill = dataMap.map[0][4]["1600"].toString();
     _(`#_${0}-${8}`).style.fill = dataMap.map[0][8]["1600"].toString();
-    console.log(hex, 'queried');
 
     loaded = true;
 	});
