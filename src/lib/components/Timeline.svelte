@@ -6,6 +6,6 @@
 
 <style lang="sass">
   .timeline
-    border: 1px dashed black
+    //border: 1px dashed black
     padding: 1em
 </style>

@@ -1,13 +1,13 @@
 <script lang="ts" context="module">
   import type { Load } from "@sveltejs/kit";
 
-  export const load: Load = async ({fetch}) => {
+  export async function load ({fetch}) {
     let mapSvg, mapJson, storiesJson;
 
     await fetch(`${import.meta.env.VITE_PUBLIC_BASE_PATH}/map.svg`)
       .then((res) => res.text())
       .then((data) => {
-        console.log('svg loaded');
+        // console.log('svg loaded');
         mapSvg = data;
       })
       .catch((error) => console.log(error));
@@ -15,7 +15,7 @@
     await fetch(`${import.meta.env.VITE_PUBLIC_BASE_PATH}/maps.json`)
       .then((res) => res.json())
       .then((data) => {
-        console.log('json loaded');
+        // console.log('json loaded');
         mapJson = data;
       })
       .catch((error) => console.log(error));
@@ -23,7 +23,7 @@
     await fetch(`${import.meta.env.VITE_PUBLIC_BASE_PATH}/stories.json`)
       .then((res) => res.json())
       .then((data) => {
-        console.log('json loaded');
+        // console.log('json loaded');
         storiesJson = data.stories;
       })
       .catch((error) => console.log(error));

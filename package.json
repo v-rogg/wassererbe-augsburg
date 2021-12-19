@@ -2,7 +2,7 @@
 	"name": "wassererbe-platform",
 	"version": "0.1.0",
 	"scripts": {
-		"dev": "svelte-kit dev --port=8080",
+		"dev": "svelte-kit dev --port=8080 --host",
 		"build": "svelte-kit build",
 		"package": "svelte-kit package",
 		"preview": "svelte-kit preview",

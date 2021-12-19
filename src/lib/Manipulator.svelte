@@ -6,12 +6,14 @@
 
 <section id="manipulator">
 	<!--	<div class="container">Manipulator</div>-->
-	<div class="mode-selector">
-		<Button>Button</Button>
-		<Button>Button</Button>
-	</div>
+<!--	<div class="mode-selector">-->
+<!--		<Button>Button</Button>-->
+<!--		<Button>Button</Button>-->
+<!--	</div>-->
+  <div></div>
 	<Timeline />
-	<MediaControls />
+  <div></div>
+<!--	<MediaControls />-->
 </section>
 
 <style lang="sass">
@@ -23,7 +25,7 @@
     position: absolute
     bottom: 0
     left: calc($p-side-width - $p-side-offset)
-    background: lightsalmon
+    //background: lightsalmon
     display: grid
     grid-template-columns: $p-side-offset auto $p-side-offset
 

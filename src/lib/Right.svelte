@@ -1,5 +1,10 @@
+<script>
+  import LegendSide from "$lib/components/LegendSide.svelte";
+</script>
+
 <section id="right">
-	<div class="container">Right</div>
+<!--	<div class="container">Right</div>-->
+  <LegendSide />
 </section>
 
 <style lang="sass">
@@ -7,7 +12,6 @@
 
   #right
     width: $p-side-width
-    background: darkseagreen
     position: absolute
     top: $p-top-spacing
     bottom: $p-bottom-spacing
