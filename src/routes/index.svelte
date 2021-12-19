@@ -2,13 +2,13 @@
   import type { Load } from "@sveltejs/kit";
 
   export const load: Load = async ({fetch}) => {
-    let svg, json;
+    let mapSvg, mapJson, storiesJson;
 
     await fetch(`${import.meta.env.VITE_PUBLIC_BASE_PATH}/map.svg`)
       .then((res) => res.text())
       .then((data) => {
         console.log('svg loaded');
-        svg = data;
+        mapSvg = data;
       })
       .catch((error) => console.log(error));
 
@@ -16,18 +16,26 @@
       .then((res) => res.json())
       .then((data) => {
         console.log('json loaded');
-        json = data;
+        mapJson = data;
+      })
+      .catch((error) => console.log(error));
+
+    await fetch(`${import.meta.env.VITE_PUBLIC_BASE_PATH}/stories.json`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log('json loaded');
+        storiesJson = data.stories;
       })
       .catch((error) => console.log(error));
 
     return {
       props: {
-        mapSVG: svg,
-        mapData: json,
+        mapSVG: mapSvg,
+        mapData: mapJson,
+        storiesData: storiesJson
       }
     }
   }
-
 </script>
 
 <script lang="ts">
@@ -35,8 +43,24 @@
 	import Right from '$lib/Right.svelte';
 	import Manipulator from '$lib/Manipulator.svelte';
   import Map from "$lib/Map.svelte";
+  import { stories, year, yearLimits } from "../stores";
 
-  export let mapSVG, mapData;
+  export let mapSVG;
+  export let mapData: {
+    map: [],
+    dates: [number],
+    limits: {
+      min: number,
+      max: number
+    }
+  } = {};
+  export let storiesData = [];
+
+  $stories = storiesData;
+
+  $yearLimits.min = mapData.limits.min;
+  $yearLimits.max = mapData.limits.max;
+  $year = mapData.limits.min;
 </script>
 
 <svelte:head>

@@ -1,0 +1,115 @@
+{
+	"stories": [
+		{
+			"name": "Kanäle",
+			"color": "#DAEACD",
+			"shape": "circle",
+			"events_of_interest": [
+				{
+					"name": "Hauptstadtbach",
+					"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid amet atque corporis dignissimos distinctio dolore doloremque ducimus eius eos eum facilis fuga fugiat harum, impedit ipsa ipsam molestiae mollitia necessitatibus nemo neque nesciunt numquam perferendis perspiciatis provident quia quos, ratione rem repellat sequi tenetur unde velit veritatis vero voluptatem?",
+					"year": 1701
+				},
+				{
+					"name": "Kaufbach",
+					"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid amet atque corporis dignissimos distinctio dolore doloremque ducimus eius eos eum facilis fuga fugiat harum, impedit ipsa ipsam molestiae mollitia necessitatibus nemo neque nesciunt numquam perferendis perspiciatis provident quia quos, ratione rem repellat sequi tenetur unde velit veritatis vero voluptatem?",
+					"year": 1702
+				},
+				{
+					"name": "Schäfflerbach",
+					"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid amet atque corporis dignissimos distinctio dolore doloremque ducimus eius eos eum facilis fuga fugiat harum, impedit ipsa ipsam molestiae mollitia necessitatibus nemo neque nesciunt numquam perferendis perspiciatis provident quia quos, ratione rem repellat sequi tenetur unde velit veritatis vero voluptatem?",
+					"year": 1702
+				},
+				{
+					"name": "Proviantbach",
+					"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid amet atque corporis dignissimos distinctio dolore doloremque ducimus eius eos eum facilis fuga fugiat harum, impedit ipsa ipsam molestiae mollitia necessitatibus nemo neque nesciunt numquam perferendis perspiciatis provident quia quos, ratione rem repellat sequi tenetur unde velit veritatis vero voluptatem?",
+					"year": 1702
+				},
+				{
+					"name": "Hanreibach",
+					"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid amet atque corporis dignissimos distinctio dolore doloremque ducimus eius eos eum facilis fuga fugiat harum, impedit ipsa ipsam molestiae mollitia necessitatibus nemo neque nesciunt numquam perferendis perspiciatis provident quia quos, ratione rem repellat sequi tenetur unde velit veritatis vero voluptatem?",
+					"year": 1702
+				},
+				{
+					"name": "Fichtelbach",
+					"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid amet atque corporis dignissimos distinctio dolore doloremque ducimus eius eos eum facilis fuga fugiat harum, impedit ipsa ipsam molestiae mollitia necessitatibus nemo neque nesciunt numquam perferendis perspiciatis provident quia quos, ratione rem repellat sequi tenetur unde velit veritatis vero voluptatem?",
+					"year": 1702
+				},
+				{
+					"name": "Malvasierbach",
+					"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid amet atque corporis dignissimos distinctio dolore doloremque ducimus eius eos eum facilis fuga fugiat harum, impedit ipsa ipsam molestiae mollitia necessitatibus nemo neque nesciunt numquam perferendis perspiciatis provident quia quos, ratione rem repellat sequi tenetur unde velit veritatis vero voluptatem?",
+					"year": 1702
+				},
+				{
+					"name": "Innerer Stadtgraben",
+					"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid amet atque corporis dignissimos distinctio dolore doloremque ducimus eius eos eum facilis fuga fugiat harum, impedit ipsa ipsam molestiae mollitia necessitatibus nemo neque nesciunt numquam perferendis perspiciatis provident quia quos, ratione rem repellat sequi tenetur unde velit veritatis vero voluptatem?",
+					"year": 1702
+				}
+			]
+		},
+		{
+			"name": "Trinkwasser",
+			"color": "#CBE6F8",
+			"shape": "square",
+			"events_of_interest": [
+				{
+					"name": "Trinkwasser 1",
+					"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid amet atque corporis dignissimos distinctio dolore doloremque ducimus eius eos eum facilis fuga fugiat harum, impedit ipsa ipsam molestiae mollitia necessitatibus nemo neque nesciunt numquam perferendis perspiciatis provident quia quos, ratione rem repellat sequi tenetur unde velit veritatis vero voluptatem?",
+					"year": 1701
+				},
+				{
+					"name": "Trinkwasser 2",
+					"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid amet atque corporis dignissimos distinctio dolore doloremque ducimus eius eos eum facilis fuga fugiat harum, impedit ipsa ipsam molestiae mollitia necessitatibus nemo neque nesciunt numquam perferendis perspiciatis provident quia quos, ratione rem repellat sequi tenetur unde velit veritatis vero voluptatem?",
+					"year": 1702
+				},
+				{
+					"name": "Trinkwasser 3",
+					"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid amet atque corporis dignissimos distinctio dolore doloremque ducimus eius eos eum facilis fuga fugiat harum, impedit ipsa ipsam molestiae mollitia necessitatibus nemo neque nesciunt numquam perferendis perspiciatis provident quia quos, ratione rem repellat sequi tenetur unde velit veritatis vero voluptatem?",
+					"year": 1703
+				},
+				{
+					"name": "Trinkwasser 4",
+					"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid amet atque corporis dignissimos distinctio dolore doloremque ducimus eius eos eum facilis fuga fugiat harum, impedit ipsa ipsam molestiae mollitia necessitatibus nemo neque nesciunt numquam perferendis perspiciatis provident quia quos, ratione rem repellat sequi tenetur unde velit veritatis vero voluptatem?",
+					"year": 1800
+				},
+				{
+					"name": "Trinkwasser 5",
+					"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid amet atque corporis dignissimos distinctio dolore doloremque ducimus eius eos eum facilis fuga fugiat harum, impedit ipsa ipsam molestiae mollitia necessitatibus nemo neque nesciunt numquam perferendis perspiciatis provident quia quos, ratione rem repellat sequi tenetur unde velit veritatis vero voluptatem?",
+					"year": 1850
+				},
+				{
+					"name": "Trinkwasser 6",
+					"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid amet atque corporis dignissimos distinctio dolore doloremque ducimus eius eos eum facilis fuga fugiat harum, impedit ipsa ipsam molestiae mollitia necessitatibus nemo neque nesciunt numquam perferendis perspiciatis provident quia quos, ratione rem repellat sequi tenetur unde velit veritatis vero voluptatem?",
+					"year": 1910
+				},
+				{
+					"name": "Trinkwasser 7",
+					"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid amet atque corporis dignissimos distinctio dolore doloremque ducimus eius eos eum facilis fuga fugiat harum, impedit ipsa ipsam molestiae mollitia necessitatibus nemo neque nesciunt numquam perferendis perspiciatis provident quia quos, ratione rem repellat sequi tenetur unde velit veritatis vero voluptatem?",
+					"year": 1990
+				}
+			]
+		},
+		{
+			"name": "Industrie",
+			"color": "#D9D9D9",
+			"shape": "triangle",
+			"events_of_interest": [
+				{
+					"name": "Industrie 1",
+					"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid amet atque corporis dignissimos distinctio dolore doloremque ducimus eius eos eum facilis fuga fugiat harum, impedit ipsa ipsam molestiae mollitia necessitatibus nemo neque nesciunt numquam perferendis perspiciatis provident quia quos, ratione rem repellat sequi tenetur unde velit veritatis vero voluptatem?",
+					"year": 1701
+				},
+				{
+					"name": "Industrie 2",
+					"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid amet atque corporis dignissimos distinctio dolore doloremque ducimus eius eos eum facilis fuga fugiat harum, impedit ipsa ipsam molestiae mollitia necessitatibus nemo neque nesciunt numquam perferendis perspiciatis provident quia quos, ratione rem repellat sequi tenetur unde velit veritatis vero voluptatem?",
+					"year": 1702
+				},
+				{
+					"name": "Industrie 3",
+					"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid amet atque corporis dignissimos distinctio dolore doloremque ducimus eius eos eum facilis fuga fugiat harum, impedit ipsa ipsam molestiae mollitia necessitatibus nemo neque nesciunt numquam perferendis perspiciatis provident quia quos, ratione rem repellat sequi tenetur unde velit veritatis vero voluptatem?",
+					"year": 1702
+				}
+			]
+		}
+	]
+}
