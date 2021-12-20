@@ -10,7 +10,7 @@ const config = {
 
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: 'body'
-	},
+	}
 
 	// onwarn: (warning, handler) => {
 	// 	const { code, frame } = warning;

@@ -1,37 +1,35 @@
 <section>
-  <h3>
-    Nutzung der Zone
-  </h3>
-  <div class="icons">
-    <div>
-      <img src="/legend/land.svg" alt="" />
-      Landwirtschaft
-    </div>
-    <div>
-      <img src="/legend/grass.svg" alt="" />
-      Grasland
-    </div>
-    <div>
-      <img src="/legend/forest.svg" alt="" />
-      Wald
-    </div>
-    <div>
-      <img src="/legend/residential.svg" alt="" />
-      Wohnraum
-    </div>
-    <div>
-      <img src="/legend/industrial.svg" alt="" />
-      Industrie
-    </div>
-    <div>
-      <img src="/legend/energy.svg" alt="" />
-      Energiegewinnung
-    </div>
-    <div>
-      <img src="/legend/special.svg" alt="" />
-      Fixpunkt
-    </div>
-  </div>
+	<h3>Nutzung der Zone</h3>
+	<div class="icons">
+		<div>
+			<img src="/legend/land.svg" alt="" />
+			Landwirtschaft
+		</div>
+		<div>
+			<img src="/legend/grass.svg" alt="" />
+			Grasland
+		</div>
+		<div>
+			<img src="/legend/forest.svg" alt="" />
+			Wald
+		</div>
+		<div>
+			<img src="/legend/residential.svg" alt="" />
+			Wohnraum
+		</div>
+		<div>
+			<img src="/legend/industrial.svg" alt="" />
+			Industrie
+		</div>
+		<div>
+			<img src="/legend/energy.svg" alt="" />
+			Energiegewinnung
+		</div>
+		<div>
+			<img src="/legend/special.svg" alt="" />
+			Fixpunkt
+		</div>
+	</div>
 </section>
 
 <style lang="sass">

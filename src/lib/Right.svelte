@@ -1,10 +1,10 @@
 <script>
-  import LegendSide from "$lib/components/LegendSide.svelte";
+	import LegendSide from '$lib/components/LegendSide.svelte';
 </script>
 
 <section id="right">
-<!--	<div class="container">Right</div>-->
-  <LegendSide />
+	<!--	<div class="container">Right</div>-->
+	<LegendSide />
 </section>
 
 <style lang="sass">

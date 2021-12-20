@@ -1,27 +1,27 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-  import { _ } from "$lib/actions/helpers";
+	import { _ } from '$lib/actions/helpers';
 
-  export let mapSVG;
-  export let mapData;
+	export let mapSVG;
+	export let mapData;
 
-  let flip = true;
+	let flip = true;
 
 	onMount(async () => {
-    setTimeout(() => {
-    _(`#_${0}-${13}`).style.fill = mapData.map[0][13]["1600"].toString();
-    _(`#_${0}-${4}`).style.fill = mapData.map[0][4]["1600"].toString();
-    _(`#_${0}-${8}`).style.fill = mapData.map[0][8]["1600"].toString();
-    }, 1000);
-  });
+		setTimeout(() => {
+			_(`#_${0}-${13}`).style.fill = mapData.map[0][13]['1600'].toString();
+			_(`#_${0}-${4}`).style.fill = mapData.map[0][4]['1600'].toString();
+			_(`#_${0}-${8}`).style.fill = mapData.map[0][8]['1600'].toString();
+		}, 1000);
+	});
 </script>
 
 <section id="map">
-  {#if mapSVG}
-    <div class="vector">
-      {@html mapSVG}
-    </div>
-  {/if}
+	{#if mapSVG}
+		<div class="vector">
+			{@html mapSVG}
+		</div>
+	{/if}
 </section>
 
 <style lang="sass">

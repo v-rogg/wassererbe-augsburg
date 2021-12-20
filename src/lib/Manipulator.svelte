@@ -6,14 +6,13 @@
 
 <section id="manipulator">
 	<!--	<div class="container">Manipulator</div>-->
-<!--	<div class="mode-selector">-->
-<!--		<Button>Button</Button>-->
-<!--		<Button>Button</Button>-->
-<!--	</div>-->
-  <div></div>
+	<!--	<div class="mode-selector">-->
+	<!--		<Button>Button</Button>-->
+	<!--		<Button>Button</Button>-->
+	<!--	</div>-->
+	<div />
 	<Timeline />
-  <div></div>
-<!--	<MediaControls />-->
+		<MediaControls />
 </section>
 
 <style lang="sass">
@@ -23,6 +22,7 @@
     height: $p-bottom-spacing
     width: calc(100% - ($p-side-width * 2) + ($p-side-offset * 2))
     position: absolute
+    //bottom: 2em
     bottom: 0
     left: calc($p-side-width - $p-side-offset)
     //background: lightsalmon
