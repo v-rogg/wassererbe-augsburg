@@ -29,6 +29,14 @@
 			<img src="/legend/special.svg" alt="" />
 			Fixpunkt
 		</div>
+    <div>
+      <img src="/legend/city.svg" alt="" />
+      Stadt <span style="font-size: .7em; margin-left: .5em">(Allgemein)</span>
+    </div>
+    <div>
+      <img src="/legend/unknown.svg" alt="" />
+      Unbekannt
+    </div>
 	</div>
 </section>
 

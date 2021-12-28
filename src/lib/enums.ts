@@ -1,4 +1,4 @@
-export declare enum PlaybackMode {
+export enum PlaybackMode {
   Pause,
   Forward,
   Backward,

@@ -41,17 +41,9 @@
 	import Right from '$lib/Right.svelte';
 	import Manipulator from '$lib/Manipulator.svelte';
 	import Map from '$lib/Map.svelte';
-  import { playback, stories, year, yearLimits } from "../stores";
+  import { playback, stories, year, yearChanges, yearLimits } from "../stores";
   import { onDestroy } from "svelte";
-
-  const enum PlaybackMode {
-    Pause,
-    Forward,
-    Backward,
-    FastForward,
-    FastBackward
-  }
-
+  import { PlaybackMode } from "$lib/enums";
 
   export let mapSVG;
 	export let mapData: {
@@ -69,29 +61,28 @@
 	$yearLimits.min = mapData.limits.min;
 	$yearLimits.max = mapData.limits.max;
 	$year = mapData.limits.min;
+  $yearChanges = mapData.dates;
 
   async function runPlayback() {
-    if ($playback == 1) {
+    if ($playback === PlaybackMode.Forward) {
       let next = $year + .25;
-      // console.log(next);
       if ($year < $yearLimits.max) {
         year.update(n => n = next, {duration: 0})
         requestAnimationFrame(runPlayback)
       }
-      else $playback = 0
-    } else if ($playback == 2) {
+      else $playback = PlaybackMode.Pause
+    } else if ($playback === PlaybackMode.Backward) {
       let next = $year - .25;
-      // console.log(next);
       if ($year > $yearLimits.min) {
         year.update(n => n = next, {duration: 0})
         requestAnimationFrame(runPlayback)
       }
-      else $playback = 0
+      else $playback = PlaybackMode.Pause
     }
   }
 
   const unsubPlayback = playback.subscribe(x => {
-    if(x) {
+    if(x === PlaybackMode.Forward || x === PlaybackMode.Backward) {
       console.log("started playback");
       requestAnimationFrame(runPlayback)
     }
