@@ -346,7 +346,7 @@
 			{ "1834": "unknown", "2008": "residential" },
 			{ "1834": "unknown", "2008": "residential" },
 			{ "1834": "unknown", "2008": "residential" },
-			{ "1834": "unknown", "2008": "residential"},
+			{ "1834": "unknown", "2008": "residential" },
 			{ "1834": "unknown", "2008": "residential" },
 			{ "1834": "unknown", "2008": "residential" },
 			{ "1834": "unknown", "2008": "residential" }
@@ -764,7 +764,7 @@
 	],
 	"dates": [1834, 1840, 2008, 2012, 2019],
 	"limits": {
-		"min": 1600,
+		"min": 1834,
 		"max": 2021
 	}
 }

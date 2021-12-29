@@ -12,7 +12,7 @@
 	<!--	</div>-->
 	<div />
 	<Timeline />
-		<MediaControls />
+	<MediaControls />
 </section>
 
 <style lang="sass">

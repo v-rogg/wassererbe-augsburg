@@ -1,7 +1,8 @@
-<script>
-	import { selectedStory, stories, selectedEoI } from '../../stores';
+<script lang="ts">
+	import { selectedStory, stories, selectedEoI, storyDirection } from '../../stores';
 	import { onDestroy } from 'svelte';
 	import { fade } from 'svelte/transition';
+	import { StoryDirection } from '$lib/enums';
 
 	let selectedS;
 	const unsub = selectedStory.subscribe((x) => (selectedS = x));
@@ -20,6 +21,9 @@
 						in:fade={{ delay: index * 50 + 100 }}
 						out:fade={{ delay: index * 50 }}
 						on:click={() => {
+							index > $selectedEoI
+								? ($storyDirection = StoryDirection.Down)
+								: ($storyDirection = StoryDirection.Up);
 							$selectedEoI = index;
 						}}
 						class:selected={$selectedEoI === index}
@@ -60,6 +64,9 @@
 						in:fade={{ delay: index * 50 + 100 }}
 						out:fade={{ delay: index * 50 }}
 						on:click={() => {
+							index > $selectedEoI
+								? ($storyDirection = StoryDirection.Down)
+								: ($storyDirection = StoryDirection.Up);
 							$selectedEoI = index;
 						}}
 						class:selected={$selectedEoI === index}
@@ -100,6 +107,9 @@
 						in:fade={{ delay: index * 50 + 100 }}
 						out:fade={{ delay: index * 50 }}
 						on:click={() => {
+							index > $selectedEoI
+								? ($storyDirection = StoryDirection.Down)
+								: ($storyDirection = StoryDirection.Up);
 							$selectedEoI = index;
 						}}
 						class:selected={$selectedEoI === index}

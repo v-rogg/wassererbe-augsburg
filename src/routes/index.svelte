@@ -41,11 +41,11 @@
 	import Right from '$lib/Right.svelte';
 	import Manipulator from '$lib/Manipulator.svelte';
 	import Map from '$lib/Map.svelte';
-  import { playback, stories, year, yearChanges, yearLimits } from "../stores";
-  import { onDestroy } from "svelte";
-  import { PlaybackMode } from "$lib/enums";
+	import { playback, stories, storyDirection, year, yearChanges, yearLimits } from '../stores';
+	import { onDestroy } from 'svelte';
+	import { PlaybackMode } from '$lib/enums';
 
-  export let mapSVG;
+	export let mapSVG;
 	export let mapData: {
 		map: [];
 		dates: [number];
@@ -61,34 +61,32 @@
 	$yearLimits.min = mapData.limits.min;
 	$yearLimits.max = mapData.limits.max;
 	$year = mapData.limits.min;
-  $yearChanges = mapData.dates;
+	$yearChanges = mapData.dates;
 
-  async function runPlayback() {
-    if ($playback === PlaybackMode.Forward) {
-      let next = $year + .25;
-      if ($year < $yearLimits.max) {
-        year.update(n => n = next, {duration: 0})
-        requestAnimationFrame(runPlayback)
-      }
-      else $playback = PlaybackMode.Pause
-    } else if ($playback === PlaybackMode.Backward) {
-      let next = $year - .25;
-      if ($year > $yearLimits.min) {
-        year.update(n => n = next, {duration: 0})
-        requestAnimationFrame(runPlayback)
-      }
-      else $playback = PlaybackMode.Pause
-    }
-  }
+	async function runPlayback() {
+		if ($playback === PlaybackMode.Forward) {
+			let next = $year + 0.25;
+			if ($year < $yearLimits.max) {
+				year.update((n) => (n = next), { duration: 0 });
+				requestAnimationFrame(runPlayback);
+			} else $playback = PlaybackMode.Pause;
+		} else if ($playback === PlaybackMode.Backward) {
+			let next = $year - 0.25;
+			if ($year > $yearLimits.min) {
+				year.update((n) => (n = next), { duration: 0 });
+				requestAnimationFrame(runPlayback);
+			} else $playback = PlaybackMode.Pause;
+		}
+	}
 
-  const unsubPlayback = playback.subscribe(x => {
-    if(x === PlaybackMode.Forward || x === PlaybackMode.Backward) {
-      console.log("started playback");
-      requestAnimationFrame(runPlayback)
-    }
-  })
+	const unsubPlayback = playback.subscribe((x) => {
+		if (x === PlaybackMode.Forward || x === PlaybackMode.Backward) {
+			console.log('started playback');
+			requestAnimationFrame(runPlayback);
+		}
+	});
 
-  onDestroy(() => unsubPlayback())
+	onDestroy(() => unsubPlayback());
 </script>
 
 <svelte:head>

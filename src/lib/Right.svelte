@@ -1,10 +1,12 @@
 <script>
 	import LegendSide from '$lib/components/LegendSide.svelte';
+	import StoryInfo from '$lib/components/StoryInfo.svelte';
 </script>
 
 <section id="right">
 	<!--	<div class="container">Right</div>-->
 	<LegendSide />
+	<StoryInfo />
 </section>
 
 <style lang="sass">
