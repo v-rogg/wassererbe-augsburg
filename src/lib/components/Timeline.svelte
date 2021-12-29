@@ -9,6 +9,8 @@
 	} from '../../stores';
 	import { fade } from 'svelte/transition';
 	import { StoryDirection } from '$lib/enums';
+	import { _ } from '$lib/actions/helpers';
+	import { onMount } from 'svelte';
 
 	const timeDifference = $yearLimits.max - $yearLimits.min;
 	let displayYears = [];
@@ -18,6 +20,43 @@
 			displayYears.push(y);
 		}
 	}
+
+	let mouseX = 0;
+	let timelineWidth: number = null;
+	let dragging = false;
+
+	let offsetYears = 0;
+
+	onMount(() => {
+		window.addEventListener('mousedown', (e) => {
+			mouseX = e.clientX;
+			timelineWidth = _('.bar').offsetWidth;
+			console.log('start', mouseX);
+		});
+
+		window.addEventListener('mousemove', (e) => {
+			if (dragging) {
+				let offset = e.clientX - mouseX;
+				let offsetRelative = offset / timelineWidth;
+				offsetYears = offsetRelative * timeDifference;
+				if ($year + offsetYears > $yearLimits.min && $year + offsetYears < $yearLimits.max) {
+					let yearOffset = $year + offsetYears;
+					year.update((n) => (n = yearOffset), { duration: 0 });
+					mouseX = e.clientX;
+				} else if ($year + offsetYears < $yearLimits.min) {
+					year.update((n) => (n = $yearLimits.min), { duration: 0 });
+				} else if ($year + offsetYears > $yearLimits.max) {
+					year.update((n) => (n = $yearLimits.max), { duration: 0 });
+				}
+			}
+		});
+
+		window.addEventListener('mouseup', (e) => {
+			dragging = false;
+			document.body.style.userSelect = null;
+			document.body.style.cursor = null;
+		});
+	});
 </script>
 
 <div class="timeline">
@@ -54,6 +93,11 @@
 		style="left: {(($year - $yearLimits.min) / timeDifference) * 100}%"
 		class:removeLine={(($year - $yearLimits.min) / timeDifference) * 100 > 99.5}
 		class:currentSelected={$selectedEoI >= 0}
+		on:mousedown={() => {
+			dragging = true;
+			document.body.style.userSelect = 'none';
+			document.body.style.cursor = 'none';
+		}}
 	>
 		{Math.floor($year)}
 	</div>
@@ -263,6 +307,9 @@
     transition: 200ms cubic-bezier(0.645, 0.045, 0.355, 1)
     transition-delay: 200ms
     transition-property: transform
+
+    &:hover:not(&:active)
+      cursor: grab
 
     &:before
       width: 2px
