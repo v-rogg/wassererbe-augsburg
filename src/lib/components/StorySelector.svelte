@@ -14,6 +14,7 @@
 					}}
 					disabled={index === $selectedStory}
 					class="story-selector"
+					class:noneSelected={$selectedStory < 0}
 				>
 					{#if story.shape === 'circle'}
 						<svg
@@ -61,6 +62,7 @@
 
 <style lang="sass">
   @import "src/styles/variables"
+  @import "src/styles/theme"
 
   h2
     font-weight: $fw-bold
@@ -85,13 +87,15 @@
     border: none
     padding: 0
     margin: 0 0 .5em 0
+    color: $c-grey-30
 
     &:disabled
       font-weight: $fw-medium
-      color: black
+      color: $c-black
 
     &:hover:not(&:disabled)
       cursor: pointer
+      color: $c-black
 
     svg
       height: 30px
@@ -106,6 +110,9 @@
     width: $p-side-content-width
 
   .moved
-    top: 100px
+    top: 125px
     transform: translate(-50%, 0)
+
+  .noneSelected
+    color: $c-black !important
 </style>

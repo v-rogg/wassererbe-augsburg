@@ -2,7 +2,7 @@
 	export async function load({ fetch }) {
 		let mapSvg, mapJson, storiesJson;
 
-		await fetch(`${import.meta.env.VITE_PUBLIC_BASE_PATH}/map.svg`)
+		await fetch(`${import.meta.env.VITE_PUBLIC_BASE_PATH}/map_neo.svg`)
 			.then((res) => res.text())
 			.then((data) => {
 				// console.log('svg loaded');
@@ -10,7 +10,7 @@
 			})
 			.catch((error) => console.log(error));
 
-		await fetch(`${import.meta.env.VITE_PUBLIC_BASE_PATH}/maps.json`)
+		await fetch(`${import.meta.env.VITE_PUBLIC_BASE_PATH}/maps-min.json`)
 			.then((res) => res.json())
 			.then((data) => {
 				// console.log('json loaded');
@@ -41,7 +41,7 @@
 	import Right from '$lib/Right.svelte';
 	import Manipulator from '$lib/Manipulator.svelte';
 	import Map from '$lib/Map.svelte';
-	import { playback, stories, storyDirection, year, yearChanges, yearLimits } from '../stores';
+	import { playback, stories, year, yearChanges, yearLimits } from '../stores';
 	import { onDestroy } from 'svelte';
 	import { PlaybackMode } from '$lib/enums';
 

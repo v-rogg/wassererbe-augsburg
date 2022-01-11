@@ -5,7 +5,7 @@
 		"dev": "svelte-kit dev --port=8080 --host",
 		"build": "svelte-kit build",
 		"package": "svelte-kit package",
-		"preview": "svelte-kit preview",
+		"preview": "svelte-kit preview --port=8080 --host",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. .",
@@ -23,5 +23,8 @@
 		"tslib": "^2.3.1",
 		"typescript": "^4.4.3"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"hotkeys-js": "^3.8.7"
+	}
 }

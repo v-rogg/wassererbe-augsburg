@@ -10,8 +10,9 @@
 	<Brand />
 	{#if $selectedStory < 0}
 		<div class="description" transition:fade={{ duration: 200 }}>
-			Proektbeschreibung - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pretium
-			nulla quis diam egestas consectetur.
+			<i>"Die Adern der Stadt"</i><br />
+			Endecke wie sich Augsburg dank vielfältiger Wassernutzung seit Ende der frühen Neuzeit verändert
+			hat.
 		</div>
 	{/if}
 	<div>
@@ -37,4 +38,5 @@
     width: $p-side-content-width
     height: 115px
     overflow-y: auto
+    text-wrap: normal
 </style>

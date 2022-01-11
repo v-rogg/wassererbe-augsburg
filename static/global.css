@@ -51,5 +51,17 @@ html {
 	font-family: 'IBM Plex Sans', sans-serif;
 	padding: 0;
 	margin: 0;
+	width: 100%;
+	height: 100%;
 	box-sizing: border-box;
+	text-rendering: optimizeLegibility;
+	font-size: 1rem;
+}
+
+.event-none {
+	pointer-events: none;
+}
+
+.hidden {
+	display: none;
 }

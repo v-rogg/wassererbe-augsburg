@@ -152,10 +152,11 @@
 
 <style lang="sass">
   @import "src/styles/variables"
+  @import "src/styles/theme"
 
   menu
     position: absolute
-    top: 300px
+    top: 350px
     height: auto
     bottom: 0
     left: 50%
@@ -171,7 +172,7 @@
     position: absolute
 
   li
-    margin: .75em 0
+    margin: .5em 0
     padding: 0
     list-style: none
     display: grid

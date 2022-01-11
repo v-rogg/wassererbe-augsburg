@@ -46,6 +46,7 @@
 
 <style lang="sass">
   @import "src/styles/variables"
+  @import "src/styles/theme"
 
   .brand
     display: flex
@@ -55,6 +56,7 @@
     position: absolute
     transform: translateX(-50%)
     left: 50%
+    top: 10px
 
   .logo
     width: 1.75em
@@ -71,7 +73,7 @@
   .title
     font-size: 1.5em
     font-weight: $fw-medium
-    line-height: 1
+    line-height: .8
 
   .subtitle
     font-size: 1.125em

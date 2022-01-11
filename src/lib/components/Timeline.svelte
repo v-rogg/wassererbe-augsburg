@@ -5,7 +5,8 @@
 		stories,
 		year,
 		yearLimits,
-		storyDirection
+		storyDirection,
+		yearChanges
 	} from '../../stores';
 	import { fade } from 'svelte/transition';
 	import { StoryDirection } from '$lib/enums';
@@ -31,7 +32,6 @@
 		window.addEventListener('mousedown', (e) => {
 			mouseX = e.clientX;
 			timelineWidth = _('.bar').offsetWidth;
-			console.log('start', mouseX);
 		});
 
 		window.addEventListener('mousemove', (e) => {
@@ -54,7 +54,6 @@
 		window.addEventListener('mouseup', (e) => {
 			dragging = false;
 			document.body.style.userSelect = null;
-			document.body.style.cursor = null;
 		});
 	});
 </script>
@@ -96,16 +95,21 @@
 		on:mousedown={() => {
 			dragging = true;
 			document.body.style.userSelect = 'none';
-			document.body.style.cursor = 'none';
 		}}
 	>
 		{Math.floor($year)}
 	</div>
 
 	<!-- Year Array  -->
-	<!--{#each $yearChanges as year}-->
-	<!--    <div class="displayYear yearChanges" style="left: {((year-$yearLimits.min) / timeDifference) * 100}%; transform: {year == $yearLimits.min ? 'translate(calc(-50%), 0)' : 'translate(-50%, 0)' }"/>-->
-	<!--{/each}-->
+	{#each $yearChanges as year}
+		<div
+			class="displayYear yearChanges"
+			style="left: {((year - $yearLimits.min) / timeDifference) * 100}%; transform: {year ==
+			$yearLimits.min
+				? 'translate(calc(-50%), 0)'
+				: 'translate(-50%, 0)'}"
+		/>
+	{/each}
 
 	<!--EoIs-->
 	{#if $stories[$selectedStory] !== undefined}
@@ -133,7 +137,12 @@
 							fill="none"
 							xmlns="http://www.w3.org/2000/svg"
 						>
-							<circle cx="15" cy="15" r="15" fill={$selectedEoI === index ? '#DAEACD' : 'white'} />
+							<circle
+								cx="15"
+								cy="15"
+								r="15"
+								fill={$selectedEoI === index ? '#DAEACD' : '#DAEACD'}
+							/>
 						</svg>
 						{index + 1}
 					</button>
@@ -163,7 +172,7 @@
 								width="31"
 								height="30"
 								rx="4"
-								fill={$selectedEoI === index ? '#CBE6F8' : 'white'}
+								fill={$selectedEoI === index ? '#CBE6F8' : '#CBE6F8'}
 							/>
 						</svg>
 						{index + 1}
@@ -193,7 +202,7 @@
 						>
 							<path
 								d="M13.5561 2.82943C15.1042 0.208871 18.8957 0.208876 20.4439 2.82944L32.4874 23.2154C34.0627 25.8819 32.1406 29.25 29.0435 29.25H4.95641C1.85939 29.25 -0.0627815 25.8819 1.51251 23.2154L13.5561 2.82943Z"
-								fill={$selectedEoI === index ? '#D9D9D9' : 'white'}
+								fill={$selectedEoI === index ? '#D9D9D9' : '#D9D9D9'}
 							/>
 						</svg>
 						{index + 1}
@@ -204,6 +213,9 @@
 		{/each}
 	{/if}
 </div>
+{#if dragging}
+	<div class="grabboard" />
+{/if}
 
 <style lang="sass">
   @import "src/styles/theme"
@@ -337,4 +349,25 @@
     &:before
       width: 2px
       height: calc(0.875em - 6px)
+
+  :global(.noCursor)
+    *
+      cursor: none !important
+      &:before
+        cursor: none !important
+      &:after
+        cursor: none !important
+      &:hover
+        cursor: none !important
+
+  .grabboard
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    z-index: 9999
+    cursor: none
+    &:hover
+      cursor: none
 </style>

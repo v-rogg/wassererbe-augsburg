@@ -1,6 +1,6 @@
 <script>
 	import { selectedEoI } from '../../stores';
-	import { fade, fly } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
 </script>
 
 {#if $selectedEoI < 0}
@@ -49,6 +49,7 @@
 
 <style lang="sass">
   @import "src/styles/variables"
+  @import "src/styles/theme"
 
   section
     position: absolute

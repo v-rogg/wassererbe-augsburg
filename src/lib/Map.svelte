@@ -8,15 +8,15 @@
 	export let mapData;
 
 	const color = {
-		grass: '#7B9F5C',
-		land: '#CBAD1B',
-		forest: '#5E714D',
+		g: '#7B9F5C',
+		a: '#CBAD1B',
+		f: '#5E714D',
 		// "residential": "#B1785B",
-		residential: '#a6604c',
+		r: '#a6604c',
 		// "industrial": "#D7D7D7",
-		industrial: '#C0C0C0',
-		city: '#323232',
-		unknown: '#F0F0F0'
+		i: '#C0C0C0'
+		// city: '#323232',
+		// unknown: '#eaeaea'
 	};
 
 	function findNextYear(): number {
@@ -48,6 +48,8 @@
 	onMount(async () => {
 		setTimeout(() => {
 			// recolor();
+			_(`#water`).style.fill = '#18A0FB';
+			_(`#water-shadow`).style.fill = '#FFFFFF';
 			year.subscribe(() => recolor());
 		}, 1);
 	});
@@ -78,5 +80,5 @@
     width: 100%
 
   :global(#map path)
-    transition: 400ms fill ease-in-out
+    transition: .2s fill linear
 </style>
