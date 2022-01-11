@@ -11,12 +11,8 @@
 		g: '#7B9F5C',
 		a: '#CBAD1B',
 		f: '#5E714D',
-		// "residential": "#B1785B",
 		r: '#a6604c',
-		// "industrial": "#D7D7D7",
 		i: '#C0C0C0'
-		// city: '#323232',
-		// unknown: '#eaeaea'
 	};
 
 	function findNextYear(): number {
@@ -47,7 +43,6 @@
 
 	onMount(async () => {
 		setTimeout(() => {
-			// recolor();
 			_(`#water`).style.fill = '#18A0FB';
 			_(`#water-shadow`).style.fill = '#FFFFFF';
 			year.subscribe(() => recolor());
@@ -57,9 +52,7 @@
 
 <section id="map">
 	{#if mapSVG}
-		<div class="vector">
-			{@html mapSVG}
-		</div>
+    {@html mapSVG}
 	{/if}
 </section>
 
@@ -67,17 +60,9 @@
   @import "../styles/variables"
 
   #map
-    display: flex
-    align-items: center
-    width: calc(100% - $p-side-width - $p-side-width)
-    position: absolute
-    top: $p-top-spacing
-    bottom: $p-bottom-spacing
-    left: $p-side-width
-    opacity: 1
-
-  .vector
+    height: 100%
     width: 100%
+    opacity: 1
 
   :global(#map path)
     transition: .2s fill linear
