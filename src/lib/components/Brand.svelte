@@ -51,32 +51,28 @@
   .brand
     display: flex
     align-items: center
-    width: $p-side-content-width
-    justify-content: left
-    position: absolute
-    transform: translateX(-50%)
-    left: 50%
-    top: 10px
 
   .logo
-    width: 1.75em
-    height: 2.125em
-    margin-right: .75em
+    width: 1.8rem
+    margin-right: .7rem
+
+    path
+      fill: var(--active)
 
   h1
-    font-size: 1em
+    font-size: $fs-big
     display: flex
     flex-direction: column
     margin: 0
     padding: 0
 
   .title
-    font-size: 1.5em
+    font-size: $fs-big
     font-weight: $fw-medium
-    line-height: .8
+    line-height: .9
 
   .subtitle
-    font-size: 1.125em
+    font-size: 1.125rem
     font-weight: $fw-regular
     line-height: 1
 </style>

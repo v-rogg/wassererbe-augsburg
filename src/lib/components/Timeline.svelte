@@ -225,6 +225,8 @@
     display: flex
     align-items: center
     position: relative
+    height: 100%
+    width: 100%
 
   .bar
     position: absolute

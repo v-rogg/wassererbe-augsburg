@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { _ } from '$lib/actions/helpers';
-	import { playback, year, yearChanges, yearLimits } from '../stores';
+	import { playback, year, yearChanges, yearLimits } from '$lib/../stores';
 	import { PlaybackMode } from '$lib/enums';
 
 	export let mapSVG;
@@ -52,13 +52,11 @@
 
 <section id="map">
 	{#if mapSVG}
-    {@html mapSVG}
+		{@html mapSVG}
 	{/if}
 </section>
 
 <style lang="sass">
-  @import "../styles/variables"
-
   #map
     height: 100%
     width: 100%
