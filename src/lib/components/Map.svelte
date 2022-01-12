@@ -41,7 +41,12 @@
 		});
 	}
 
+	// TODO: Add GSAP Timeline init
+
 	onMount(async () => {
+
+		// TODO: Add GSAP .to
+
 		setTimeout(() => {
 			_(`#water`).style.fill = '#18A0FB';
 			_(`#water-shadow`).style.fill = '#FFFFFF';
