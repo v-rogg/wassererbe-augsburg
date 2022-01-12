@@ -96,3 +96,7 @@ html {
 .hidden {
 	display: none;
 }
+
+.number {
+	font-family: "Be Vietnam Pro", "IBM Plex Sans", sans-serif;
+}

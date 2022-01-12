@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Timeline from '$lib/components/Timeline.svelte';
+	import Timeline from '$lib/Components/Timeline.svelte';
 	import Button from '$lib/primitives/Button.svelte';
-	import MediaControls from '$lib/components/MediaControls.svelte';
+	import MediaControls from '$lib/Components/MediaControls.svelte';
 </script>
 
 <section id="manipulator">

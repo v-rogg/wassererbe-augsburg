@@ -41,13 +41,15 @@
 	import Right from '$lib/Right.svelte';
 	import Manipulator from '$lib/Manipulator.svelte';
 	import Layout from '$lib/_Layout.svelte';
-	import Map from '$lib/components/Map.svelte';
+	import Map from '$lib/Components/Map.svelte';
 	import { playback, stories, year, yearChanges, yearLimits } from '../stores';
 	import { onDestroy } from 'svelte';
 	import { PlaybackMode } from '$lib/enums';
-	import Timeline from '$lib/components/Timeline.svelte';
-	import Brand from '$lib/components/Brand.svelte';
-	import Controls from '$lib/components/Controls.svelte';
+	import Timeline from '$lib/Components/Timeline.svelte';
+	import Brand from '$lib/Components/Brand.svelte';
+	import Controls from '$lib/Components/Controls.svelte';
+	import Legal from '$lib/Components/Legal.svelte';
+	import About from '$lib/Components/About.svelte';
 
 	export let mapSVG;
 	export let mapData: {
@@ -97,9 +99,11 @@
 	<title>Wassererbe Augsburg</title>
 </svelte:head>
 
-<Layout slot="center">
+<Layout>
 	<Map {mapSVG} {mapData} slot="center" />
 	<Brand slot="top-left" />
 	<Timeline slot="bottom-mid" />
 	<Controls slot="top-mid" />
+	<Legal slot='bottom-right' />
+	<About slot='bottom-left' />
 </Layout>

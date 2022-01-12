@@ -6,7 +6,7 @@
 	<title>Wassererbe Augsburg</title>
 </svelte:head>
 
-<div class="container">
+<main class="container">
 	<div class="app active-{active}">
 		<img class="ratio" src="ratio.png" alt="resize" aria-hidden="true" />
 		<div class="center abs">
@@ -34,7 +34,7 @@
 			<slot name="bottom-right" />
 		</div>
 	</div>
-</div>
+</main>
 
 <style lang="sass">
   @import "src/styles/theme"
