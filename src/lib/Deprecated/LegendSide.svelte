@@ -1,5 +1,5 @@
 <script>
-	import { selectedEoI } from '../../stores';
+	import { selectedEoI } from '$lib/../stores';
 	import { fly } from 'svelte/transition';
 </script>
 
@@ -48,8 +48,8 @@
 {/if}
 
 <style lang="sass">
-  @import "src/styles/variables"
-  @import "src/styles/theme"
+  @import "../../styles/variables"
+  @import "../../styles/theme"
 
   section
     position: absolute

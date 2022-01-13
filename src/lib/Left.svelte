@@ -1,6 +1,6 @@
 <script>
-	import StorySelector from '$lib/Components/StorySelector.svelte';
-	import EoISelector from '$lib/Components/EoISelector.svelte';
+	import StorySelector from '$lib/Deprecated/StorySelector.svelte';
+	import EoISelector from '$lib/Deprecated/EoISelector.svelte';
 	import Brand from '$lib/Components/Brand.svelte';
 	import { selectedStory } from '../stores';
 	import { fade } from 'svelte/transition';

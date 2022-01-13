@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { playback, year, yearLimits } from '../../stores';
+	import { playback, year, yearLimits } from '$lib/../stores';
 	import { fade } from 'svelte/transition';
 	import { PlaybackMode } from '$lib/enums';
 
@@ -137,7 +137,7 @@
 </div>
 
 <style lang="sass">
-  @import "src/styles/theme"
+  @import "../../styles/theme"
 
   .media-controls
     display: flex

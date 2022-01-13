@@ -3,7 +3,7 @@
 	import { hotkey as hotkeyAction } from '$lib/Actions/hotkeys';
 	import { createEventDispatcher } from 'svelte';
 
-	export let active: boolean = true;
+	export let active: boolean = false;
 	export let title: string = '';
 	export let hotkey: string = '';
 	export let disabled: boolean = false;
@@ -37,7 +37,7 @@
 		{#if disabled}
 			<span class="lock event-none" class:hidden={!disabled}>
 				<svg
-					height="1em"
+					height=".8em"
 					aria-hidden="true"
 					focusable="false"
 					data-prefix="fas"
@@ -57,7 +57,7 @@
 		{#if danger}
 			<span class="danger event-none" class:hidden={!danger}>
 				<svg
-					height="1em"
+					height=".8"
 					aria-hidden="true"
 					focusable="false"
 					data-prefix="fas"
@@ -77,62 +77,64 @@
 </div>
 
 <style lang="sass">
-  @import "./src/styles/theme"
+	@import "./src/styles/theme"
 
-  .ui-button
-    position: relative
+	.ui-button
+		position: relative
 
-  button
-    border: none
-    background: $c-grey-30
-    width: 2rem
-    height: 2rem
-    font-size: $fs-normal
-    display: flex
-    justify-content: center
-    align-items: center
-    border-radius: $bor-normal
-    color: $c-black
-    position: relative
-    outline: none
+	button
+		border: none
+		background: $c-grey-10
+		width: 2rem
+		height: 2rem
+		font-size: $fs-normal
+		display: flex
+		justify-content: center
+		align-items: center
+		border-radius: $bor-normal
+		color: $c-black
+		position: relative
+		outline: none
 
-    &:hover:not(.open):not(:disabled)
-      cursor: pointer
+		&:hover:not(.open):not(:disabled)
+			background: $c-grey-30
+			cursor: pointer
 
-    &:active:not(.open):not(:disabled)
-      background: $c-grey-10
-      color: $c-grey-90
+		&:active:not(.open):not(:disabled)
+			background: $c-white
+			color: $c-black
 
-      path
-        fill: $c-black
+		&:disabled
+			color: $c-grey-50
 
-  .active
-    background: var(--active)
-    color: $c-white
+	.active
+		background: var(--active)
+		color: $c-white
 
-    //path
-      //fill: $c-white
+		&:hover
+			//color: $c-black
+			color: var(--active)
 
-  .main
-    display: flex
-    justify-content: center
-    align-items: center
+	.main
+		display: flex
+		justify-content: center
+		align-items: center
 
-  .lock, .danger
-    position: absolute
-    bottom: .25rem
-    right: .25rem
-    font-size: .85rem
+	.lock, .danger
+		position: absolute
+		bottom: .15rem
+		right: .15rem
+		font-size: .85rem
 
-  .lock
-    color: $c-black
+	.lock
+		color: $c-black
 
-  .danger
-    color: $c-red
+	.danger
+		color: $c-red
 
-  .addon
-    position: absolute
-    font-size: .85rem
-    top: .25rem
-    right: .5rem
+	.addon
+		position: absolute
+		font-size: .85rem
+		top: .25rem
+		right: .5rem
 </style>

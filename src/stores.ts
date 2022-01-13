@@ -1,6 +1,6 @@
 import { readable, writable } from 'svelte/store';
 import { tweened } from 'svelte/motion';
-import { PlaybackMode, StoryDirection } from '$lib/enums';
+import { DisplayMode, PlaybackMode, StoryDirection } from '$lib/enums';
 import { browser } from '$app/env';
 
 export const year = tweened(1890, { duration: 1600 });
@@ -19,3 +19,16 @@ export const isMobile = readable(false, (set) => {
 });
 
 export const showTooltip = readable(true);
+
+export const mode = writable(DisplayMode.Map);
+
+export const defaultYearChangeDuration = 2500;
+
+export const mapData = writable({
+	map: undefined,
+	dates: [0],
+	limits: {
+		min: 0,
+		max: 0
+	}
+});

@@ -1,6 +1,6 @@
 <script>
-	import LegendSide from '$lib/Components/LegendSide.svelte';
-	import StoryInfo from '$lib/Components/StoryInfo.svelte';
+	import LegendSide from '$lib/Deprecated/LegendSide.svelte';
+	import StoryInfo from '$lib/Deprecated/StoryInfo.svelte';
 </script>
 
 <section id="right">

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Timeline from '$lib/Components/Timeline.svelte';
-	import Button from '$lib/primitives/Button.svelte';
-	import MediaControls from '$lib/Components/MediaControls.svelte';
+	import Button from '$lib/Primitives/Button.svelte';
+	import MediaControls from '$lib/Deprecated/MediaControls.svelte';
 </script>
 
 <section id="manipulator">
@@ -50,7 +50,7 @@
 </section>
 
 <style lang="sass">
-  @import "../styles/variables"
+  @import "../../styles/variables"
 
   #manipulator
     height: $p-bottom-spacing

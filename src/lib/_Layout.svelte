@@ -1,5 +1,5 @@
 <script lang="ts">
-	let active = 'blue';
+	import { mode } from '../stores.ts';
 </script>
 
 <svelte:head>
@@ -7,7 +7,7 @@
 </svelte:head>
 
 <main class="container">
-	<div class="app active-{active}">
+	<div class="app active-{$mode}">
 		<img class="ratio" src="ratio.png" alt="resize" aria-hidden="true" />
 		<div class="center abs">
 			<slot name="center" />
@@ -96,11 +96,11 @@
     width: 100%
     height: 100%
 
-  :global(.active-blue)
+  :global(.active-0)
     //:root
     --active: #{$c-blue}
 
-  :global(.active-green)
+  :global(.active-1)
     //:root
     --active: #{$c-green}
 </style>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { selectedStory, stories, selectedEoI, storyDirection } from '../../stores';
+	import { selectedStory, stories, selectedEoI, storyDirection } from '$lib/../stores';
 	import { onDestroy } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { StoryDirection } from '$lib/enums';
@@ -151,8 +151,8 @@
 {/if}
 
 <style lang="sass">
-  @import "src/styles/variables"
-  @import "src/styles/theme"
+  @import "../../styles/variables"
+  @import "../../styles/theme"
 
   menu
     position: absolute

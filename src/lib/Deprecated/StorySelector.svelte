@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { selectedStory, stories, selectedEoI } from '../../stores.ts';
+	import { selectedStory, stories, selectedEoI } from '$lib/../stores';
 </script>
 
 <nav class:moved={$selectedStory >= 0}>
@@ -61,8 +61,8 @@
 </nav>
 
 <style lang="sass">
-  @import "src/styles/variables"
-  @import "src/styles/theme"
+  @import "../../styles/variables"
+  @import "../../styles/theme"
 
   h2
     font-weight: $fw-bold

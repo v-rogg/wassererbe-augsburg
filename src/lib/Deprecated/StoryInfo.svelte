@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { fade, fly } from 'svelte/transition';
-	import { selectedEoI, selectedStory, stories, storyDirection } from '../../stores';
+	import { selectedEoI, selectedStory, stories, storyDirection } from '$lib/../stores';
 	import { StoryDirection } from '$lib/enums';
 	import { cubicIn, cubicOut, linear, quadIn, quadOut, sineIn, sineOut } from 'svelte/easing';
 
@@ -179,8 +179,8 @@
 </section>
 
 <style lang="sass">
-  @import "src/styles/variables"
-  @import "src/styles/theme"
+  @import "../../styles/variables"
+  @import "../../styles/theme"
 
   section
     position: absolute
