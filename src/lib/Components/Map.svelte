@@ -3,11 +3,14 @@
 	import { _ } from '$lib/actions/helpers';
 	import { mapData, mode, year, yearChanges } from '$lib/../stores';
 	import { DisplayMode } from '$lib/enums';
+	import gsap from 'gsap';
 
 	export let mapSVG;
 	let waterAll, waterBGAll;
 	let yearUnsub, modeUnsub;
 
+	const blue = '#18A0FB';
+	const white = '#FFFFFF';
 	const color = {
 		g: '#7B9F5C',
 		a: '#CBAD1B',
@@ -56,8 +59,8 @@
 	function recolor() {
 		switch ($mode) {
 			case DisplayMode.Map:
-				waterAll.forEach((e: HTMLElement) => (e.style.stroke = '#18A0FB'));
-				waterBGAll.forEach((e: HTMLElement) => (e.style.stroke = '#FFFFFF'));
+				waterAll.forEach((e: HTMLElement) => (e.style.stroke = blue));
+				waterBGAll.forEach((e: HTMLElement) => (e.style.stroke = white));
 				waterAll.forEach((e: HTMLElement) => (e.style.opacity = '1'));
 				waterBGAll.forEach((e: HTMLElement) => (e.style.opacity = '1'));
 
@@ -98,18 +101,25 @@
 		}
 	}
 
-	// TODO: Add GSAP Timeline init
-
 	onMount(async () => {
-		waterAll = document.querySelectorAll(`[id*="$"]`);
-		waterBGAll = document.querySelectorAll(`[id*="@"]`);
+		waterAll = document.querySelectorAll(`[id*="_w"]`);
+		waterBGAll = document.querySelectorAll(`[id*="_bgw"]`);
+
+		waterAll.forEach((el) => {
+			const len = el.getTotalLength();
+			el.style.strokeDasharray = len;
+			el.style.strokeDashoffset = len;
+			el.style.stroke = blue;
+		});
 
 		// TODO: Add GSAP .to
+		// Der erste Parameter ist die ID des Flusses (siehe svg), duration und delay musst bei jedem fluss dann verändern. Momentan hast du 5s Zeit für die Ladeanimation. Das kannst du aber verändern, siehe nächstes Kommentar
+		gsap.to('#_w-n', { 'stroke-dashoffset': 0, duration: 3, delay: 1, ease: 'none' });
 
 		setTimeout(() => {
 			yearUnsub = year.subscribe(() => recolor());
 			modeUnsub = mode.subscribe(() => recolor());
-		}, 1);
+		}, 5000); // waits 5s until everything is displayed
 	});
 
 	onDestroy(() => {
@@ -125,11 +135,16 @@
 </section>
 
 <style lang="sass">
-  #map
-    height: 100%
-    width: 100%
-    opacity: 1
+	#map
+		height: 100%
+		width: 100%
+		opacity: 1
 
-  :global(#map path)
-    transition: .2s linear
+	:global(#map path)
+		transition: .2s linear
+		transition-property: fill, stroke
+
+	:global(#map "id*=['#_-']" path)
+		stroke-dasharray: 600
+		stroke-dashoffset: 600
 </style>

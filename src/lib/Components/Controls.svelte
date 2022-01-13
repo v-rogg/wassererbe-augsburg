@@ -5,7 +5,6 @@
 	import { PlaybackMode } from '$lib/enums.ts';
 	import { goto } from '$lib/actions/helpers';
 
-	const timeDifference = $yearLimits.max - $yearLimits.min;
 	const default_duration = 2500;
 </script>
 

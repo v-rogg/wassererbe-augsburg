@@ -25,6 +25,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"gsap": "^3.9.1",
 		"hotkeys-js": "^3.8.7"
 	}
 }
