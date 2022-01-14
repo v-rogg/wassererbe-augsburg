@@ -28,9 +28,7 @@
 				}
 			}}
 		>
-			<span class="event-none">
-				<slot />
-			</span>
+			<slot />
 		</Button>
 	</span>
 </div>
