@@ -143,8 +143,4 @@
 	:global(#map path)
 		transition: .2s linear
 		transition-property: fill, stroke
-
-	:global(#map "id*=['#_-']" path)
-		stroke-dasharray: 600
-		stroke-dashoffset: 600
 </style>
