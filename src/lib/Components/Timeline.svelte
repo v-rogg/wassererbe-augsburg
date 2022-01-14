@@ -248,7 +248,7 @@
       height: 100%
 
       path
-        stroke-dasharray: 4
+        stroke-dasharray: 3, 4
 
   .bar
     position: absolute
