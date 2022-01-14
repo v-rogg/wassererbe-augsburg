@@ -110,11 +110,15 @@
 			el.style.strokeDasharray = len;
 			el.style.strokeDashoffset = len;
 			el.style.stroke = blue;
+			el.style.opacity = 0;
 		});
+
+		const waterSpeed = .1;
 
 		// TODO: Add GSAP .to
 		// Der erste Parameter ist die ID des Flusses (siehe svg), duration und delay musst bei jedem fluss dann verändern. Momentan hast du 5s Zeit für die Ladeanimation. Das kannst du aber verändern, siehe nächstes Kommentar
-		gsap.to('#_w-n', { 'stroke-dashoffset': 0, duration: 3, delay: 1, ease: 'none' });
+		gsap.to('#_w-n', { 'stroke-dashoffset': 0, duration: 25 * waterSpeed, delay: 1, ease: 'none' });
+		gsap.to('#_w-n', { opacity: 1, duration: .5, delay: 1, ease: 'none' });
 
 		setTimeout(() => {
 			yearUnsub = year.subscribe(() => recolor());
