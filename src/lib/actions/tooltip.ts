@@ -1,4 +1,4 @@
-import Tooltip from '$lib/primitives/Tooltip.svelte';
+import Tooltip from '$lib/Primitives/Tooltip.svelte';
 
 export function tooltip(node, key?) {
 	let title;
