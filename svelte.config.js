@@ -10,14 +10,14 @@ const config = {
 
     // hydrate the <div id="svelte"> element in src/app.html
     target: 'body'
-  }
+  },
 
-  // onwarn: (warning, handler) => {
-  // 	const { code, frame } = warning;
-  // 	if (code === 'css-unused-selector') return;
-  //
-  // 	handler(warning);
-  // }
+  onwarn: (warning, handler) => {
+  	const { code, frame } = warning;
+  	if (code === 'css-unused-selector') return;
+
+  	handler(warning);
+  }
 };
 
 export default config;

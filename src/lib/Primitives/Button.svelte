@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { tooltip } from '$lib/Actions/tooltip';
-	import { hotkey as hotkeyAction } from '$lib/Actions/hotkeys';
+	import { tooltip } from '$lib/actions/tooltip';
+	import { hotkey as hotkeyAction } from '$lib/actions/hotkeys';
 	import { createEventDispatcher } from 'svelte';
 
 	export let active: boolean = false;
