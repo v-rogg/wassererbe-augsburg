@@ -95,7 +95,7 @@
 </script>
 
 <svelte:head>
-	<title>Wassererbe Augsburg</title>
+  <title>Wassererbe Augsburg</title>
 </svelte:head>
 
 <Layout>

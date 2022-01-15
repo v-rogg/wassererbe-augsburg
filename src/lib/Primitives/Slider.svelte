@@ -1,11 +1,12 @@
-<script lang="ts">
-	import { createEventDispatcher } from 'svelte';
-	import { SliderState } from '$lib/enums';
-	import Button from '$lib/Primitives/Button.svelte';
+<script>
+  import { createEventDispatcher } from "svelte";
+  import { SliderState } from "$lib/enums";
+  import Button from "$lib/Primitives/Button.svelte";
 
-	export let title: string = '';
-	export let hotkey: string = '';
-	export let state: SliderState = SliderState.Off;
+  export let title = '';
+	export let hotkey = '';
+	export let active = false;
+  $: state = active ? SliderState.On : SliderState.Off;
 
 	const dispatch = createEventDispatcher();
 </script>
@@ -55,7 +56,6 @@
 		align-items: center
 		font-size: $fs-normal
 		color: $c-black
-		//transition: 0ms
 		transition: 400ms transform cubic-bezier(0.645, 0.045, 0.355, 1)
 
 		&:hover

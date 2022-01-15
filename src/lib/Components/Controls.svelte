@@ -2,7 +2,7 @@
 	import Button from '$lib/Primitives/Button.svelte';
 	import Slider from '$lib/Primitives/Slider.svelte';
 	import { playback, year, yearLimits, mode } from '$lib/../stores';
-	import { PlaybackMode } from '$lib/enums.ts';
+	import { PlaybackMode, DisplayMode } from '$lib/enums.ts';
 	import { goto } from '$lib/actions/helpers';
 
 	const default_duration = 2500;
@@ -16,6 +16,7 @@
 			on:click={(e) => {
 				$mode = e.detail.state;
 			}}
+      active={$mode === DisplayMode.Percent}
 		>
 			<svg
 				height="1em"

@@ -1,3 +1,7 @@
+<svelte:head>
+  <title>Datenschutz – Wassererbe Augsburg</title>
+</svelte:head>
+
 <main>
 	<h1>Datenschutzerklärung</h1>
 	<p>Stand: 12. Januar 2022</p>
