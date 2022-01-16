@@ -47,9 +47,12 @@
     align-items: center
 
   .app
+    max-width: 1920px
+    max-height: 1400px
+    //height: 100%
     position: relative
     width: max-content
-    height: max-content
+    //height: max-content
     top: -17px
 
   .ratio
