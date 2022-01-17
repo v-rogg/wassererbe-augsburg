@@ -225,40 +225,41 @@
 </section>
 
 <style lang="sass">
-	@import "src/styles/theme"
+  @import "src/styles/theme"
 
-	section
-		display: grid
-		grid-template-columns: 10% 15% auto calc(25% - 3em) 3em
-		justify-content: space-between
-		width: 100%
+  section
+    display: grid
+    grid-template-columns: 10% 15% auto calc(25% - 3em) 3em
+    justify-content: space-between
+    width: 100%
 
-	.slider
-		display: flex
-		grid-area: 1/1/2/3
+  .slider
+    display: flex
+    grid-area: 1/1/2/3
 
-	.media
-		display: flex
-		background: $c-grey-10
-		border-radius: $bor-normal
-		grid-area: 1/3/2/4
+  .media
+    display: flex
+    background: var(--c-grey-10)
+    border-radius: $bor-normal
+    grid-area: 1/3/2/4
 
-	.legend
-		display: flex
-		gap: 16px
-		grid-area: 1/4/2/5
-		width: 100%
-		justify-content: end
+  .legend
+    display: flex
+    gap: 16px
+    grid-area: 1/4/2/5
+    width: 100%
+    justify-content: end
 
-	.north
-		display: flex
-		align-items: center
-		justify-content: end
-		font-size: $fs-small
+  .north
+    display: flex
+    align-items: center
+    justify-content: end
+    font-size: $fs-small
+    color: var(--c-black)
 
-		span
-			margin-right: 4px
+    span
+      margin-right: 4px
 
-		svg
-			transform: rotate(45deg)
+    svg
+      transform: rotate(45deg)
 </style>

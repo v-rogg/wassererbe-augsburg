@@ -49,10 +49,7 @@
   .app
     max-width: 1920px
     max-height: 1400px
-    //height: 100%
     position: relative
-    width: max-content
-    //height: max-content
     top: -17px
 
   .ratio
@@ -100,10 +97,8 @@
     height: 100%
 
   :global(.active-0)
-    //:root
     --active: #{$c-blue}
 
   :global(.active-1)
-    //:root
     --active: #{$c-green}
 </style>

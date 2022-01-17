@@ -19,7 +19,7 @@
 		font-size: $fs-micro
 
 		a
-			color: $c-black
+			color: var(--c-black)
 			text-decoration: none
 
 			&:hover

@@ -32,14 +32,14 @@
 		width: 100%
 		height: 100%
 		font-size: $fs-micro
-		color: $c-black
+		color: var(--c-black)
 
 	.brand
 		font-weight: $fw-semibold
 
 	a
 		text-decoration: none
-		color: $c-black
+		color: var(--c-black)
 
 		&:hover
 			text-decoration: underline

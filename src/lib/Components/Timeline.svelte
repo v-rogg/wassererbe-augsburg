@@ -232,13 +232,14 @@
     position: relative
     height: 100%
     width: 100%
+    color: var(--c-black)
 
   .stroked_bar
     //border: 1px dashed currentColor
     position: absolute
     width: 18%
     border-radius: 2px
-    color: $c-black
+    color: var(--c-black)
     height: 2px
 
     svg
@@ -256,7 +257,7 @@
     width: 82%
     height: 2px
     border-radius: 2px
-    color: $c-black
+    color: var(--c-black)
     background: currentColor
 
   .arrow
@@ -283,7 +284,7 @@
 
     &:before
       content: ""
-      color: $c-black
+      color: var(--c-black)
       background: currentColor
       width: 1px
       height: calc(1.75em - 10px)

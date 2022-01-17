@@ -36,35 +36,36 @@
 </div>
 
 <style lang="sass">
-	@import "src/styles/variables"
-	@import "src/styles/theme"
+  @import "src/styles/variables"
+  @import "src/styles/theme"
 
-	.brand
-		display: flex
-		align-items: center
+  .brand
+    display: flex
+    align-items: center
+    color: var(--c-black)
 
-	.logo
-		width: 1.8rem
-		margin-right: .7rem
+  .logo
+    width: 1.8rem
+    margin-right: .7rem
 
-		path
-			transition: 400ms fill cubic-bezier(0.645, 0.045, 0.355, 1)
-			fill: var(--active)
+    path
+      transition: 400ms fill cubic-bezier(0.645, 0.045, 0.355, 1)
+      fill: var(--active)
 
-	h1
-		font-size: $fs-big
-		display: flex
-		flex-direction: column
-		margin: 0
-		padding: 0
+  h1
+    font-size: $fs-big
+    display: flex
+    flex-direction: column
+    margin: 0
+    padding: 0
 
-	.title
-		font-size: $fs-big
-		font-weight: $fw-medium
-		line-height: .9
+  .title
+    font-size: $fs-big
+    font-weight: $fw-medium
+    line-height: .9
 
-	.subtitle
-		font-size: 1.125rem
-		font-weight: $fw-regular
-		line-height: 1
+  .subtitle
+    font-size: 1.125rem
+    font-weight: $fw-regular
+    line-height: 1
 </style>

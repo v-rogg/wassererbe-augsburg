@@ -40,14 +40,14 @@
 	.slider
 		width: 4rem
 		height: 2rem
-		background: $c-grey-10
+		background: var(--c-grey-10)
 		border-radius: $bor-normal
 		overflow: hidden
 
 	button
 		position: absolute
 		border: none
-		background: $c-grey-30
+		background: var(--c-grey-30)
 		width: 2rem
 		height: 2rem
 		border-radius: $bor-normal
@@ -55,20 +55,20 @@
 		justify-content: center
 		align-items: center
 		font-size: $fs-normal
-		color: $c-black
+		color: var(--c-black)
 		transition: 400ms transform cubic-bezier(0.645, 0.045, 0.355, 1)
 
 		&:hover
 			cursor: pointer
-			background: $c-grey-10
+			background: var(--c-grey-10)
 
 		&:active
-			background: $c-white
+			background: var(--c-white)
 
 
 	:global(.on button)
 		display: block
-		color: $c-white
+		color: var(--c-white)
 		transform: translateX(100%)
 		background: var(--active)
 

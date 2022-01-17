@@ -84,7 +84,7 @@
 
 	button
 		border: none
-		background: $c-grey-10
+		background: var(--c-grey-10)
 		width: 2rem
 		height: 2rem
 		font-size: $fs-normal
@@ -92,24 +92,24 @@
 		justify-content: center
 		align-items: center
 		border-radius: $bor-normal
-		color: $c-black
+		color: var(--c-black)
 		position: relative
 		outline: none
 
 		&:hover:not(.open):not(:disabled)
-			background: $c-grey-30
+			background: var(--c-grey-30)
 			cursor: pointer
 
 		&:active:not(.open):not(:disabled)
-			background: $c-white
-			color: $c-black
+			background: var(--c-white)
+			color: var(--c-black)
 
 		&:disabled
-			color: $c-grey-50
+			color: var(--c-grey-50)
 
 	.active
 		background: var(--active)
-		color: $c-white
+		color: var(--c-white)
 
 		&:hover
 			//color: $c-black
@@ -127,7 +127,7 @@
 		font-size: .85rem
 
 	.lock
-		color: $c-black
+		color: var(--c-black)
 
 	.danger
 		color: $c-red
