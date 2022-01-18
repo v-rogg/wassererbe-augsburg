@@ -212,7 +212,7 @@
 					: 'translate(-50%, 0)'}"
         class:yearChanges--big={$year === y}
         on:click={() => {goto(y); console.log(y)}}
-      />
+      ><span>{y}</span></div>
     {/if}
   {/each}
 
@@ -348,6 +348,9 @@
 
   .yearChanges
     transform: translate(calc(-50% - 1px), 0)
+
+    span
+      display: none
 
     &:before
       width: 8px
