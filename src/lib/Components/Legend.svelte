@@ -12,60 +12,63 @@
 </script>
 
 <section transition:fly={{ duration: 200, x: 10 }}>
-  <p>Nutzung der Zone</p>
-  <div class="icons">
-    <div>
-      <div class="svg number">
-        <img src="/legend/agricultural.svg" alt="" />
-        {#if count.get('a') != undefined}
-          <span>{count.get('a')}</span>
-        {/if}
+  <div>
+
+    <p>Nutzung der Zone</p>
+    <div class="icons">
+      <div>
+        <div class="svg number">
+          <img src="/legend/agricultural.svg" alt="" />
+          {#if count.get('a') != undefined}
+            <span>{count.get('a')}</span>
+          {/if}
+        </div>
+        Landwirtschaft
       </div>
-      Landwirtschaft
-    </div>
-    <div>
-      <div class="svg number">
-        <img src="/legend/grassland.svg" alt="" />
-        {#if count.get('g') != undefined}
-          <span>{count.get('g')}</span>
-        {/if}
+      <div>
+        <div class="svg number">
+          <img src="/legend/grassland.svg" alt="" />
+          {#if count.get('g') != undefined}
+            <span>{count.get('g')}</span>
+          {/if}
+        </div>
+        Grasland
       </div>
-      Grasland
-    </div>
-    <div>
-      <div class="svg number">
-        <img src="/legend/forest.svg" alt="" />
-        {#if count.get('f') != undefined}
-          <span>{count.get('f')}</span>
-        {/if}
+      <div>
+        <div class="svg number">
+          <img src="/legend/forest.svg" alt="" />
+          {#if count.get('f') != undefined}
+            <span>{count.get('f')}</span>
+          {/if}
+        </div>
+        Wald
       </div>
-      Wald
-    </div>
-    <div>
-      <div class="svg number">
-        <img src="/legend/residential.svg" alt="" />
-        {#if count.get('r') != undefined}
-          <span>{count.get('r')}</span>
-        {/if}
+      <div>
+        <div class="svg number">
+          <img src="/legend/residential.svg" alt="" />
+          {#if count.get('r') != undefined}
+            <span>{count.get('r')}</span>
+          {/if}
+        </div>
+        Wohnraum
       </div>
-      Wohnraum
-    </div>
-    <div>
-      <div class="svg number">
-        <img src="/legend/industrial.svg" alt="" />
-        {#if count.get('i') != undefined}
-          <span style:color="var(--c-black)">{count.get('i')}</span>
-        {/if}
+      <div>
+        <div class="svg number">
+          <img src="/legend/industrial.svg" alt="" />
+          {#if count.get('i') != undefined}
+            <span style:color="var(--c-black)">{count.get('i')}</span>
+          {/if}
+        </div>
+        Industrie
       </div>
-      Industrie
-    </div>
-    <div>
-      <img src="/legend/channel.svg" alt="" />
-      Kanal
-    </div>
-    <div>
-      <img src="/legend/river.svg" alt="" />
-      Lech
+      <div>
+        <img src="/legend/channel.svg" alt="" />
+        Kanal
+      </div>
+      <div>
+        <img src="/legend/river.svg" alt="" />
+        Lech
+      </div>
     </div>
   </div>
 </section>
@@ -77,8 +80,10 @@
     margin-bottom: 2em
 
   section
-    margin-left: 3rem
+    display: flex
+    justify-content: center
     margin-top: -4rem
+    width: 100%
 
   .icons
     display: grid

@@ -14,6 +14,11 @@
       <slot name="center" />
     </div>
     {/if}
+    {#if $$slots.center_large}
+      <div class="center-large abs">
+        <slot name="center_large" />
+      </div>
+    {/if}
     {#if $$slots.top_left}
     <div class="top left abs">
       <slot name="top_left" />

@@ -14,9 +14,9 @@
 </script>
 
 <section>
-  <p class="description">
-    Erfahre wie sich die Stadt seit Ende der Neuzeit dank intensiver Wassernutzung verändert hat.
-  </p>
+<!--  <p class="description">-->
+<!--    Erfahre wie sich die Stadt seit Ende der Neuzeit dank intensiver Wassernutzung verändert hat.-->
+<!--  </p>-->
   <p class="choose">
     Wähle ein Geschichte
   </p>

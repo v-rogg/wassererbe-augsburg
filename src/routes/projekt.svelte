@@ -1,6 +1,8 @@
 <script lang="ts">
   import Layout from "$lib/_Layout.svelte";
   import Brand from "$lib/Components/Brand.svelte";
+  import Legal from "$lib/Components/Legal.svelte";
+  import About from "$lib/Components/About.svelte";
 </script>
 
 <svelte:head>
@@ -8,7 +10,7 @@
 </svelte:head>
 
 <Layout>
-  <div slot="center-large">
+  <div slot="center_large">
     <h1>Über das Projekt</h1>
     <h2>Hintergrund</h2>
     <p>
@@ -22,7 +24,10 @@
     <h2>Quellen</h2>
   </div>
 
-  <Brand slot="top-left" />
+  <Brand slot="top_left" />
+
+  <Legal slot="bottom_right" />
+  <About slot="bottom_left" />
 </Layout>
 
 <style lang="sass">

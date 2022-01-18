@@ -19,7 +19,7 @@
 
 <svelte:window bind:innerWidth />
 
-{#if $showTooltip && !$isMobile}
+{#if $showTooltip && title && !$isMobile}
   {#if right}
     <div
       style="
