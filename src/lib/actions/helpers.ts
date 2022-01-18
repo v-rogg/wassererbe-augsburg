@@ -8,7 +8,9 @@ export function _(query: string): HTMLElement {
 
 export function goto(goToYear: number): boolean {
   function run() {
-    const duration = (Math.abs(get(year) - goToYear) / (get(yearLimits).max - get(yearLimits).min)) * defaultYearChangeDuration;
+    const duration =
+      (Math.abs(get(year) - goToYear) / (get(yearLimits).max - get(yearLimits).min)) *
+      defaultYearChangeDuration;
     year.update((n) => (n = goToYear), { duration });
     setTimeout(() => {
       playback.set(PlaybackMode.Pause);

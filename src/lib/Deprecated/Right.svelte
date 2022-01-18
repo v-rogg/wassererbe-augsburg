@@ -10,7 +10,7 @@
 </section>
 
 <style lang="sass">
-  @import "../styles/variables"
+  @import "../../styles/variables"
 
   #right
     width: $p-side-width

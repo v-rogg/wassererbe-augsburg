@@ -225,40 +225,51 @@
 </section>
 
 <style lang="sass">
-	@import "src/styles/theme"
+  @import "src/styles/theme"
 
-	section
-		display: grid
-		grid-template-columns: 10% 15% auto calc(25% - 3em) 3em
-		justify-content: space-between
-		width: 100%
+  section
+    display: grid
+    grid-template-columns: 10% 15% auto calc(25% - 3em) 3em
+    justify-content: space-between
+    width: 100%
 
-	.slider
-		display: flex
-		grid-area: 1/1/2/3
+  .slider
+    display: flex
+    grid-area: 1/1/2/3
 
-	.media
-		display: flex
-		background: $c-grey-10
-		border-radius: $bor-normal
-		grid-area: 1/3/2/4
+  .media
+    display: flex
+    background: var(--c-grey-10)
+    border-radius: $bor-normal
+    grid-area: 1/3/2/4
+    gap: .25rem
+    position: relative
 
-	.legend
-		display: flex
-		gap: 16px
-		grid-area: 1/4/2/5
-		width: 100%
-		justify-content: end
+    &:before
+      content: ""
+      background: var(--c-grey-10)
+      width: 100%
+      height: 32px
+      position: absolute
+      border-radius: $bor-normal
 
-	.north
-		display: flex
-		align-items: center
-		justify-content: end
-		font-size: $fs-small
+  .legend
+    display: flex
+    gap: 16px
+    grid-area: 1/4/2/5
+    width: 100%
+    justify-content: end
 
-		span
-			margin-right: 4px
+  .north
+    display: flex
+    align-items: center
+    justify-content: end
+    font-size: $fs-small
+    color: var(--c-black)
 
-		svg
-			transform: rotate(45deg)
+    span
+      margin-right: 4px
+
+    svg
+      transform: rotate(45deg)
 </style>

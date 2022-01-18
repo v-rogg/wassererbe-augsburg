@@ -8,7 +8,6 @@ export const yearLimits = writable({ min: 1600, max: 2021 });
 export const yearChanges = writable([]);
 export const stories = writable([]);
 export const selectedStory = writable(-1);
-export const selectedEoI = writable(-1);
 export const playback = writable(PlaybackMode.Pause);
 export const storyDirection = writable(StoryDirection.Up);
 
@@ -32,3 +31,5 @@ export const mapData = writable({
     max: 0
   }
 });
+
+export const countTotal = writable(new Map)

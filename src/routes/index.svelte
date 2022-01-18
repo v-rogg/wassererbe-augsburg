@@ -47,6 +47,8 @@
   import Controls from "$lib/Components/Controls.svelte";
   import Legal from "$lib/Components/Legal.svelte";
   import About from "$lib/Components/About.svelte";
+  import StorySelector from "$lib/Components/StorySelector.svelte";
+  import RightSide from "$lib/RightSide.svelte";
 
   export let mapSVG;
   export let loadedMapData: {
@@ -100,9 +102,11 @@
 
 <Layout>
   <Map {mapSVG} slot="center" />
-  <Brand slot="top-left" />
-  <Timeline slot="bottom-mid" />
-  <Controls slot="top-mid" />
-  <Legal slot="bottom-right" />
-  <About slot="bottom-left" />
+  <Brand slot="top_left" />
+  <Timeline slot="bottom_mid" />
+  <Controls slot="top_mid" />
+  <Legal slot="bottom_right" />
+  <About slot="bottom_left" />
+  <StorySelector slot="mid_left" />
+  <RightSide slot="mid_right" />
 </Layout>

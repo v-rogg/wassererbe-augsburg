@@ -9,38 +9,53 @@
 <main class="container">
   <div class="app active-{$mode}">
     <img class="ratio" src="ratio.png" alt="resize" aria-hidden="true" />
+    {#if $$slots.center}
     <div class="center abs">
       <slot name="center" />
     </div>
-    <div class="center-large abs">
-      <slot name="center-large" />
-    </div>
+    {/if}
+    {#if $$slots.top_left}
     <div class="top left abs">
-      <slot name="top-left" />
+      <slot name="top_left" />
     </div>
+    {/if}
+    {#if $$slots.top_mid}
     <div class="top h-mid abs">
-      <slot name="top-mid" />
+      <slot name="top_mid" />
     </div>
+    {/if}
+    {#if $$slots.mid_left}
     <div class="v-mid left abs">
-      <slot name="mid-left" />
+      <slot name="mid_left" />
     </div>
+    {/if}
+    {#if $$slots.mid_right}
     <div class="v-mid right abs">
-      <slot name="mid-right" />
+      <slot name="mid_right" />
     </div>
+    {/if}
+    {#if $$slots.bottom_mid}
     <div class="bottom h-mid abs">
-      <slot name="bottom-mid" />
+      <slot name="bottom_mid" />
     </div>
+    {/if}
+    {#if $$slots.bottom_left}
     <div class="bottom left abs">
-      <slot name="bottom-left" />
+      <slot name="bottom_left" />
     </div>
+    {/if}
+    {#if $$slots.bottom_right}
     <div class="bottom right abs">
-      <slot name="bottom-right" />
+      <slot name="bottom_right" />
     </div>
+    {/if}
   </div>
 </main>
 
 <style lang="sass">
   @import "src/styles/theme"
+
+  $side-width: 300px
 
   .container
     width: 100%
@@ -52,16 +67,13 @@
   .app
     max-width: 1920px
     max-height: 1400px
-    //height: 100%
     position: relative
-    width: max-content
-    //height: max-content
     top: -17px
 
   .ratio
     display: block
     max-height: calc(100vh - 100px - 70px - 4rem)
-    max-width: calc(100vw - 460px - 8rem)
+    max-width: calc(100vw - 8rem - #{$side-width * 2})
     margin: auto
     height: max-content
     width: auto
@@ -72,12 +84,12 @@
     align-items: center
 
   .left
-    left: -230px
-    width: 230px
+    left: -#{$side-width}
+    width: #{$side-width}
 
   .right
-    right: -230px
-    width: 230px
+    right: -#{$side-width}
+    width: #{$side-width}
 
   .top
     top: -70px
@@ -90,7 +102,6 @@
   .h-mid
     left: 10%
     width: 80%
-
 
   .bottom
     bottom: -100px
@@ -108,11 +119,9 @@
     width: 100%
     height: calc(100% + 70px + 100px)
 
-    :global(.active-0)
-      //:root
-      --active: #{$c-blue}
+  :global(.active-0)
+    --active: #{$c-blue}
 
-    :global(.active-1)
-      //:root
-      --active: #{$c-green}
+  :global(.active-1)
+    --active: #{$c-green}
 </style>
