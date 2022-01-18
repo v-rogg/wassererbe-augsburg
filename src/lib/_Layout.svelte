@@ -1,39 +1,42 @@
 <script lang="ts">
-	import { mode } from '../stores.ts';
+  import { mode } from "../stores.ts";
 </script>
 
 <svelte:head>
-	<title>Wassererbe Augsburg</title>
+  <title>Wassererbe Augsburg</title>
 </svelte:head>
 
 <main class="container">
-	<div class="app active-{$mode}">
-		<img class="ratio" src="ratio.png" alt="resize" aria-hidden="true" />
-		<div class="center abs">
-			<slot name="center" />
-		</div>
-		<div class="top left abs">
-			<slot name="top-left" />
-		</div>
-		<div class="top h-mid abs">
-			<slot name="top-mid" />
-		</div>
-		<div class="v-mid left abs">
-			<slot name="mid-left" />
-		</div>
-		<div class="v-mid right abs">
-			<slot name="mid-right" />
-		</div>
-		<div class="bottom h-mid abs">
-			<slot name="bottom-mid" />
-		</div>
-		<div class="bottom left abs">
-			<slot name="bottom-left" />
-		</div>
-		<div class="bottom right abs">
-			<slot name="bottom-right" />
-		</div>
-	</div>
+  <div class="app active-{$mode}">
+    <img class="ratio" src="ratio.png" alt="resize" aria-hidden="true" />
+    <div class="center abs">
+      <slot name="center" />
+    </div>
+    <div class="center-large abs">
+      <slot name="center-large" />
+    </div>
+    <div class="top left abs">
+      <slot name="top-left" />
+    </div>
+    <div class="top h-mid abs">
+      <slot name="top-mid" />
+    </div>
+    <div class="v-mid left abs">
+      <slot name="mid-left" />
+    </div>
+    <div class="v-mid right abs">
+      <slot name="mid-right" />
+    </div>
+    <div class="bottom h-mid abs">
+      <slot name="bottom-mid" />
+    </div>
+    <div class="bottom left abs">
+      <slot name="bottom-left" />
+    </div>
+    <div class="bottom right abs">
+      <slot name="bottom-right" />
+    </div>
+  </div>
 </main>
 
 <style lang="sass">
@@ -99,11 +102,17 @@
     width: 100%
     height: 100%
 
-  :global(.active-0)
-    //:root
-    --active: #{$c-blue}
+  .center-large
+    top: -70px
+    bottom: -100px
+    width: 100%
+    height: calc(100% + 70px + 100px)
 
-  :global(.active-1)
-    //:root
-    --active: #{$c-green}
+    :global(.active-0)
+      //:root
+      --active: #{$c-blue}
+
+    :global(.active-1)
+      //:root
+      --active: #{$c-green}
 </style>

@@ -1,24 +1,24 @@
 export enum PlaybackMode {
-	Pause,
-	Forward,
-	Backward,
-	FastForward,
-	FastBackward,
-	StepForward,
-	StepBackward
+  Pause,
+  Forward,
+  Backward,
+  FastForward,
+  FastBackward,
+  StepForward,
+  StepBackward
 }
 
 export enum StoryDirection {
-	Up,
-	Down
+  Up,
+  Down
 }
 
 export enum SliderState {
-	Off,
-	On
+  Off,
+  On
 }
 
 export enum DisplayMode {
-	Map,
-	Percent
+  Map,
+  Percent
 }

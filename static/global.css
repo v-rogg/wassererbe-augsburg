@@ -1,108 +1,98 @@
 @font-face {
-	font-family: 'IBM Plex Sans';
-	font-style: normal;
-	font-weight: 300;
-	font-display: swap;
-	src: local('IBM Plex Sans Thin'),
-		url(https://fonts.gstatic.com/s/ibmplexsans/v9/zYX9KVElMYYaJe8bpLHnCwDKjXr8AIFsdA.woff2)
-			format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-		U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("IBM Plex Sans Thin"), url(https://fonts.gstatic.com/s/ibmplexsans/v9/zYX9KVElMYYaJe8bpLHnCwDKjXr8AIFsdA.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-	font-family: 'IBM Plex Sans';
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: local('IBM Plex Sans Regular'),
-		url(https://fonts.gstatic.com/s/ibmplexsans/v9/zYXgKVElMYYaJe8bpLHnCwDKhdHeFQ.woff2)
-			format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-		U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("IBM Plex Sans Regular"), url(https://fonts.gstatic.com/s/ibmplexsans/v9/zYXgKVElMYYaJe8bpLHnCwDKhdHeFQ.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-	font-family: 'IBM Plex Sans';
-	font-style: normal;
-	font-weight: 500;
-	font-display: swap;
-	src: local('IBM Plex Sans Medium'),
-		url(https://fonts.gstatic.com/s/ibmplexsans/v9/zYX9KVElMYYaJe8bpLHnCwDKjSL9AIFsdA.woff2)
-			format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-		U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("IBM Plex Sans Medium"),
+    url(https://fonts.gstatic.com/s/ibmplexsans/v9/zYX9KVElMYYaJe8bpLHnCwDKjSL9AIFsdA.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-	font-family: 'IBM Plex Sans';
-	font-style: normal;
-	font-weight: 700;
-	font-display: swap;
-	src: local('IBM Plex Sans Bold'),
-		url(https://fonts.gstatic.com/s/ibmplexsans/v9/zYX9KVElMYYaJe8bpLHnCwDKjWr7AIFsdA.woff2)
-			format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-		U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("IBM Plex Sans Bold"), url(https://fonts.gstatic.com/s/ibmplexsans/v9/zYX9KVElMYYaJe8bpLHnCwDKjWr7AIFsdA.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-	font-family: 'Be Vietnam Pro';
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: local('Be Vietnam Pro Regular'),
-		url(https://fonts.gstatic.com/s/bevietnampro/v8/QdVPSTAyLFyeg_IDWvOJmVES_Hw3BXoYZ7Aj.woff2)
-			format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-		U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Be Vietnam Pro Regular"),
+    url(https://fonts.gstatic.com/s/bevietnampro/v8/QdVPSTAyLFyeg_IDWvOJmVES_Hw3BXoYZ7Aj.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-	font-family: 'Be Vietnam Pro';
-	font-style: normal;
-	font-weight: 600;
-	font-display: swap;
-	src: local('Be Vietnam Pro Semi Bold'),
-		url(https://fonts.gstatic.com/s/bevietnampro/v8/QdVMSTAyLFyeg_IDWvOJmVES_HToIW81Rb0JcBao.woff2)
-			format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-		U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local("Be Vietnam Pro Semi Bold"),
+    url(https://fonts.gstatic.com/s/bevietnampro/v8/QdVMSTAyLFyeg_IDWvOJmVES_HToIW81Rb0JcBao.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-	font-family: 'Be Vietnam Pro';
-	font-style: normal;
-	font-weight: 700;
-	font-display: swap;
-	src: local('Be Vietnam Pro Bold'),
-		url(https://fonts.gstatic.com/s/bevietnampro/v8/QdVMSTAyLFyeg_IDWvOJmVES_HSMIG81Rb0JcBao.woff2)
-			format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
-		U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Be Vietnam Pro Bold"),
+    url(https://fonts.gstatic.com/s/bevietnampro/v8/QdVMSTAyLFyeg_IDWvOJmVES_HSMIG81Rb0JcBao.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 body,
 html {
-	font-family: 'IBM Plex Sans', sans-serif;
-	padding: 0;
-	margin: 0;
-	width: 100%;
-	height: 100%;
-	box-sizing: border-box;
-	text-rendering: optimizeLegibility;
-	font-size: 1rem;
-	overflow: hidden;
+  font-family: "IBM Plex Sans", sans-serif;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  font-size: 1rem;
+  overflow: hidden;
 }
 
 .event-none {
-	pointer-events: none;
+  pointer-events: none;
 }
 
 .hidden {
-	display: none;
+  display: none;
 }
 
 .number {
-	font-family: 'Be Vietnam Pro', 'IBM Plex Sans', sans-serif;
+  font-family: "Be Vietnam Pro", "IBM Plex Sans", sans-serif;
 }
