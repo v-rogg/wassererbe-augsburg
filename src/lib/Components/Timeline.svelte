@@ -215,6 +215,10 @@
       />
     {/if}
   {/each}
+
+  <div class="reference_description">
+    Vorhandene Referenzkarten
+  </div>
 </div>
 {#if dragging}
   <div class="grabboard" />
@@ -399,4 +403,22 @@
 
     &:hover
       cursor: none
+
+  .reference_description
+    position: absolute
+    bottom: 0
+    left: 50%
+    transform: translateX(calc(-50% + 1rem))
+    font-size: $fs-micro
+
+    &:before
+      position: absolute
+      left: -1rem
+      top: 50%
+      transform: translateY(-50%)
+      content: ""
+      width: 8px
+      height: 8px
+      border-radius: 12px
+      background: currentColor
 </style>
