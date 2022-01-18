@@ -56,18 +56,18 @@
         <div class="svg number">
           <img src="/legend/industrial.svg" alt="" />
           {#if count.get('i') != undefined}
-            <span style:color="var(--c-black)">{count.get('i')}</span>
+            <span>{count.get('i')}</span>
           {/if}
         </div>
         Industrie
       </div>
       <div>
-        <img src="/legend/channel.svg" alt="" />
-        Kanal
-      </div>
-      <div>
         <img src="/legend/river.svg" alt="" />
         Lech
+      </div>
+      <div>
+        <img src="/legend/channel.svg" alt="" />
+        Kanal
       </div>
     </div>
   </div>
@@ -104,5 +104,5 @@
         text-align: center
         width: 100%
         font-size: $fs-micro
-        color: var(--c-white)
+        color: $c-white
 </style>

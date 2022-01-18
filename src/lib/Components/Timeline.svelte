@@ -1,7 +1,7 @@
 <script lang="ts">
   import { playback, year, yearChanges, yearLimits } from "../../stores";
   import { PlaybackMode } from "$lib/enums";
-  import { _, goto } from "$lib/actions/helpers";
+  import { _, goto, gotoElement } from "$lib/actions/helpers";
   import { onMount } from "svelte";
 
   const timeDifference = $yearLimits.max - $yearLimits.min;
@@ -206,13 +206,14 @@
     {#if y !== $yearLimits.max}
       <div
         class="displayYear yearChanges"
+        title="{y}"
         style="left: {18 + (((y - $yearLimits.min) / timeDifference) * 82)}%; transform: {y ===
 				$yearLimits.min
 					? 'translate(calc(-50%), 0)'
 					: 'translate(-50%, 0)'}"
         class:yearChanges--big={$year === y}
-        on:click={() => {goto(y)}}
-      ></div>
+        on:click={(e) => {gotoElement(e.target)}}
+      />
     {/if}
   {/each}
 
