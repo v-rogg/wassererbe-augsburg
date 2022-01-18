@@ -25,12 +25,12 @@
     --c-grey-10: #{$c-grey-10}
     --c-white: #{$c-white}
 
-    @media (prefers-color-scheme: dark)
-      --c-black: #{$c-white}
-      --c-grey-90: #{$c-grey-10}
-      --c-grey-70: #{$c-grey-30}
-      --c-grey-50: #{$c-grey-50}
-      --c-grey-30: #{$c-grey-70}
-      --c-grey-10: #{$c-grey-90}
-      --c-white: #{$c-black}
+    //@media (prefers-color-scheme: dark)
+    //  --c-black: #{$c-white}
+    //  --c-grey-90: #{$c-grey-10}
+    //  --c-grey-70: #{$c-grey-30}
+    //  --c-grey-50: #{$c-grey-50}
+    //  --c-grey-30: #{$c-grey-70}
+    //  --c-grey-10: #{$c-grey-90}
+    //  --c-white: #{$c-black}
 </style>

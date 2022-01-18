@@ -211,8 +211,8 @@
 					? 'translate(calc(-50%), 0)'
 					: 'translate(-50%, 0)'}"
         class:yearChanges--big={$year === y}
-        on:click={() => {goto(y); console.log(y)}}
-      ><span>{y}</span></div>
+        on:click={() => {goto(y)}}
+      ></div>
     {/if}
   {/each}
 
@@ -237,7 +237,6 @@
     color: var(--c-black)
 
   .stroked_bar
-    //border: 1px dashed currentColor
     position: absolute
     width: 18%
     border-radius: 2px

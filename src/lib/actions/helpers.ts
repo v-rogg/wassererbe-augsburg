@@ -7,6 +7,7 @@ export function _(query: string): HTMLElement {
 }
 
 export function goto(goToYear: number): boolean {
+  console.log(goToYear);
   function run() {
     const duration =
       (Math.abs(get(year) - goToYear) / (get(yearLimits).max - get(yearLimits).min)) *
