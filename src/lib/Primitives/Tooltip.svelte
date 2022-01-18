@@ -1,5 +1,6 @@
 <script lang="ts">
   import { isMobile, showTooltip } from "$lib/../stores";
+  import { onMount } from "svelte";
 
   export let title;
   export let x;
@@ -7,8 +8,13 @@
   export let key;
 
   let innerWidth = 0;
+  let REM = 16;
 
   $: right = x < innerWidth - innerWidth / 3;
+
+  onMount(() => {
+    REM = parseFloat(window.getComputedStyle(document.body).getPropertyValue('font-size'));
+  })
 </script>
 
 <svelte:window bind:innerWidth />
@@ -17,11 +23,11 @@
   {#if right}
     <div
       style="
-                top: {y / 16 + 0.5}rem;
-                left: {x / 16 + 0.25}rem;"
+                top: {y / REM + 0.5}rem;
+                left: {x / REM + 0.25}rem;"
       class="tooltip"
     >
-			<span class="margin-right">
+			<span class:margin-right={key}>
 				{title}
 			</span>
       {#if key}
@@ -30,7 +36,8 @@
 						<span class="hotkey">
 							{#if key.toUpperCase() === 'RIGHT'}
 								<svg
-                  height="1em"
+                  height=".8em"
+                  width="auto"
                   aria-hidden="true"
                   focusable="false"
                   data-prefix="fas"
@@ -46,7 +53,8 @@
                 >
 							{:else if key.toUpperCase() === 'LEFT'}
 								<svg
-                  height="1em"
+                  height=".8em"
+                  width="auto"
                   aria-hidden="true"
                   focusable="false"
                   data-prefix="far"
@@ -73,8 +81,8 @@
   {:else}
     <div
       style="
-                top: {y / 16 + 0.5}rem;
-                right: {innerWidth / 16 - x / 16 - 0.25}rem;"
+                top: {y / REM + 0.5}rem;
+                right: {innerWidth / REM - x / REM - 0.25}rem;"
       class="tooltip"
     >
       {#if key}
@@ -83,7 +91,8 @@
 						<span class="hotkey">
 							{#if key.toUpperCase() === 'RIGHT'}
 								<svg
-                  height="1em"
+                  height=".8em"
+                  width="auto"
                   aria-hidden="true"
                   focusable="false"
                   data-prefix="fas"
@@ -99,7 +108,8 @@
                 >
 							{:else if key.toUpperCase() === 'LEFT'}
 								<svg
-                  height="1em"
+                  height=".8em"
+                  width="auto"
                   aria-hidden="true"
                   focusable="false"
                   data-prefix="far"
@@ -122,7 +132,7 @@
 					</span>
 				</span>
       {/if}
-      <span class="margin-left">
+      <span class:margin-left={key}>
 				{title}
 			</span>
     </div>
@@ -172,7 +182,4 @@
       margin: 2px 0 4px 0
       border-radius: $bor-normal
       border: .75px solid var(--c-black)
-
-    &--svg
-      transform: translateY(1px)
 </style>

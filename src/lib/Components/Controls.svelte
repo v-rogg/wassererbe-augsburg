@@ -242,6 +242,16 @@
     background: var(--c-grey-10)
     border-radius: $bor-normal
     grid-area: 1/3/2/4
+    gap: .25rem
+    position: relative
+
+    &:before
+      content: ""
+      background: var(--c-grey-10)
+      width: 100%
+      height: 32px
+      position: absolute
+      border-radius: $bor-normal
 
   .legend
     display: flex

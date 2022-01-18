@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { playback, selectedEoI, year, yearChanges, yearLimits } from "../../stores";
+  import { playback, year, yearChanges, yearLimits } from "../../stores";
   import { PlaybackMode } from "$lib/enums";
   import { _, goto } from "$lib/actions/helpers";
   import { onMount } from "svelte";
@@ -52,8 +52,10 @@
 <div class="timeline">
   <!--Timeline and Arrow  -->
   <div class="stroked_bar">
-    <svg width="100%" height="100%" viewBox="0 0 100 2" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
-        <path d="M0,1L100,1" style="fill:none;stroke:currentColor;stroke-width:2px;"/>
+    <svg width="100%" height="100%" viewBox="0 0 100 2" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+         xml:space="preserve"
+         style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+        <path d="M0,1L100,1" style="fill:none;stroke:currentColor;stroke-width:2px;" />
     </svg>
   </div>
   <div class="bar" />
@@ -61,33 +63,31 @@
     viewBox="0 0 8 14"
     fill="none"
     class="arrow"
-    on:click={() => {
-			goto($yearLimits.max);
-		}}
+    class:arrow--big={$year === $yearLimits.max}
+    on:click={() => {goto($yearLimits.max);}}
   >
     <path d="M1 1L6 7L1 12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
   </svg>
 
-  <div class="displayYear removeLine" class:minSelected={$selectedEoI >= 0}>
+  <div class="displayYear removeLine number">
     1500
   </div>
 
   <!--Min Year  -->
-  <div class="yearLimitMin displayYear" class:minSelected={$selectedEoI >= 0}>
+  <div class="yearLimitMin displayYear number">
     {$yearLimits.min}
   </div>
 
   <!--Max Year-->
-  <div class="yearLimitMax displayYear removeLine" class:maxSelected={$selectedEoI >= 0}>
+  <div class="yearLimitMax displayYear removeLine">
     {$yearLimits.max === new Date().getFullYear() ? 'Heute' : $yearLimits.max}
   </div>
 
   <!--Every Century-->
   {#each displayYears as year}
     <div
-      class="displayYear"
+      class="displayYear number"
       style="left: {18 + (((year - $yearLimits.min) / timeDifference) * 82)}%"
-      class:displaySelected={$selectedEoI >= 0}
     >
       {year}
     </div>
@@ -95,20 +95,19 @@
 
   <!--Current Year-->
   <div
-    class="displayYear currentYear"
+    class="displayYear currentYear number"
     style="left: {18 + ((($year - $yearLimits.min) / timeDifference) * 82)}%"
-    class:removeLine={18 + ((($year - $yearLimits.min) / timeDifference) * 100) > 99.5}
-    class:currentSelected={$selectedEoI >= 0}
+    class:removeLine={18 + ((($year - $yearLimits.min) / timeDifference) * 82) > 99.5}
     on:mousedown={() => {
-			dragging = true;
-			document.body.style.userSelect = 'none';
-		}}
+      dragging = true;
+      document.body.style.userSelect = 'none';
+    }}
   >
     {Math.floor($year)}
 
     {#if $playback === PlaybackMode.FastForward}
-			<span class="currentPlaybackMode forward">
-				<svg
+      <span class="currentPlaybackMode forward">
+        <svg
           height="1em"
           aria-hidden="true"
           focusable="false"
@@ -123,10 +122,10 @@
           d="M52.51 440.6l171.5-142.9V214.3L52.51 71.41C31.88 54.28 0 68.66 0 96.03v319.9C0 443.3 31.88 457.7 52.51 440.6zM308.5 440.6l192-159.1c15.25-12.87 15.25-36.37 0-49.24l-192-159.1c-20.63-17.12-52.51-2.749-52.51 24.62v319.9C256 443.3 287.9 457.7 308.5 440.6z"
         /></svg
         >
-			</span>
+      </span>
     {:else if $playback === PlaybackMode.StepForward}
-			<span class="currentPlaybackMode forward">
-				<svg
+      <span class="currentPlaybackMode forward">
+        <svg
           height="1em"
           aria-hidden="true"
           focusable="false"
@@ -141,10 +140,10 @@
           d="M287.1 447.1c17.67 0 31.1-14.33 31.1-32V96.03c0-17.67-14.33-32-32-32c-17.67 0-31.1 14.33-31.1 31.1v319.9C255.1 433.6 270.3 447.1 287.1 447.1zM52.51 440.6l192-159.1c7.625-6.436 11.43-15.53 11.43-24.62c0-9.094-3.809-18.18-11.43-24.62l-192-159.1C31.88 54.28 0 68.66 0 96.03v319.9C0 443.3 31.88 457.7 52.51 440.6z"
         /></svg
         >
-			</span>
+      </span>
     {:else if $playback === PlaybackMode.Forward}
-			<span class="currentPlaybackMode forward">
-				<svg
+      <span class="currentPlaybackMode forward">
+        <svg
           height="1em"
           aria-hidden="true"
           focusable="false"
@@ -162,10 +161,10 @@
         /></g
         ></svg
         >
-			</span>
+      </span>
     {:else if $playback === PlaybackMode.StepBackward}
-			<span class="currentPlaybackMode backward">
-				<svg
+      <span class="currentPlaybackMode backward">
+        <svg
           height="1em"
           aria-hidden="true"
           focusable="false"
@@ -180,10 +179,10 @@
           d="M31.1 64.03c-17.67 0-31.1 14.33-31.1 32v319.9c0 17.67 14.33 32 32 32C49.67 447.1 64 433.6 64 415.1V96.03C64 78.36 49.67 64.03 31.1 64.03zM267.5 71.41l-192 159.1C67.82 237.8 64 246.9 64 256c0 9.094 3.82 18.18 11.44 24.62l192 159.1c20.63 17.12 52.51 2.75 52.51-24.62v-319.9C319.1 68.66 288.1 54.28 267.5 71.41z"
         /></svg
         >
-			</span>
+      </span>
     {:else if $playback === PlaybackMode.FastBackward}
-			<span class="currentPlaybackMode backward">
-				<svg
+      <span class="currentPlaybackMode backward">
+        <svg
           height="1em"
           aria-hidden="true"
           focusable="false"
@@ -198,7 +197,7 @@
           d="M459.5 71.41l-171.5 142.9v83.45l171.5 142.9C480.1 457.7 512 443.3 512 415.1V96.03C512 68.66 480.1 54.28 459.5 71.41zM203.5 71.41L11.44 231.4c-15.25 12.87-15.25 36.37 0 49.24l192 159.1c20.63 17.12 52.51 2.749 52.51-24.62v-319.9C255.1 68.66 224.1 54.28 203.5 71.41z"
         /></svg
         >
-			</span>
+      </span>
     {/if}
   </div>
 
@@ -211,9 +210,8 @@
 				$yearLimits.min
 					? 'translate(calc(-50%), 0)'
 					: 'translate(-50%, 0)'}"
-        on:click={() => {
-					goto(y);
-				}}
+        class:yearChanges--big={$year === y}
+        on:click={() => {goto(y); console.log(y)}}
       />
     {/if}
   {/each}
@@ -274,6 +272,9 @@
     &:active
       height: 16px
 
+    &--big
+      height: 20px
+
 
   .displayYear
     position: absolute
@@ -299,23 +300,9 @@
     right: 0
     transform: translate(50%, 1.75em) !important
 
-  .maxSelected
-    transform: translate(50%, 2.3em) !important
-
-    &:before
-      height: calc(2.3em - 11px)
-      top: calc(-100% - 6px)
-
   .yearLimitMin
     left: 18%
     transform: translate(calc(-50% - 1px), 1.75em) !important
-
-  .minSelected
-    transform: translate(calc(-50% - 1px), 2.3em) !important
-
-    &:before
-      height: calc(2.3em - 11px)
-      top: calc(-100% - 6px)
 
   .currentYear
     transform: translate(-50%, -1.5em)
@@ -379,6 +366,14 @@
         width: 10px
         height: 10px
         top: -5px
+
+    &--big
+      &:before
+        transition-delay: 0s
+        transition-duration: 100ms
+        width: 14px
+        height: 14px
+        top: -7px
 
   :global(.noCursor)
     *

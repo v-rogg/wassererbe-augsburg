@@ -1,8 +1,8 @@
 <script>
-	import StorySelector from '$lib/Deprecated/StorySelector.svelte';
+	import StorySelector from '$lib/Deprecated/StorySelectorOld.svelte';
 	import EoISelector from '$lib/Deprecated/EoISelector.svelte';
 	import Brand from '$lib/Components/Brand.svelte';
-	import { selectedStory } from '../stores';
+	import { selectedStory } from '../../stores.js';
 	import { fade } from 'svelte/transition';
 </script>
 
@@ -22,7 +22,7 @@
 </section>
 
 <style lang="sass">
-  @import "../styles/variables"
+  @import "../../styles/variables"
 
   #left
     width: $p-side-width

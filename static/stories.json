@@ -1,28 +1,200 @@
 {
-	"stories": [
-		{
-			"name": "Textilviertel",
-			"zones": ["10_4", "10_5", "11_4"],
-			"usage": [
-				{
-					"start": 1500,
-					"end": 1879,
-					"usage": "water",
-					"description": "Das Unterer Brunnenwerk versorgte ursprünglich das Domviertel von <span class='bold numbers'>1500-1879</span> mit Trinkwasser und ist somit das zweitgrößte und zweitälteste Trinkwasserwerk in Augsburg."
-				},
-				{
-					"start": 1879,
-					"end": 1989,
-					"usage": "industrial",
-					"description": "Von 1879-1989 wird das Werk nur noch zu industriellen Zwecken genutzt. Es beherbergte eine Feilenhauerei, eine Schleiferei, verschiedene mechanische Werkstätten und eine Maschinenfabrik"
-				},
-				{
-					"start": 1989,
-					"end": 2022,
-					"usage": "residential",
-					"description": "Heute wird der Turm als Wohnraum und das Pumphaus als Kino, Bar und Restaurant genutzt"
-				}
-			]
-		}
-	]
+  "stories": [
+    {
+      "name": "Textilviertel",
+      "zones": [
+        "10_4",
+        "10_5",
+        "11_4"
+      ],
+      "usage": [
+        {
+          "start": 1500,
+          "end": 1879,
+          "usage": "water",
+          "description": "Das Unterer Brunnenwerk versorgte ursprünglich das Domviertel von <span class='bold numbers'>1500-1879</span> mit Trinkwasser und ist somit das zweitgrößte und zweitälteste Trinkwasserwerk in Augsburg."
+        },
+        {
+          "start": 1879,
+          "end": 1989,
+          "usage": "industrial",
+          "description": "Von 1879-1989 wird das Werk nur noch zu industriellen Zwecken genutzt. Es beherbergte eine Feilenhauerei, eine Schleiferei, verschiedene mechanische Werkstätten und eine Maschinenfabrik"
+        },
+        {
+          "start": 1989,
+          "end": 2022,
+          "usage": "residential",
+          "description": "Heute wird der Turm als Wohnraum und das Pumphaus als Kino, Bar und Restaurant genutzt"
+        }
+      ]
+    },
+    {
+      "name": "Proviantbachquartier",
+      "zones": [
+        "10_4",
+        "10_5",
+        "11_4"
+      ],
+      "usage": [
+        {
+          "start": 1500,
+          "end": 1879,
+          "usage": "water",
+          "description": "Das Unterer Brunnenwerk versorgte ursprünglich das Domviertel von <span class='bold numbers'>1500-1879</span> mit Trinkwasser und ist somit das zweitgrößte und zweitälteste Trinkwasserwerk in Augsburg."
+        },
+        {
+          "start": 1879,
+          "end": 1989,
+          "usage": "industrial",
+          "description": "Von 1879-1989 wird das Werk nur noch zu industriellen Zwecken genutzt. Es beherbergte eine Feilenhauerei, eine Schleiferei, verschiedene mechanische Werkstätten und eine Maschinenfabrik"
+        },
+        {
+          "start": 1989,
+          "end": 2022,
+          "usage": "residential",
+          "description": "Heute wird der Turm als Wohnraum und das Pumphaus als Kino, Bar und Restaurant genutzt"
+        }
+      ]
+    },
+    {
+      "name": "Herrenbachviertel",
+      "zones": [
+        "10_4",
+        "10_5",
+        "11_4"
+      ],
+      "usage": [
+        {
+          "start": 1500,
+          "end": 1879,
+          "usage": "water",
+          "description": "Das Unterer Brunnenwerk versorgte ursprünglich das Domviertel von <span class='bold numbers'>1500-1879</span> mit Trinkwasser und ist somit das zweitgrößte und zweitälteste Trinkwasserwerk in Augsburg."
+        },
+        {
+          "start": 1879,
+          "end": 1989,
+          "usage": "industrial",
+          "description": "Von 1879-1989 wird das Werk nur noch zu industriellen Zwecken genutzt. Es beherbergte eine Feilenhauerei, eine Schleiferei, verschiedene mechanische Werkstätten und eine Maschinenfabrik"
+        },
+        {
+          "start": 1989,
+          "end": 2022,
+          "usage": "residential",
+          "description": "Heute wird der Turm als Wohnraum und das Pumphaus als Kino, Bar und Restaurant genutzt"
+        }
+      ]
+    },
+    {
+      "name": "Lechviertel",
+      "zones": [
+        "10_4",
+        "10_5",
+        "11_4"
+      ],
+      "usage": [
+        {
+          "start": 1500,
+          "end": 1879,
+          "usage": "water",
+          "description": "Das Unterer Brunnenwerk versorgte ursprünglich das Domviertel von <span class='bold numbers'>1500-1879</span> mit Trinkwasser und ist somit das zweitgrößte und zweitälteste Trinkwasserwerk in Augsburg."
+        },
+        {
+          "start": 1879,
+          "end": 1989,
+          "usage": "industrial",
+          "description": "Von 1879-1989 wird das Werk nur noch zu industriellen Zwecken genutzt. Es beherbergte eine Feilenhauerei, eine Schleiferei, verschiedene mechanische Werkstätten und eine Maschinenfabrik"
+        },
+        {
+          "start": 1989,
+          "end": 2022,
+          "usage": "residential",
+          "description": "Heute wird der Turm als Wohnraum und das Pumphaus als Kino, Bar und Restaurant genutzt"
+        }
+      ]
+    },
+    {
+      "name": "Hauptstadtbach",
+      "zones": [
+        "10_4",
+        "10_5",
+        "11_4"
+      ],
+      "usage": [
+        {
+          "start": 1500,
+          "end": 1879,
+          "usage": "water",
+          "description": "Das Unterer Brunnenwerk versorgte ursprünglich das Domviertel von <span class='bold numbers'>1500-1879</span> mit Trinkwasser und ist somit das zweitgrößte und zweitälteste Trinkwasserwerk in Augsburg."
+        },
+        {
+          "start": 1879,
+          "end": 1989,
+          "usage": "industrial",
+          "description": "Von 1879-1989 wird das Werk nur noch zu industriellen Zwecken genutzt. Es beherbergte eine Feilenhauerei, eine Schleiferei, verschiedene mechanische Werkstätten und eine Maschinenfabrik"
+        },
+        {
+          "start": 1989,
+          "end": 2022,
+          "usage": "residential",
+          "description": "Heute wird der Turm als Wohnraum und das Pumphaus als Kino, Bar und Restaurant genutzt"
+        }
+      ]
+    },
+    {
+      "name": "Hochfeld",
+      "zones": [
+        "10_4",
+        "10_5",
+        "11_4"
+      ],
+      "usage": [
+        {
+          "start": 1500,
+          "end": 1879,
+          "usage": "water",
+          "description": "Das Unterer Brunnenwerk versorgte ursprünglich das Domviertel von <span class='bold numbers'>1500-1879</span> mit Trinkwasser und ist somit das zweitgrößte und zweitälteste Trinkwasserwerk in Augsburg."
+        },
+        {
+          "start": 1879,
+          "end": 1989,
+          "usage": "industrial",
+          "description": "Von 1879-1989 wird das Werk nur noch zu industriellen Zwecken genutzt. Es beherbergte eine Feilenhauerei, eine Schleiferei, verschiedene mechanische Werkstätten und eine Maschinenfabrik"
+        },
+        {
+          "start": 1989,
+          "end": 2022,
+          "usage": "residential",
+          "description": "Heute wird der Turm als Wohnraum und das Pumphaus als Kino, Bar und Restaurant genutzt"
+        }
+      ]
+    },
+    {
+      "name": "Hochablass",
+      "zones": [
+        "10_4",
+        "10_5",
+        "11_4"
+      ],
+      "usage": [
+        {
+          "start": 1500,
+          "end": 1879,
+          "usage": "water",
+          "description": "Das Unterer Brunnenwerk versorgte ursprünglich das Domviertel von <span class='bold numbers'>1500-1879</span> mit Trinkwasser und ist somit das zweitgrößte und zweitälteste Trinkwasserwerk in Augsburg."
+        },
+        {
+          "start": 1879,
+          "end": 1989,
+          "usage": "industrial",
+          "description": "Von 1879-1989 wird das Werk nur noch zu industriellen Zwecken genutzt. Es beherbergte eine Feilenhauerei, eine Schleiferei, verschiedene mechanische Werkstätten und eine Maschinenfabrik"
+        },
+        {
+          "start": 1989,
+          "end": 2022,
+          "usage": "residential",
+          "description": "Heute wird der Turm als Wohnraum und das Pumphaus als Kino, Bar und Restaurant genutzt"
+        }
+      ]
+    }
+  ]
 }
