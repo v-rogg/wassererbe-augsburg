@@ -249,7 +249,7 @@
       content: ""
       background: var(--c-grey-10)
       width: 100%
-      height: 32px
+      height: 2rem
       position: absolute
       border-radius: $bor-normal
 

@@ -75,7 +75,7 @@
         content: ""
         background: var(--c-grey-10)
         height: calc(100% + 1em)
-        width: 32px
+        width: 2rem
         position: absolute
         top: -.5em
         border-radius: $bor-normal
