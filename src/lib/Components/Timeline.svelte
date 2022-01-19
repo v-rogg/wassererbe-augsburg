@@ -3,6 +3,7 @@
   import { PlaybackMode } from "$lib/enums";
   import { _, goto, gotoElement } from "$lib/actions/helpers";
   import { onMount } from "svelte";
+  import { tooltip } from "$lib/actions/tooltip";
 
   const timeDifference = $yearLimits.max - $yearLimits.min;
   let displayYears = [];
@@ -203,17 +204,19 @@
 
   <!-- Year Array  -->
   {#each $yearChanges as y}
+    {@const objYear = y}
     {#if y !== $yearLimits.max}
       <div
         class="displayYear yearChanges"
+        class:yearChanges--big={objYear === $year}
         title="{y}"
+        data-year="{y}"
+        use:tooltip
         style="left: {18 + (((y - $yearLimits.min) / timeDifference) * 82)}%; transform: {y ===
 				$yearLimits.min
 					? 'translate(calc(-50%), 0)'
 					: 'translate(-50%, 0)'}"
-        class:yearChanges--big={$year === y}
-        on:click={(e) => {gotoElement(e.target)}}
-      />
+        on:click={(e) => {goto(objYear)}}></div>
     {/if}
   {/each}
 

@@ -33,8 +33,7 @@ export function goto(goToYear: number): boolean {
 
 
 export function gotoElement(elem: HTMLElement): boolean {
-  const goToYear = parseInt(elem.title)
-
+  const goToYear = parseInt(elem.dataset.year)
   console.log(goToYear);
 
   if (goToYear > get(year)) {
