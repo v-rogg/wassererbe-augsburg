@@ -64,7 +64,6 @@
     viewBox="0 0 8 14"
     fill="none"
     class="arrow"
-    class:arrow--big={$year === $yearLimits.max}
     on:click={() => {goto($yearLimits.max);}}
   >
     <path d="M1 1L6 7L1 12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
