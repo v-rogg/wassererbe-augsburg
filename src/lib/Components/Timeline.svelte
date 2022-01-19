@@ -203,12 +203,11 @@
   </div>
 
   <!-- Year Array  -->
+<!--        class:yearChanges&#45;&#45;big={objYear === $year}-->
   {#each $yearChanges as y}
-    {@const objYear = y}
     {#if y !== $yearLimits.max}
       <div
         class="displayYear yearChanges"
-        class:yearChanges--big={objYear === $year}
         title="{y}"
         data-year="{y}"
         use:tooltip
@@ -216,7 +215,7 @@
 				$yearLimits.min
 					? 'translate(calc(-50%), 0)'
 					: 'translate(-50%, 0)'}"
-        on:click={(e) => {goto(objYear)}}></div>
+        on:click={(e) => {gotoElement(e.target)}}></div>
     {/if}
   {/each}
 
