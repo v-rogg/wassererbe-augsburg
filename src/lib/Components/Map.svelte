@@ -80,67 +80,71 @@
     return new Map(unsortedMap);
   }
 
-  function recolor() {
+  async function recolor(colorYear: number) {
+    const count = countZones();
+
+    switch ($mode) {
+      case DisplayMode.Map:
+        waterAll.forEach((e: HTMLElement) => (e.style.stroke = blue));
+        waterBGAll.forEach((e: HTMLElement) => (e.style.stroke = white));
+        waterAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
+        waterBGAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
+
+        $mapData.map.forEach((row, r_index) => {
+          row.forEach((entry, c_index) => {
+            try {
+              const column_index = c_index.toString().padStart(2, "0");
+              const row_index = r_index.toString().padStart(2, "0");
+              const combined = `${row_index}-${column_index}`
+              // console.log(`_${row_index}-${column_index}`);
+
+              _(`[id*='_${combined}']`).style.opacity = "1";
+
+              if ($selectedStory >= 0) {
+                if (!$stories[$selectedStory].zones.includes(`${combined}`)) {
+                  _(`[id*='_${combined}']`).style.opacity = "0.2";
+                }
+              }
+
+              _(`[id*='_${combined}']`).style.fill =
+                color[$mapData.map[r_index][c_index][colorYear].toLowerCase()];
+            } catch (e) {
+            }
+          });
+        });
+        break;
+      case DisplayMode.Percent:
+        waterAll.forEach((e: HTMLElement) => (e.style.opacity = "0"));
+        waterBGAll.forEach((e: HTMLElement) => (e.style.opacity = "0"));
+
+        let step = 0;
+        count.forEach((value, key) => {
+          if (key !== undefined) {
+            for (let i = 0; i < value; i++) {
+              let paddedStep = step.toString().padStart(3, "0");
+
+              try {
+                _(`[id*='-${paddedStep}']`).style.opacity = "1";
+                _(`[id*='-${paddedStep}']`).style.fill = color[key.toString().toLowerCase()];
+              } catch (e) {
+                console.log(e, paddedStep);
+              }
+
+              step++;
+            }
+          }
+        });
+        break;
+    }
+  }
+
+  function redraw() {
     const colorYear = findNextSmallerYear();
 
     let newHash = String(colorYear)+String($infoMode)+String($mode)+String($selectedStory);
 
     if (newHash !== redrawHash) {
-      const count = countZones();
-
-      switch ($mode) {
-        case DisplayMode.Map:
-          waterAll.forEach((e: HTMLElement) => (e.style.stroke = blue));
-          waterBGAll.forEach((e: HTMLElement) => (e.style.stroke = white));
-          waterAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
-          waterBGAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
-
-          $mapData.map.forEach((row, r_index) => {
-            row.forEach((entry, c_index) => {
-              try {
-                const column_index = c_index.toString().padStart(2, "0");
-                const row_index = r_index.toString().padStart(2, "0");
-                const combined = `${row_index}-${column_index}`
-                // console.log(`_${row_index}-${column_index}`);
-
-                _(`[id*='_${combined}']`).style.opacity = "1";
-
-                if ($selectedStory >= 0) {
-                  if (!$stories[$selectedStory].zones.includes(`${combined}`)) {
-                    _(`[id*='_${combined}']`).style.opacity = "0.2";
-                  }
-                }
-
-                _(`[id*='_${combined}']`).style.fill =
-                  color[$mapData.map[r_index][c_index][colorYear].toLowerCase()];
-              } catch (e) {
-              }
-            });
-          });
-          break;
-        case DisplayMode.Percent:
-          waterAll.forEach((e: HTMLElement) => (e.style.opacity = "0"));
-          waterBGAll.forEach((e: HTMLElement) => (e.style.opacity = "0"));
-
-          let step = 0;
-          count.forEach((value, key) => {
-            if (key !== undefined) {
-              for (let i = 0; i < value; i++) {
-                let paddedStep = step.toString().padStart(3, "0");
-
-                try {
-                  _(`[id*='-${paddedStep}']`).style.opacity = "1";
-                  _(`[id*='-${paddedStep}']`).style.fill = color[key.toString().toLowerCase()];
-                } catch (e) {
-                  console.log(e, paddedStep);
-                }
-
-                step++;
-              }
-            }
-          });
-          break;
-      }
+      recolor(colorYear)
       redrawHash = newHash
     }
   }
@@ -160,9 +164,9 @@
     loading();
 
     setTimeout(() => {
-      yearUnsub = year.subscribe(() => recolor());
-      modeUnsub = mode.subscribe(() => recolor());
-      selectedStoryUnsub = selectedStory.subscribe(() => recolor());
+      yearUnsub = year.subscribe(() => redraw());
+      modeUnsub = mode.subscribe(() => redraw());
+      selectedStoryUnsub = selectedStory.subscribe(() => redraw());
     }, 5000); // waits 5s until everything is displayed
   });
 

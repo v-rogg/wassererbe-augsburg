@@ -280,7 +280,7 @@
     display: flex
     align-items: center
     justify-content: end
-    font-size: $fs-small
+    font-size: $fs-micro
     color: var(--c-black)
 
     span

@@ -228,12 +228,12 @@
     &:first-of-type
       margin-top: 0
       padding-top: 0
-      &:before
-        border-radius: $bor-normal $bor-normal 0 0
+      //&:before
+      //  border-radius: $bor-normal $bor-normal 0 0
 
     &:last-of-type
       margin-bottom: 0
       padding-bottom: 0
-      &:before
-        border-radius: 0 0 $bor-normal $bor-normal
+      //&:before
+      //  border-radius: 0 0 $bor-normal $bor-normal
 </style>

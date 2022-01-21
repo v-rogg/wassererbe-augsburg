@@ -34,6 +34,10 @@
       --c-grey-10: #{$c-grey-90}
       --c-white: #{$c-black}
 
+    @media (max-height: 960px)
+      font-size: clamp(13px, 1.6vh, 16px)
+      //font-size: 13px
+
   :global(.residential)
     &:before
       background: $c-residential !important

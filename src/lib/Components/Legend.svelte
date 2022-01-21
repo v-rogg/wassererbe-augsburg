@@ -80,6 +80,7 @@
   p
     font-weight: $fw-semibold
     margin-bottom: 1.5em
+    font-size: $fs-micro
 
   .legend
     position: absolute
