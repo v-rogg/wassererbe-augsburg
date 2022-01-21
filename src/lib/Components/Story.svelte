@@ -137,14 +137,14 @@
       div
         display: flex
         align-items: center
-        gap: 2.5rem
+        gap: 40px
 
       .svg
         position: relative
 
         span
           position: absolute
-          right: -1.5rem
+          right: -26px
           text-align: left
           width: 100%
           display: flex
