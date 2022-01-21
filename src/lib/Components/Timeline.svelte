@@ -62,7 +62,7 @@
   {#each $stories as story, index}
     {#if $selectedStory === index}
       {#each story.usage as usage}
-        <div class="usage {usage.usage}" style="left: {calculateOffset(usage.start)}%; width: calc({calculateOffset(usage.end) - calculateOffset(usage.start)}% - 2px)" transition:fade={{duration: 300, ease: sineInOut}}>
+        <div class="usage {usage.usage}" class:round-left={usage.start === 1500} style="left: {calculateOffset(usage.start)}%; width: calc({calculateOffset(usage.end) - calculateOffset(usage.start)}% - 2px)" transition:fade={{duration: 300, ease: sineInOut}}>
         </div>
       {/each}
     {/if}
@@ -258,10 +258,6 @@
     position: absolute
     color: transparent
 
-    &:first-of-type
-      &:before
-        border-radius: $bor-normal 0 0 $bor-normal
-
     &:before
       content: ""
       width: 100%
@@ -272,6 +268,11 @@
       transform: translateY(-50%)
       opacity: .9
       background: var(--c-grey-30)
+      border-radius: $bor-small
+
+  .round-left
+    &:before
+      border-radius: $bor-normal 0 0 $bor-normal
 
   .stroked_bar
     position: absolute

@@ -193,6 +193,8 @@
   .text
     overflow-y: auto
     scrollbar-width: thin
+    scrollbar-color: var(--c-grey-30) var(--c-grey-10)
+    scrollbar-gutter: stable
 
     &::-webkit-scrollbar
       width: 4px
@@ -221,6 +223,7 @@
       background: var(--c-grey-30)
       display: block
       position: absolute
+      border-radius: $bor-small
 
     &:first-of-type
       margin-top: 0
