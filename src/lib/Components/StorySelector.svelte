@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { selectedStory, stories, storyDirection } from "$lib/../stores";
+  import { selectedStory, stories, storyDirection, infoMode } from "$lib/../stores";
   import { onDestroy } from "svelte";
   import { fade } from "svelte/transition";
-  import { StoryDirection } from "$lib/enums";
+  import { StoryDirection, InfoMode } from "$lib/enums";
   import Button from "$lib/Primitives/Button.svelte";
 
   let selectedS;
@@ -20,17 +20,19 @@
   <p class="choose">
     Wähle ein Geschichte
   </p>
-  <menu transition:fade={{ delay: 400 }}>
+  <menu transition:fade>
     <ul>
       {#each $stories as story, index}
         <li on:click={() => {
           if ($selectedStory === index) {
             $selectedStory = -1
+            $infoMode = InfoMode.Legend
           } else {
             index > $selectedStory
-								? ($storyDirection = StoryDirection.Down)
-								: ($storyDirection = StoryDirection.Up);
+              ? ($storyDirection = StoryDirection.Down)
+              : ($storyDirection = StoryDirection.Up);
             $selectedStory = index
+            $infoMode = InfoMode.Story
           }
         }}>
           <Button
@@ -54,8 +56,11 @@
 
   .description
     position: absolute
-    top: 2rem
+    top: clamp(1rem, 2.5vh, 2rem)
     width: 80%
+
+    @media (max-height: 790px)
+      display: none
 
   .choose
     font-weight: $fw-semibold
@@ -63,7 +68,7 @@
 
   menu
     width: 100%
-    margin-bottom: 4rem
+    margin-bottom: 2rem
     padding: 0
 
     ul

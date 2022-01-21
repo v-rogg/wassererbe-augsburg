@@ -33,4 +33,28 @@
       --c-grey-30: #{$c-grey-70}
       --c-grey-10: #{$c-grey-90}
       --c-white: #{$c-black}
+
+  :global(.residential)
+    &:before
+      background: $c-residential !important
+
+  :global(.agricultural)
+    &:before
+      background: $c-agricultural !important
+
+  :global(.industrial)
+    &:before
+      background: $c-industrial !important
+
+  :global(.forest)
+    &:before
+      background: $c-forest !important
+
+  :global(.grassland)
+    &:before
+      background: $c-grassland !important
+
+  :global(.water)
+    &:before
+      background: $c-water !important
 </style>

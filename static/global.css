@@ -102,3 +102,7 @@ main {
 .number {
 	font-family: 'Be Vietnam Pro', 'IBM Plex Sans', sans-serif;
 }
+
+.bold {
+    font-weight: 600;
+}

@@ -1,9 +1,11 @@
 <script lang="ts">
-  import { playback, year, yearChanges, yearLimits } from "../../stores";
+  import { playback, year, yearChanges, yearLimits, selectedStory, stories } from "../../stores";
   import { PlaybackMode } from "$lib/enums";
   import { _, goto, gotoElement } from "$lib/actions/helpers";
   import { onMount } from "svelte";
   import { tooltip } from "$lib/actions/tooltip";
+  import { fade } from "svelte/transition";
+  import { sineInOut } from "svelte/easing";
 
   const timeDifference = $yearLimits.max - $yearLimits.min;
   let displayYears = [];
@@ -17,8 +19,13 @@
   let mouseX = 0;
   let timelineWidth: number = null;
   let dragging = false;
-
+  let beforeTimeOffset = 18;
   let offsetYears = 0;
+
+  function calculateOffset(year: number): number {
+    let beforeTimeDifference = $yearLimits.min - 1500;
+    return year < $yearLimits.min ? (((year - 1500) / beforeTimeDifference) / 100) * beforeTimeOffset * 100 : beforeTimeOffset + (((year - $yearLimits.min) / timeDifference) * (100 - beforeTimeOffset))
+  }
 
   onMount(() => {
     window.addEventListener("mousedown", (e) => {
@@ -51,6 +58,16 @@
 </script>
 
 <div class="timeline">
+  <!--Story Usage-->
+  {#each $stories as story, index}
+    {#if $selectedStory === index}
+      {#each story.usage as usage}
+        <div class="usage {usage.usage}" style="left: {calculateOffset(usage.start)}%; width: calc({calculateOffset(usage.end) - calculateOffset(usage.start)}% - 2px)" transition:fade={{duration: 300, ease: sineInOut}}>
+        </div>
+      {/each}
+    {/if}
+  {/each}
+
   <!--Timeline and Arrow  -->
   <div class="stroked_bar">
     <svg width="100%" height="100%" viewBox="0 0 100 2" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
@@ -87,17 +104,33 @@
   {#each displayYears as year}
     <div
       class="displayYear number"
-      style="left: {18 + (((year - $yearLimits.min) / timeDifference) * 82)}%"
+      style="left: {calculateOffset(year)}%"
     >
       {year}
     </div>
   {/each}
 
+  <!-- Year Array  -->
+  {#each $yearChanges as y}
+    {#if y !== $yearLimits.max}
+      <div
+        class="displayYear yearChanges"
+        title="{y}"
+        data-year="{y}"
+        use:tooltip
+        style="left: {calculateOffset(y)}%; transform: {y ===
+				$yearLimits.min
+					? 'translate(calc(-50%), 0)'
+					: 'translate(-50%, 0)'}"
+        on:click={(e) => {gotoElement(e.target)}}></div>
+    {/if}
+  {/each}
+
   <!--Current Year-->
   <div
     class="displayYear currentYear number"
-    style="left: {18 + ((($year - $yearLimits.min) / timeDifference) * 82)}%"
-    class:removeLine={18 + ((($year - $yearLimits.min) / timeDifference) * 82) > 99.5}
+    style="left: {calculateOffset($year)}%"
+    class:removeLine={calculateOffset($year) > 99.5}
     on:mousedown={() => {
       dragging = true;
       document.body.style.userSelect = 'none';
@@ -201,23 +234,6 @@
     {/if}
   </div>
 
-  <!-- Year Array  -->
-<!--        class:yearChanges&#45;&#45;big={objYear === $year}-->
-  {#each $yearChanges as y}
-    {#if y !== $yearLimits.max}
-      <div
-        class="displayYear yearChanges"
-        title="{y}"
-        data-year="{y}"
-        use:tooltip
-        style="left: {18 + (((y - $yearLimits.min) / timeDifference) * 82)}%; transform: {y ===
-				$yearLimits.min
-					? 'translate(calc(-50%), 0)'
-					: 'translate(-50%, 0)'}"
-        on:click={(e) => {gotoElement(e.target)}}></div>
-    {/if}
-  {/each}
-
   <div class="reference_description">
     Vorhandene Referenzkarten
   </div>
@@ -237,6 +253,25 @@
     height: 100%
     width: 100%
     color: var(--c-black)
+
+  .usage
+    position: absolute
+    color: transparent
+
+    &:first-of-type
+      &:before
+        border-radius: $bor-normal 0 0 $bor-normal
+
+    &:before
+      content: ""
+      width: 100%
+      display: block
+      position: absolute
+      height: .6rem
+      top: 50%
+      transform: translateY(-50%)
+      opacity: .9
+      background: var(--c-grey-30)
 
   .stroked_bar
     position: absolute
@@ -323,8 +358,8 @@
     &:before
       width: 2px
       top: auto
-      height: calc(1.5em - 13px)
-      bottom: calc(-100% + 8px)
+      height: calc(1.5em - 12px)
+      bottom: calc(-100% + .4em)
       transition: 200ms cubic-bezier(0.645, 0.045, 0.355, 1)
       transition-delay: 200ms
       transition-property: height, bottom

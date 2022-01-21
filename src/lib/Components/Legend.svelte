@@ -2,6 +2,7 @@
   import { fly } from "svelte/transition";
   import { countTotal } from "../../stores";
   import { onDestroy } from "svelte";
+  import { sineIn, sineOut } from "svelte/easing";
 
   let count = new Map;
   const unsubCountTotal = countTotal.subscribe((x) => count = x)
@@ -11,15 +12,16 @@
   })
 </script>
 
-<section transition:fly={{ duration: 200, x: 10 }}>
+<div class="legend"
+     in:fly={{ duration: 600, x: 30, ease: sineOut }}
+     out:fly={{ duration: 600, x: 30, ease: sineIn }}>
   <div>
-
-    <p>Nutzung der Zone</p>
+    <p>Nutzung der Zonen</p>
     <div class="icons">
       <div>
         <div class="svg number">
           <img src="/legend/agricultural.svg" alt="" />
-          {#if count.get('a') != undefined}
+          {#if count.get('a') !== undefined}
             <span>{count.get('a')}</span>
           {/if}
         </div>
@@ -28,7 +30,7 @@
       <div>
         <div class="svg number">
           <img src="/legend/grassland.svg" alt="" />
-          {#if count.get('g') != undefined}
+          {#if count.get('g') !== undefined}
             <span>{count.get('g')}</span>
           {/if}
         </div>
@@ -37,7 +39,7 @@
       <div>
         <div class="svg number">
           <img src="/legend/forest.svg" alt="" />
-          {#if count.get('f') != undefined}
+          {#if count.get('f') !== undefined}
             <span>{count.get('f')}</span>
           {/if}
         </div>
@@ -46,7 +48,7 @@
       <div>
         <div class="svg number">
           <img src="/legend/residential.svg" alt="" />
-          {#if count.get('r') != undefined}
+          {#if count.get('r') !== undefined}
             <span>{count.get('r')}</span>
           {/if}
         </div>
@@ -55,7 +57,7 @@
       <div>
         <div class="svg number">
           <img src="/legend/industrial.svg" alt="" />
-          {#if count.get('i') != undefined}
+          {#if count.get('i') !== undefined}
             <span>{count.get('i')}</span>
           {/if}
         </div>
@@ -71,18 +73,20 @@
       </div>
     </div>
   </div>
-</section>
+</div>
 
 <style lang="sass">
   @import "src/styles/theme"
   p
     font-weight: $fw-semibold
-    margin-bottom: 2em
+    margin-bottom: 1.5em
 
-  section
+  .legend
+    position: absolute
     display: flex
     justify-content: center
-    margin-top: -4rem
+    margin-bottom: 3rem
+    //width: 80%
     width: 100%
 
   .icons

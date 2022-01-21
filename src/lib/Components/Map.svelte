@@ -1,13 +1,13 @@
 <script lang="ts">
   import { onDestroy, onMount } from "svelte";
   import { _ } from "$lib/actions/helpers";
-  import { countTotal, mapData, mode, year, yearChanges } from "$lib/../stores";
+  import { countRegion, countTotal, mapData, mode, selectedStory, stories, year, yearChanges } from "$lib/../stores";
   import { DisplayMode } from "$lib/enums";
   import loading from "$lib/actions/loading";
 
   export let mapSVG;
   let waterAll, waterBGAll;
-  let yearUnsub, modeUnsub;
+  let yearUnsub, modeUnsub, selectedStoryUnsub;
 
   const blue = "#18A0FB";
   const white = "#FFFFFF";
@@ -42,19 +42,37 @@
       i: 0
     };
 
+    let countReg = {
+      g: 0,
+      a: 0,
+      f: 0,
+      r: 0,
+      i: 0
+    };
+
     const colorYear = findNextSmallerYear();
 
     $mapData.map.forEach((row, r_index) => {
       row.forEach((entry, c_index) => {
         count[$mapData.map[r_index][c_index][colorYear]]++;
+        if ($selectedStory >= 0) {
+          const column_index = c_index.toString().padStart(2, "0");
+          const row_index = r_index.toString().padStart(2, "0");
+          const combined = `${row_index}-${column_index}`
+          if ($stories[$selectedStory].zones.includes(`${combined}`)) {
+            countReg[$mapData.map[r_index][c_index][colorYear]]++;
+          }
+        }
       });
     });
 
     const unsortedMap = new Map(Object.entries(count));
+    const unsortedRegionMap = new Map(Object.entries(countReg));
     // const unsortedArray = [...unsortedMap];
     // const sortedArray = unsortedArray.sort(([key1, value1], [key2, value2]) =>  value2 - value1)
 
     countTotal.set(unsortedMap);
+    countRegion.set(unsortedRegionMap);
 
     return new Map(unsortedMap);
   }
@@ -73,10 +91,20 @@
         $mapData.map.forEach((row, r_index) => {
           row.forEach((entry, c_index) => {
             try {
-              let column_index = c_index.toString().padStart(2, "0");
-              let row_index = r_index.toString().padStart(2, "0");
+              const column_index = c_index.toString().padStart(2, "0");
+              const row_index = r_index.toString().padStart(2, "0");
+              const combined = `${row_index}-${column_index}`
               // console.log(`_${row_index}-${column_index}`);
-              _(`[id*='_${row_index}-${column_index}']`).style.fill =
+
+              _(`[id*='_${combined}']`).style.opacity = "1";
+
+              if ($selectedStory >= 0) {
+                if (!$stories[$selectedStory].zones.includes(`${combined}`)) {
+                  _(`[id*='_${combined}']`).style.opacity = "0.2";
+                }
+              }
+
+              _(`[id*='_${combined}']`).style.fill =
                 color[$mapData.map[r_index][c_index][colorYear].toLowerCase()];
             } catch (e) {
             }
@@ -94,6 +122,7 @@
               let paddedStep = step.toString().padStart(3, "0");
 
               try {
+                _(`[id*='-${paddedStep}']`).style.opacity = "1";
                 _(`[id*='-${paddedStep}']`).style.fill = color[key.toString().toLowerCase()];
               } catch (e) {
                 console.log(e, paddedStep);
@@ -123,12 +152,14 @@
     setTimeout(() => {
       yearUnsub = year.subscribe(() => recolor());
       modeUnsub = mode.subscribe(() => recolor());
+      selectedStoryUnsub = selectedStory.subscribe(() => recolor());
     }, 5000); // waits 5s until everything is displayed
   });
 
   onDestroy(() => {
     yearUnsub;
     modeUnsub;
+    selectedStoryUnsub;
   });
 </script>
 
@@ -146,5 +177,5 @@
 
   :global(#map path)
     transition: .2s linear
-    transition-property: fill, stroke
+    transition-property: fill, stroke, opacity
 </style>

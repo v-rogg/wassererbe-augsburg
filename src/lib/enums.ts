@@ -22,3 +22,8 @@ export enum DisplayMode {
   Map,
   Percent
 }
+
+export enum InfoMode {
+  Legend,
+  Story
+}
