@@ -138,6 +138,7 @@
         display: flex
         align-items: center
         gap: 40px
+        //color: var(--c-black)
 
       .svg
         position: relative
@@ -150,12 +151,11 @@
           display: flex
           align-items: center
           font-size: $fs-micro
-          color: var(--c-black)
 
       .agricultural
-        color: $c-agricultural
+          color: $c-agricultural
       .grassland
-        color: $c-grassland
+          color: $c-grassland
       .residential
         color: $c-residential
       .industrial
@@ -228,12 +228,8 @@
     &:first-of-type
       margin-top: 0
       padding-top: 0
-      //&:before
-      //  border-radius: $bor-normal $bor-normal 0 0
 
     &:last-of-type
       margin-bottom: 0
       padding-bottom: 0
-      //&:before
-      //  border-radius: 0 0 $bor-normal $bor-normal
 </style>

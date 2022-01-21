@@ -86,7 +86,7 @@
     switch ($mode) {
       case DisplayMode.Map:
         waterAll.forEach((e: HTMLElement) => (e.style.stroke = blue));
-        waterBGAll.forEach((e: HTMLElement) => (e.style.stroke = white));
+        waterBGAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-white)"));
         waterAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
         waterBGAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
 
@@ -99,6 +99,8 @@
               // console.log(`_${row_index}-${column_index}`);
 
               _(`[id*='_${combined}']`).style.opacity = "1";
+              waterAll.forEach((e: HTMLElement) => (e.style.opacity = '1'));
+              waterBGAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
 
               if ($selectedStory >= 0) {
                 if (!$stories[$selectedStory].zones.includes(`${combined}`)) {
@@ -158,7 +160,7 @@
       el.style.strokeDasharray = len;
       el.style.strokeDashoffset = len;
       el.style.stroke = blue;
-      el.style.opacity = 0;
+      // el.style.opacity = 0;
     });
 
     loading();
