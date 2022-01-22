@@ -20,7 +20,7 @@
     <div class="icons">
       <div>
         <div class="svg number">
-          <img src="/legend/agricultural.svg" alt="" />
+          <img width="44" height="44"  src="/legend/agricultural.svg" alt="" />
           {#if count.get('a') !== undefined}
             <span>{count.get('a')}</span>
           {/if}
@@ -29,7 +29,7 @@
       </div>
       <div>
         <div class="svg number">
-          <img src="/legend/grassland.svg" alt="" />
+          <img width="44" height="44"  src="/legend/grassland.svg" alt="" />
           {#if count.get('g') !== undefined}
             <span>{count.get('g')}</span>
           {/if}
@@ -38,7 +38,7 @@
       </div>
       <div>
         <div class="svg number">
-          <img src="/legend/forest.svg" alt="" />
+          <img width="44" height="44"  src="/legend/forest.svg" alt="" />
           {#if count.get('f') !== undefined}
             <span>{count.get('f')}</span>
           {/if}
@@ -47,7 +47,7 @@
       </div>
       <div>
         <div class="svg number">
-          <img src="/legend/residential.svg" alt="" />
+          <img width="44" height="44"  src="/legend/residential.svg" alt="" />
           {#if count.get('r') !== undefined}
             <span>{count.get('r')}</span>
           {/if}
@@ -56,7 +56,7 @@
       </div>
       <div>
         <div class="svg number">
-          <img src="/legend/industrial.svg" alt="" />
+          <img width="44" height="44"  src="/legend/industrial.svg" alt="" />
           {#if count.get('i') !== undefined}
             <span>{count.get('i')}</span>
           {/if}
@@ -64,11 +64,11 @@
         Industrie
       </div>
       <div>
-        <img src="/legend/river.svg" alt="" />
+        <img width="44" height="5" src="/legend/river.svg" alt="" />
         Lech
       </div>
       <div>
-        <img src="/legend/channel.svg" alt="" />
+        <img width="44" height="10" src="/legend/channel.svg" alt="" />
         Kanal
       </div>
     </div>
