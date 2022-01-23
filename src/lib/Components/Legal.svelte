@@ -1,7 +1,5 @@
 <section>
-  <a href="https://www.hs-augsburg.de/Service/Impressum.html" rel="nofollow" target="_blank">
-    Impressum
-  </a>
+  <a href="/impressum"> Impressum </a>
   <a href="/datenschutz"> Datenschutz </a>
 </section>
 

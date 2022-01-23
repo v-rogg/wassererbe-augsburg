@@ -64,11 +64,11 @@
         Industrie
       </div>
       <div>
-        <img width="44" height="5" src="/legend/river.svg" alt="" />
+        <img width="44" height="10" src="/legend/river.svg" alt="" />
         Lech
       </div>
       <div>
-        <img width="44" height="10" src="/legend/channel.svg" alt="" />
+        <img width="44" height="5" src="/legend/channel.svg" alt="" />
         Kanal
       </div>
     </div>

@@ -5,6 +5,8 @@
   import { DisplayMode } from "$lib/enums";
   import loading from "$lib/actions/loading";
   import { infoMode } from "../../stores";
+  import { fade } from "svelte/transition";
+  import { sineIn } from "svelte/easing";
 
   export let mapSVG;
   let waterAll, waterBGAll;
@@ -98,7 +100,7 @@
               const combined = `${row_index}-${column_index}`
               // console.log(`_${row_index}-${column_index}`);
 
-              _(`[id*='_${combined}']`).style.opacity = "1";
+              // _(`[id*='_${combined}']`).style.opacity = "1";
               waterAll.forEach((e: HTMLElement) => (e.style.opacity = '1'));
               waterBGAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
 
@@ -126,7 +128,7 @@
               let paddedStep = step.toString().padStart(3, "0");
 
               try {
-                _(`[id*='-${paddedStep}']`).style.opacity = "1";
+                // _(`[id*='-${paddedStep}']`).style.opacity = "1";
                 _(`[id*='-${paddedStep}']`).style.fill = color[key.toString().toLowerCase()];
               } catch (e) {
                 console.log(e, paddedStep);
@@ -151,7 +153,10 @@
     }
   }
 
+  let ready = false;
+
   onMount(async () => {
+    ready = true;
     waterAll = document.querySelectorAll(`[id*="_w"]`);
     waterBGAll = document.querySelectorAll(`[id*="_bgw"]`);
 
@@ -160,16 +165,19 @@
       el.style.strokeDasharray = len;
       el.style.strokeDashoffset = len;
       el.style.stroke = blue;
-      // el.style.opacity = 0;
     });
 
-    loading();
+    waterBGAll.forEach((el) => {
+      const len = el.getTotalLength();
+      el.style.strokeDasharray = len;
+      el.style.strokeDashoffset = len;
+      el.style.stroke = "var(--c-white)"
+    })
 
-    setTimeout(() => {
-      yearUnsub = year.subscribe(() => redraw());
-      modeUnsub = mode.subscribe(() => redraw());
-      selectedStoryUnsub = selectedStory.subscribe(() => redraw());
-    }, 5000); // waits 5s until everything is displayed
+    loading();
+    yearUnsub = year.subscribe(() => redraw());
+    modeUnsub = mode.subscribe(() => redraw());
+    selectedStoryUnsub = selectedStory.subscribe(() => redraw());
   });
 
   onDestroy(() => {
@@ -179,7 +187,7 @@
   });
 </script>
 
-<section id="map">
+<section id="map" out:fade={{duration: 500, ease: sineIn }}>
   {#if mapSVG}
     {@html mapSVG}
   {/if}
@@ -192,6 +200,7 @@
     opacity: 1
 
   :global(#map path)
+    opacity: 0
     transition: .2s linear
     transition-property: fill, stroke, opacity
 </style>

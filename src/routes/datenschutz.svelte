@@ -1,67 +1,68 @@
+<script lang="ts">
+  import Layout from "$lib/_Layout.svelte";
+  import Brand from "$lib/Components/Brand.svelte";
+  import Legal from "$lib/Components/Legal.svelte";
+  import About from "$lib/Components/About.svelte";
+  import { fly } from "svelte/transition";
+  import { sineIn, sineOut } from "svelte/easing";
+</script>
+
 <svelte:head>
   <title>Datenschutz – Wassererbe Augsburg</title>
 </svelte:head>
 
-<main>
-  <h1>Datenschutzerklärung</h1>
-  <p>Stand: 12. Januar 2022</p>
+<Layout>
+  <div slot="center" class="center" in:fly={{ x:-5, duration: 500, delay: 500, ease: sineOut }} out:fly={{ x: 5, duration: 500, ease: sineIn }}>
+    <h1>Datenschutzerklärung</h1>
+    <p>
+      Stand: 12. Januar 2022<br />
+      <br />
+      Valentin Rogg<br />
+      Friedrich-Ebert-Str. 10b<br />
+      86368 Gersthofen<br />
+      <br />
+      Kontakt<br />
+      Telefon: 0821-1757090991<br/>
+      Mail: mail@valentinrogg.de<br />
+      <br />
+      Es werden keine Daten erhoben oder weiterverarbeitet.<br />
+      <br />
+      Wir bitten Sie, sich regelmäßig über den Inhalt unserer Datenschutzerklärung zu informieren. Wir passen die Datenschutzerklärung an,
+      sobald die Änderungen der von uns durchgeführten Datenverarbeitungen dies erforderlich machen. Wir informieren Sie, sobald durch die
+      Änderungen eine Mitwirkungshandlung Ihrerseits (z.B. Einwilligung) oder eine sonstige individuelle Benachrichtigung erforderlich wird.
+      Sofern wir in dieser Datenschutzerklärung Adressen und Kontaktinformationen von Unternehmen und Organisationen angeben, bitten wir zu
+      beachten, dass die Adressen sich über die Zeit ändern können und bitten die Angaben vor Kontaktaufnahme zu prüfen.
+    </p>
+  </div>
 
-  <h2>Verantwortlicher</h2>
-  <p>
-    Valentin Rogg<br />
-    Friedrich-Ebert-Str. 10b<br />
-    86368
-  </p>
+  <Brand slot="top_left" />
+  <Legal slot="bottom_right" />
+  <About slot="bottom_left" />
+</Layout>
 
-  E-Mail-Adresse:
-
-  <p>
-    <a href="mailto:mail@valentinrogg.de">mail@valentinrogg.de</a>
-  </p>
-
-  <h2>Übersicht der Verarbeitungen</h2>
-  <p>
-    Die nachfolgende Übersicht fasst die Arten der verarbeiteten Daten und die Zwecke ihrer Verarbeitung zusammen und verweist auf die
-    betroffenen Personen.
-  </p>
-
-  <h3>Maßgebliche Rechtsgrundlagen</h3>
-  <p>
-    Im Folgenden erhalten Sie eine Übersicht der Rechtsgrundlagen der DSGVO, auf deren Basis wir personenbezogene Daten verarbeiten. Bitte
-    nehmen Sie zur Kenntnis, dass neben den Regelungen der DSGVO nationale Datenschutzvorgaben in Ihrem bzw. unserem Wohn- oder Sitzland
-    gelten können. Sollten ferner im Einzelfall speziellere Rechtsgrundlagen maßgeblich sein, teilen wir Ihnen diese in der
-    Datenschutzerklärung mit.
-  </p>
-  <p>
-    Zusätzlich zu den Datenschutzregelungen der Datenschutz-Grundverordnung gelten nationale Regelungen zum Datenschutz in Deutschland.
-    Hierzu gehört insbesondere das Gesetz zum Schutz vor Missbrauch personenbezogener Daten bei der Datenverarbeitung
-    (Bundesdatenschutzgesetz – BDSG). Das BDSG enthält insbesondere Spezialregelungen zum Recht auf Auskunft, zum Recht auf Löschung, zum
-    Widerspruchsrecht, zur Verarbeitung besonderer Kategorien personenbezogener Daten, zur Verarbeitung für andere Zwecke und zur
-    Übermittlung sowie automatisierten Entscheidungsfindung im Einzelfall einschließlich Profiling. Des Weiteren regelt es die
-    Datenverarbeitung für Zwecke des Beschäftigungsverhältnisses (§ 26 BDSG), insbesondere im Hinblick auf die Begründung, Durchführung oder
-    Beendigung von Beschäftigungsverhältnissen sowie die Einwilligung von Beschäftigten. Ferner können Landesdatenschutzgesetze der
-    einzelnen Bundesländer zur Anwendung gelangen.
-  </p>
-
-  <h2>Änderung und Aktualisierung der Datenschutzerklärung</h2>
-  <p>
-    Wir bitten Sie, sich regelmäßig über den Inhalt unserer Datenschutzerklärung zu informieren. Wir passen die Datenschutzerklärung an,
-    sobald die Änderungen der von uns durchgeführten Datenverarbeitungen dies erforderlich machen. Wir informieren Sie, sobald durch die
-    Änderungen eine Mitwirkungshandlung Ihrerseits (z.B. Einwilligung) oder eine sonstige individuelle Benachrichtigung erforderlich wird.
-  </p>
-  <p>
-    Sofern wir in dieser Datenschutzerklärung Adressen und Kontaktinformationen von Unternehmen und Organisationen angeben, bitten wir zu
-    beachten, dass die Adressen sich über die Zeit ändern können und bitten die Angaben vor Kontaktaufnahme zu prüfen.
-  </p>
-</main>
 
 <style lang="sass">
-	main
-		max-width: 1024px
-		margin: 6rem auto
-		padding: 0 2rem
-		overflow-y: auto
+  @import "src/styles/theme"
 
-	:global(body)
-		overflow: auto
+  .center
+    //display: flex
+    //flex-direction: column
+    //justify-content: center
+    height: 100%
+    padding-right: 2rem
+    overflow-y: auto
+    scrollbar-width: thin
+    scrollbar-color: var(--c-grey-30) var(--c-grey-10)
+    scrollbar-gutter: stable
+
+    &::-webkit-scrollbar
+      width: 4px
+
+    &::-webkit-scrollbar-track
+      background-color: var(--c-grey-10)
+
+    &::-webkit-scrollbar-thumb
+      height: 30px
+      background-color: var(--c-grey-30)
+
 </style>

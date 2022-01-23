@@ -5,7 +5,7 @@
   import { onMount } from "svelte";
   import { tooltip } from "$lib/actions/tooltip";
   import { fade } from "svelte/transition";
-  import { sineInOut } from "svelte/easing";
+  import { sineIn, sineInOut, sineOut } from "svelte/easing";
 
   const timeDifference = $yearLimits.max - $yearLimits.min;
   let displayYears = [];
@@ -27,10 +27,15 @@
     return year < $yearLimits.min ? (((year - 1500) / beforeTimeDifference) / 100) * beforeTimeOffset * 100 : beforeTimeOffset + (((year - $yearLimits.min) / timeDifference) * (100 - beforeTimeOffset))
   }
 
+  let ready = false;
+
   onMount(() => {
+    ready = true;
     window.addEventListener("mousedown", (e) => {
       mouseX = e.clientX;
-      timelineWidth = _(".bar").offsetWidth;
+      try {
+        timelineWidth = _(".bar").offsetWidth;
+      } catch (e) {}
     });
 
     window.addEventListener("mousemove", (e) => {
@@ -57,7 +62,8 @@
   });
 </script>
 
-<div class="timeline">
+{#if ready}
+<div class="timeline" in:fade={{ duration: 1000, delay: 4500, ease: sineOut }} out:fade={{ duration: 500, ease: sineIn }}>
   <!--Story Usage-->
   {#each $stories as story, index}
     {#if $selectedStory === index}
@@ -238,6 +244,7 @@
     Vorhandene Referenzkarten
   </div>
 </div>
+{/if}
 {#if dragging}
   <div class="grabboard" />
 {/if}

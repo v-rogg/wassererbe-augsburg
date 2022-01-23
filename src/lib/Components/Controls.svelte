@@ -4,11 +4,18 @@
   import { playback, year, yearLimits, mode, infoMode } from "$lib/../stores";
   import { PlaybackMode, DisplayMode, InfoMode } from "$lib/enums.ts";
   import { goto } from "$lib/actions/helpers";
+  import { fade } from "svelte/transition";
+  import { sineIn, sineOut } from "svelte/easing";
+  import { onMount } from "svelte";
 
   const default_duration = 2500;
+
+  let ready = false;
+  onMount(() => {ready = true})
 </script>
 
-<section>
+{#if ready}
+<section  in:fade={{ duration: 1000, delay: 4500, ease: sineOut }} out:fade={{ duration: 500, ease: sineIn }}>
   <div class="slider">
     <Slider
       title="%-Ansicht"
@@ -239,6 +246,7 @@
     >
   </div>
 </section>
+{/if}
 
 <style lang="sass">
   @import "src/styles/theme"

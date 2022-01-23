@@ -3,15 +3,23 @@
   import Story from "$lib/Components/Story.svelte";
   import { infoMode } from "../stores";
   import { InfoMode } from "$lib/enums";
+  import { fade } from "svelte/transition";
+  import { sineIn, sineOut } from "svelte/easing";
+  import { onMount } from "svelte";
+
+  let ready = false;
+  onMount(() => {ready = true})
 </script>
 
-<section>
+{#if ready}
+<section  in:fade={{ duration: 1000, delay: 4500, ease: sineOut }} out:fade={{ duration: 500, ease: sineIn }}>
   {#if $infoMode === InfoMode.Legend}
     <Legend/>
   {:else if $infoMode === InfoMode.Story}
     <Story/>
   {/if}
 </section>
+{/if}
 
 <style lang="sass">
   section

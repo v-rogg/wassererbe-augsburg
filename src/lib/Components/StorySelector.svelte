@@ -1,72 +1,90 @@
 <script lang="ts">
   import { selectedStory, stories, storyDirection, infoMode } from "$lib/../stores";
-  import { onDestroy } from "svelte";
+  import { onDestroy, onMount } from "svelte";
   import { fade } from "svelte/transition";
   import { StoryDirection, InfoMode } from "$lib/enums";
   import Button from "$lib/Primitives/Button.svelte";
+  import { sineIn, sineOut } from "svelte/easing";
 
   let selectedS;
   const unsub = selectedStory.subscribe((x) => (selectedS = x));
+
+  let ready = false;
+  onMount(() => {ready = true})
 
   onDestroy(() => {
     unsub();
   });
 </script>
 
-<section>
+{#if ready}
+<section  in:fade={{ duration: 1000, delay: 4500, ease: sineOut }} out:fade={{ duration: 500, ease: sineIn }}>
   <p class="description">
     Erfahre wie sich die Stadt seit Ende der Neuzeit dank intensiver Wassernutzung verändert hat.
   </p>
-  <p class="choose">
-    Wähle ein Geschichte
-  </p>
-  <menu transition:fade>
-    <ul>
-      {#each $stories as story, index}
-        <li on:click={() => {
-          if ($selectedStory === index) {
-            $selectedStory = -1
-            $infoMode = InfoMode.Legend
-          } else {
-            index > $selectedStory
-              ? ($storyDirection = StoryDirection.Down)
-              : ($storyDirection = StoryDirection.Up);
-            $selectedStory = index
-            $infoMode = InfoMode.Story
-          }
-        }}>
-          <Button
-            active={$selectedStory === index}>
-            <span class="number" class:active={$selectedStory === index}>
-              {index + 1}
+  <div>
+
+    <p class="choose">
+      Wähle ein Geschichte
+    </p>
+    <nav transition:fade>
+      <ul>
+        {#each $stories as story, index}
+          <li on:click={() => {
+            if ($selectedStory === index) {
+              $selectedStory = -1
+              $infoMode = InfoMode.Legend
+            } else {
+              index > $selectedStory
+                ? ($storyDirection = StoryDirection.Down)
+                : ($storyDirection = StoryDirection.Up);
+              $selectedStory = index
+              $infoMode = InfoMode.Story
+            }
+          }}>
+            <Button
+              active={$selectedStory === index}>
+              <span class="number" class:active={$selectedStory === index}>
+                {index + 1}
+              </span>
+            </Button>
+            <span class:active={$selectedStory === index}>
+              {story.name}
             </span>
-          </Button>
-          <span class:active={$selectedStory === index}>
-            {story.name}
-          </span>
-        </li>
-      {/each}
-    </ul>
-  </menu>
+          </li>
+        {/each}
+      </ul>
+    </nav>
+  </div>
 </section>
+{/if}
 
 <style lang="sass">
   @import "../../styles/variables"
   @import "../../styles/theme"
 
   .description
-    position: absolute
-    top: clamp(1rem, 2.5vh, 2rem)
+    //position: absolute
+    //top: clamp(1rem, 2.5vh, 2rem)
     width: 80%
 
-    @media (max-height: 790px)
-      display: none
+    //@media (max-height: 790px)
+    //  display: none
+    //
+    //@media (max-width: 1320px)
+    //  display: none
+
+  section
+    display: grid
+    top: 5%
+    grid-template-rows: 1fr auto 1fr
+    height: 90%
 
   .choose
     font-weight: $fw-semibold
     margin-bottom: 2em
 
-  menu
+  nav
     width: 100%
     margin-bottom: 2rem
     padding: 0
