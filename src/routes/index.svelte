@@ -39,7 +39,7 @@
 <script lang="ts">
   import Layout from "$lib/_Layout.svelte";
   import Map from "$lib/Components/Map.svelte";
-  import { mapData, playback, stories, year, yearChanges, yearLimits } from "../stores";
+  import { mapData, playback, stories, year, yearChanges, yearLimits, isMobile } from "../stores";
   import { onDestroy } from "svelte";
   import { PlaybackMode } from "$lib/enums";
   import Timeline from "$lib/Components/Timeline.svelte";
@@ -93,12 +93,18 @@
     }
   });
 
+  let innerHeight;
+  let innerWidth;
+
   onDestroy(() => unsubPlayback());
 </script>
 
 <svelte:head>
   <title>Wassererbe Augsburg</title>
 </svelte:head>
+
+<svelte:window bind:innerHeight bind:innerWidth />
+{innerWidth} {innerHeight}
 
 <Layout>
   <Map {mapSVG} slot="center" />
