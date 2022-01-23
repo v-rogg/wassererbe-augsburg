@@ -10,8 +10,8 @@
     display: flex
     flex-direction: column
     text-align: right
-    align-items: end
-    justify-content: end
+    align-items: flex-end
+    justify-content: flex-end
     width: 100%
     height: 100%
     font-size: $fs-micro

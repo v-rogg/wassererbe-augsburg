@@ -188,7 +188,7 @@
 
   .nextUp
     display: flex
-    justify-content: end
+    justify-content: flex-end
     width: 100%
     position: absolute
     bottom: 0

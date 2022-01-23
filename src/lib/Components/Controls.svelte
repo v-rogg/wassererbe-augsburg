@@ -286,12 +286,12 @@
     gap: 16px
     grid-area: 1/4/2/5
     width: 100%
-    justify-content: end
+    justify-content: flex-end
 
   .north
     display: flex
     align-items: center
-    justify-content: end
+    justify-content: flex-end
     font-size: $fs-micro
     color: var(--c-black)
 

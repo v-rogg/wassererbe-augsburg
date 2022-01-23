@@ -29,8 +29,8 @@
   section
     display: flex
     flex-direction: column
-    align-items: start
-    justify-content: end
+    align-items: flex-start
+    justify-content: flex-end
     width: 100%
     height: 100%
     font-size: $fs-micro
