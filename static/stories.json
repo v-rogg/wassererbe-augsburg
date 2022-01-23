@@ -80,6 +80,15 @@
         "30-11",
         "31-10"
       ],
+      "references": [
+        "ref-fabrikschloss",
+        "ref-textilmuseum",
+        "ref-glaspalast",
+        "ref-proviantbach",
+        "ref-hanreibach",
+        "ref-fichtelbach",
+        "ref-schaefflerbach"
+      ],
       "usage": [
         {
           "start": 1500,
@@ -117,6 +126,10 @@
         "30-10",
         "28-12",
         "29-11"
+      ],
+      "references": [
+        "ref-proviantbach",
+        "ref-glaspalast"
       ],
       "usage": [
         {

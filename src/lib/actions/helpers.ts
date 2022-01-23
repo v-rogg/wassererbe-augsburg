@@ -2,7 +2,7 @@ import { defaultYearChangeDuration, yearLimits, year, playback, yearChanges } fr
 import { PlaybackMode } from "$lib/enums";
 import { get } from "svelte/store";
 
-export function _(query: string): HTMLElement {
+export function _(query: string): HTMLElement|SVGPathElement {
   return document.querySelector(query);
 }
 

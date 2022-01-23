@@ -83,62 +83,6 @@
   async function recolor(colorYear: number) {
     const count = countZones();
 
-    switch ($mode) {
-      case DisplayMode.Map:
-        waterAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-river)"));
-        waterBGAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-white)"));
-        waterAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
-        waterBGAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
-
-        $mapData.map.forEach((row, r_index) => {
-          row.forEach((entry, c_index) => {
-            try {
-              const column_index = c_index.toString().padStart(2, "0");
-              const row_index = r_index.toString().padStart(2, "0");
-              const combined = `${row_index}-${column_index}`
-              // console.log(`_${row_index}-${column_index}`);
-
-              // _(`[id*='_${combined}']`).style.opacity = "1";
-              // waterAll.forEach((e: HTMLElement) => (e.style.opacity = '1'));
-              // waterBGAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
-
-              if ($selectedStory >= 0) {
-                if (!$stories[$selectedStory].zones.includes(`${combined}`)) {
-                  _(`[id*='_${combined}']`).style.opacity = "0.2";
-                }
-              }
-
-              _(`[id*='_${combined}']`).style.fill =
-                color[$mapData.map[r_index][c_index][colorYear].toLowerCase()];
-            } catch (e) {
-            }
-          });
-        });
-        break;
-      case DisplayMode.Percent:
-        waterAll.forEach((e: HTMLElement) => (e.style.opacity = "0"));
-        waterBGAll.forEach((e: HTMLElement) => (e.style.opacity = "0"));
-
-        let step = 0;
-        count.forEach((value, key) => {
-          if (key !== undefined) {
-            for (let i = 0; i < value; i++) {
-              let paddedStep = step.toString().padStart(3, "0");
-
-              try {
-                // _(`[id*='-${paddedStep}']`).style.opacity = "1";
-                _(`[id*='-${paddedStep}']`).style.fill = color[key.toString().toLowerCase()];
-              } catch (e) {
-                console.log(e, paddedStep);
-              }
-
-              step++;
-            }
-          }
-        });
-        break;
-    }
-
     if (loaded) {
       if ($displayReference) {
         waterAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-river-dull)"));
@@ -173,6 +117,66 @@
           });
         });
       }
+    }
+
+    switch ($mode) {
+      case DisplayMode.Map:
+        waterAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-river)"));
+        waterBGAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-white)"));
+        waterAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
+        waterBGAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
+
+        $mapData.map.forEach((row, r_index) => {
+          row.forEach((entry, c_index) => {
+            try {
+              const column_index = c_index.toString().padStart(2, "0");
+              const row_index = r_index.toString().padStart(2, "0");
+              const combined = `${row_index}-${column_index}`
+              // console.log(`_${row_index}-${column_index}`);
+
+              // _(`[id*='_${combined}']`).style.opacity = "1";
+              // waterAll.forEach((e: HTMLElement) => (e.style.opacity = '1'));
+              // waterBGAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
+
+              if ($selectedStory >= 0) {
+                if (!$stories[$selectedStory].zones.includes(`${combined}`)) {
+                  _(`[id*='_${combined}']`).style.opacity = "0.2";
+                }
+
+                for (let ref of $stories[$selectedStory].references) {
+                  _(`[id=${ref}]`).style.opacity = "1"
+                }
+              }
+
+              _(`[id*='_${combined}']`).style.fill =
+                color[$mapData.map[r_index][c_index][colorYear].toLowerCase()];
+            } catch (e) {
+            }
+          });
+        });
+        break;
+      case DisplayMode.Percent:
+        waterAll.forEach((e: HTMLElement) => (e.style.opacity = "0"));
+        waterBGAll.forEach((e: HTMLElement) => (e.style.opacity = "0"));
+
+        let step = 0;
+        count.forEach((value, key) => {
+          if (key !== undefined) {
+            for (let i = 0; i < value; i++) {
+              let paddedStep = step.toString().padStart(3, "0");
+
+              try {
+                // _(`[id*='-${paddedStep}']`).style.opacity = "1";
+                _(`[id*='-${paddedStep}']`).style.fill = color[key.toString().toLowerCase()];
+              } catch (e) {
+                console.log(e, paddedStep);
+              }
+
+              step++;
+            }
+          }
+        });
+        break;
     }
   }
 
@@ -265,6 +269,10 @@
   :global(#map g)
     transition: .2s linear
     transition-property: fill, stroke, opacity
+
+  :global(#map g)
+    text-shadow: 0 0 3px var(--c-white)
+
 
   :global(#map path)
     transition: .2s linear

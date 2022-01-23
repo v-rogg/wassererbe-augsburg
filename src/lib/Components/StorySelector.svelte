@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { selectedStory, stories, storyDirection, infoMode } from "$lib/../stores";
+  import { selectedStory, stories, storyDirection, infoMode, displayReference } from "$lib/../stores";
   import { onDestroy, onMount } from "svelte";
   import { fade } from "svelte/transition";
   import { StoryDirection, InfoMode } from "$lib/enums";
@@ -38,6 +38,7 @@
               index > $selectedStory
                 ? ($storyDirection = StoryDirection.Down)
                 : ($storyDirection = StoryDirection.Up);
+              $displayReference = false
               $selectedStory = index
               $infoMode = InfoMode.Story
             }
