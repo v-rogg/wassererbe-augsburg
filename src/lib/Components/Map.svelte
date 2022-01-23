@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onDestroy, onMount } from "svelte";
-  import { _ } from "$lib/actions/helpers";
+  import { _, findNextSmallerYear } from "$lib/actions/helpers";
   import {
     countRegion,
     countTotal,
@@ -10,7 +10,7 @@
     selectedStory,
     stories,
     year,
-    yearChanges
+    yearChanges, yearLimits
   } from "$lib/../stores";
   import { DisplayMode } from "$lib/enums";
   import loading from "$lib/actions/loading";
@@ -34,20 +34,6 @@
     r: "#a6604c",
     i: "#C0C0C0"
   };
-
-  function findNextSmallerYear(): number {
-    let num = 0;
-    const sortedYears = $yearChanges;
-    sortedYears.sort((a, b) => {
-      return b - a;
-    });
-    sortedYears.forEach((y) => {
-      if (y <= $year && y > num) {
-        num = y;
-      }
-    });
-    return num;
-  }
 
   function countZones(): Map<string, number> {
     let count = {
@@ -151,7 +137,6 @@
         });
         break;
     }
-    console.log('hello', loaded);
 
     if (loaded) {
       if ($displayReference) {

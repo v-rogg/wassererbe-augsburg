@@ -1,9 +1,9 @@
 <script lang="ts">
   import Button from "$lib/Primitives/Button.svelte";
   import Slider from "$lib/Primitives/Slider.svelte";
-  import { playback, year, yearLimits, mode, infoMode, displayReference } from "$lib/../stores";
+  import { playback, year, yearLimits, mode, infoMode, displayReference, yearChanges } from "$lib/../stores";
   import { PlaybackMode, DisplayMode, InfoMode } from "$lib/enums.ts";
-  import { goto } from "$lib/actions/helpers";
+  import { findNextBiggerYear, findNextSmallerYear, goto } from "$lib/actions/helpers";
   import { fade } from "svelte/transition";
   import { sineIn, sineOut } from "svelte/easing";
   import { onMount } from "svelte";
@@ -15,7 +15,7 @@
 </script>
 
 {#if ready}
-<section  in:fade={{ duration: 1000, delay: 4500, ease: sineOut }} out:fade={{ duration: 500, ease: sineIn }}>
+<section  in:fade={{ duration: 10, delay: 4500, ease: sineOut }} out:fade={{ duration: 500, ease: sineIn }}>
   <div class="slider">
     <Slider
       title="%-Ansicht"
@@ -72,7 +72,7 @@
       </svg>
     </Button>
 
-    <Button hotkey="left" title="Vorherige Etappe" active={$playback === PlaybackMode.StepBackward}>
+    <Button hotkey="left" title="Vorherige Etappe" active={$playback === PlaybackMode.StepBackward} on:click={() => {goto(findNextSmallerYear(1))}}>
       <svg
         height="1em"
         aria-hidden="true"
@@ -141,7 +141,7 @@
       </svg>
     </Button>
 
-    <Button hotkey="right" title="Nächste Etappe" active={$playback === PlaybackMode.StepForward}>
+    <Button hotkey="right" title="Nächste Etappe" active={$playback === PlaybackMode.StepForward} on:click={() => {goto(findNextBiggerYear(1))}}>
       <svg
         height="1em"
         aria-hidden="true"

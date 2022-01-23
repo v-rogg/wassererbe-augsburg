@@ -1,4 +1,4 @@
-import { defaultYearChangeDuration, yearLimits, year, playback } from "../../stores";
+import { defaultYearChangeDuration, yearLimits, year, playback, yearChanges } from "../../stores";
 import { PlaybackMode } from "$lib/enums";
 import { get } from "svelte/store";
 
@@ -45,4 +45,30 @@ export function gotoElement(elem: HTMLElement): boolean {
   }
 
   return false;
+}
+
+export function findNextSmallerYear(offset = 0): number {
+  let num = get(yearLimits).min;
+  const sortedYears = get(yearChanges);
+  sortedYears.sort((a, b) => {
+    return b - a;
+  });
+  sortedYears.forEach((y) => {
+    if (y <= get(year) - offset && y > num) {
+      num = y;
+    }
+  });
+  return num;
+}
+
+export function findNextBiggerYear(offset = 0): number {
+  let num = get(yearLimits).max;
+  const sortedYears = get(yearChanges);
+  sortedYears.sort((a, b) => a - b);
+  sortedYears.forEach((y) => {
+    if (y >= get(year) + offset && y < num) {
+      num = y;
+    }
+  });
+  return num;
 }

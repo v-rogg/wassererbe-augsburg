@@ -72,14 +72,13 @@ export default function() {
     setTimeout(() => {
       const paddedStep = i.toString().padStart(3, "0");
       const fill = _(`[id*='-${paddedStep}']`).style.fill;
-      console.log(fill);
       _(`[id*='-${paddedStep}']`).style.fill = "var(--c-grey-10)";
 
       setTimeout(() => {
         _(`[id*='-${paddedStep}']`).style.fill = fill;
-      }, (i * 2 + 1000) * (Math.random()/10 + 1))
+      }, (i * 1.2 + 300) * (Math.random()/10 + 1))
 
       gsap.to(`[id*='-${paddedStep}']`, {opacity: 1, duration: 0, delay: .3})
-    },  (i) * (Math.random()/10 + 1) * 3)
+    },  (i) * (Math.random()/10 + 1) * 0.5 + 4000)
   }
 }
