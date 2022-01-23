@@ -4,13 +4,15 @@
   import {
     countRegion,
     countTotal,
-    displayReference, firstLoad,
+    displayReference,
+    firstLoad,
     mapData,
     mode,
     selectedStory,
     stories,
     year,
-    infoMode, mapLoaded
+    infoMode,
+    mapLoaded,
   } from "$lib/../stores";
   import { DisplayMode } from "$lib/enums";
   import loading from "$lib/actions/loading";
@@ -33,7 +35,7 @@
     a: "#CBAD1B",
     f: "#5E714D",
     r: "#a6604c",
-    i: "#C0C0C0"
+    i: "#C0C0C0",
   };
 
   function countZones(): Map<string, number> {
@@ -42,7 +44,7 @@
       a: 0,
       f: 0,
       r: 0,
-      i: 0
+      i: 0,
     };
 
     let countReg = {
@@ -50,7 +52,7 @@
       a: 0,
       f: 0,
       r: 0,
-      i: 0
+      i: 0,
     };
 
     const colorYear = findNextSmallerYear();
@@ -61,7 +63,7 @@
         if ($selectedStory >= 0) {
           const column_index = c_index.toString().padStart(2, "0");
           const row_index = r_index.toString().padStart(2, "0");
-          const combined = `${row_index}-${column_index}`
+          const combined = `${row_index}-${column_index}`;
           if ($stories[$selectedStory].zones.includes(`${combined}`)) {
             countReg[$mapData.map[r_index][c_index][colorYear]]++;
           }
@@ -93,11 +95,10 @@
             try {
               const column_index = c_index.toString().padStart(2, "0");
               const row_index = r_index.toString().padStart(2, "0");
-              const combined = `${row_index}-${column_index}`
+              const combined = `${row_index}-${column_index}`;
 
               _(`[id*='_${combined}']`).style.opacity = "0.2";
-            } catch (e) {
-            }
+            } catch (e) {}
           });
         });
       } else {
@@ -109,11 +110,10 @@
             try {
               const column_index = c_index.toString().padStart(2, "0");
               const row_index = r_index.toString().padStart(2, "0");
-              const combined = `${row_index}-${column_index}`
+              const combined = `${row_index}-${column_index}`;
 
               _(`[id*='_${combined}']`).style.opacity = "1";
-            } catch (e) {
-            }
+            } catch (e) {}
           });
         });
       }
@@ -138,7 +138,7 @@
             try {
               const column_index = c_index.toString().padStart(2, "0");
               const row_index = r_index.toString().padStart(2, "0");
-              const combined = `${row_index}-${column_index}`
+              const combined = `${row_index}-${column_index}`;
               // console.log(`_${row_index}-${column_index}`);
 
               // _(`[id*='_${combined}']`).style.opacity = "1";
@@ -151,20 +151,17 @@
               if ($selectedStory >= 0) {
                 waterAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-river-dull)"));
 
-
                 if (!$stories[$selectedStory].zones.includes(`${combined}`)) {
                   _(`[id*='_${combined}']`).style.opacity = "0.2";
                 }
 
                 for (let ref of $stories[$selectedStory].references) {
-                  _(`[id=${ref}]`).style.opacity = "1"
+                  _(`[id=${ref}]`).style.opacity = "1";
                 }
               }
 
-              _(`[id*='_${combined}']`).style.fill =
-                color[$mapData.map[r_index][c_index][colorYear].toLowerCase()];
-            } catch (e) {
-            }
+              _(`[id*='_${combined}']`).style.fill = color[$mapData.map[r_index][c_index][colorYear].toLowerCase()];
+            } catch (e) {}
           });
         });
         break;
@@ -196,35 +193,33 @@
   function redraw() {
     const colorYear = findNextSmallerYear();
 
-    let newHash = String(colorYear)+String($infoMode)+String($mode)+String($selectedStory)+String($displayReference);
-
-
+    let newHash = String(colorYear) + String($infoMode) + String($mode) + String($selectedStory) + String($displayReference);
 
     if ($year >= 1972 && !riverShow) {
       riverShow = true;
-      gsap.to('#_w-s', { 'stroke-dashoffset': 0, duration: 4 * .1, delay: 0, ease: 'none' });
-      gsap.to('#_bgw-s', { 'stroke-dashoffset': 0, duration: 4 * .1, delay: 0, ease: 'none' });
+      gsap.to("#_w-s", { "stroke-dashoffset": 0, duration: 4 * 0.1, delay: 0, ease: "none" });
+      gsap.to("#_bgw-s", { "stroke-dashoffset": 0, duration: 4 * 0.1, delay: 0, ease: "none" });
 
-      gsap.to('#_w-u', { 'stroke-dashoffset': 0, duration: 1.5 * .1, delay: 0.3, ease: 'none' });
-      gsap.to('#_bgw-u', { 'stroke-dashoffset': 0, duration: 1.5 * .1, delay: 0.3, ease: 'none' });
+      gsap.to("#_w-u", { "stroke-dashoffset": 0, duration: 1.5 * 0.1, delay: 0.3, ease: "none" });
+      gsap.to("#_bgw-u", { "stroke-dashoffset": 0, duration: 1.5 * 0.1, delay: 0.3, ease: "none" });
 
-      gsap.to('#_w-t', { 'stroke-dashoffset': 0, duration: 1.5 * .1, delay: 0.3, ease: 'none' });
-      gsap.to('#_bgw-t', { 'stroke-dashoffset': 0, duration: 1.5 * .1, delay: 0.3, ease: 'none' });
+      gsap.to("#_w-t", { "stroke-dashoffset": 0, duration: 1.5 * 0.1, delay: 0.3, ease: "none" });
+      gsap.to("#_bgw-t", { "stroke-dashoffset": 0, duration: 1.5 * 0.1, delay: 0.3, ease: "none" });
     } else if ($year < 1972 && riverShow) {
       riverShow = false;
-      gsap.to('#_w-s', { 'stroke-dashoffset': _('#_w-s').getTotalLength(), duration: 4 * .1, delay: 0.3, ease: 'none' });
-      gsap.to('#_bgw-s', { 'stroke-dashoffset': _('#_bgw-s').getTotalLength(), duration: 4 * .1, delay: 0.3, ease: 'none' });
+      gsap.to("#_w-s", { "stroke-dashoffset": _("#_w-s").getTotalLength(), duration: 4 * 0.1, delay: 0.3, ease: "none" });
+      gsap.to("#_bgw-s", { "stroke-dashoffset": _("#_bgw-s").getTotalLength(), duration: 4 * 0.1, delay: 0.3, ease: "none" });
 
-      gsap.to('#_w-u', { 'stroke-dashoffset': _('#_w-u').getTotalLength() + 1, duration: 1.5 * .1, delay: 0, ease: 'none' });
-      gsap.to('#_bgw-u', { 'stroke-dashoffset': _('#_bgw-u').getTotalLength() + 1, duration: 1.5 * .1, delay: 0, ease: 'none' });
+      gsap.to("#_w-u", { "stroke-dashoffset": _("#_w-u").getTotalLength() + 1, duration: 1.5 * 0.1, delay: 0, ease: "none" });
+      gsap.to("#_bgw-u", { "stroke-dashoffset": _("#_bgw-u").getTotalLength() + 1, duration: 1.5 * 0.1, delay: 0, ease: "none" });
 
-      gsap.to('#_w-t', { 'stroke-dashoffset': _('#_w-t').getTotalLength() + 1, duration: 1.5 * .1, delay: 0, ease: 'none' });
-      gsap.to('#_bgw-t', { 'stroke-dashoffset': _('#_bgw-t').getTotalLength() + 1, duration: 1.5 * .1, delay: 0, ease: 'none' });
+      gsap.to("#_w-t", { "stroke-dashoffset": _("#_w-t").getTotalLength() + 1, duration: 1.5 * 0.1, delay: 0, ease: "none" });
+      gsap.to("#_bgw-t", { "stroke-dashoffset": _("#_bgw-t").getTotalLength() + 1, duration: 1.5 * 0.1, delay: 0, ease: "none" });
     }
 
     if (newHash !== redrawHash) {
-      recolor(colorYear)
-      redrawHash = newHash
+      recolor(colorYear);
+      redrawHash = newHash;
     }
   }
 
@@ -248,15 +243,15 @@
       const len = el.getTotalLength();
       el.style.strokeDasharray = len;
       el.style.strokeDashoffset = len;
-      el.style.stroke = "var(--c-white)"
+      el.style.stroke = "var(--c-white)";
     });
 
     referenceAll.forEach((el) => {
-      el.style.opacity = "0"
+      el.style.opacity = "0";
     });
 
     waterHelpers.forEach((el) => {
-      el.style.opacity = "0"
+      el.style.opacity = "0";
     });
 
     if ($firstLoad) {
@@ -293,7 +288,7 @@
   });
 </script>
 
-<section id="map" out:fade={{duration: 500, ease: sineIn }}>
+<section id="map" out:fade={{ duration: 500, ease: sineIn }}>
   {#if mapSVG}
     {@html mapSVG}
   {/if}

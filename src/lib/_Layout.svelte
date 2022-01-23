@@ -10,9 +10,9 @@
   <div class="app active-{$mode}">
     <img class="ratio" src="ratio.png" alt="resize" aria-hidden="true" />
     {#if $$slots.center}
-    <div class="center abs">
-      <slot name="center" />
-    </div>
+      <div class="center abs">
+        <slot name="center" />
+      </div>
     {/if}
     {#if $$slots.center_large}
       <div class="center-large abs">
@@ -20,39 +20,39 @@
       </div>
     {/if}
     {#if $$slots.top_left}
-    <div class="top left abs">
-      <slot name="top_left" />
-    </div>
+      <div class="top left abs">
+        <slot name="top_left" />
+      </div>
     {/if}
     {#if $$slots.top_mid}
-    <div class="top h-mid abs">
-      <slot name="top_mid" />
-    </div>
+      <div class="top h-mid abs">
+        <slot name="top_mid" />
+      </div>
     {/if}
     {#if $$slots.mid_left}
-    <div class="v-mid left abs">
-      <slot name="mid_left" />
-    </div>
+      <div class="v-mid left abs">
+        <slot name="mid_left" />
+      </div>
     {/if}
     {#if $$slots.mid_right}
-    <div class="v-mid right abs">
-      <slot name="mid_right" />
-    </div>
+      <div class="v-mid right abs">
+        <slot name="mid_right" />
+      </div>
     {/if}
     {#if $$slots.bottom_mid}
-    <div class="bottom h-mid abs">
-      <slot name="bottom_mid" />
-    </div>
+      <div class="bottom h-mid abs">
+        <slot name="bottom_mid" />
+      </div>
     {/if}
     {#if $$slots.bottom_left}
-    <div class="bottom left abs">
-      <slot name="bottom_left" />
-    </div>
+      <div class="bottom left abs">
+        <slot name="bottom_left" />
+      </div>
     {/if}
     {#if $$slots.bottom_right}
-    <div class="bottom right abs">
-      <slot name="bottom_right" />
-    </div>
+      <div class="bottom right abs">
+        <slot name="bottom_right" />
+      </div>
     {/if}
   </div>
 </main>

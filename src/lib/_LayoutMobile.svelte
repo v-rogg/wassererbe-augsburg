@@ -5,17 +5,15 @@
 <main class="container">
   <div class="app active-{$mode}">
     <header>
-      <slot name="header_left"/>
+      <slot name="header_left" />
 
-      <div class="hamburger">
-        X
-      </div>
+      <div class="hamburger">X</div>
     </header>
     <div class="center">
-      <slot name="center"/>
+      <slot name="center" />
     </div>
     <div class="lower_center">
-      <slot name="lower_center"/>
+      <slot name="lower_center" />
     </div>
     <div class="fourth">
       <slot name="4th" />

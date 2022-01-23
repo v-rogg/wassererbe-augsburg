@@ -8,17 +8,19 @@
   import { onMount } from "svelte";
 
   let ready = false;
-  onMount(() => {ready = true})
+  onMount(() => {
+    ready = true;
+  });
 </script>
 
 {#if ready}
-<section  in:fade={{ duration: 1000, delay: $firstLoad ? 4500 : 0, ease: sineOut }} out:fade={{ duration: 500, ease: sineIn }}>
-  {#if $infoMode === InfoMode.Legend}
-    <Legend/>
-  {:else if $infoMode === InfoMode.Story}
-    <Story/>
-  {/if}
-</section>
+  <section in:fade={{ duration: 1000, delay: $firstLoad ? 4500 : 0, ease: sineOut }} out:fade={{ duration: 500, ease: sineIn }}>
+    {#if $infoMode === InfoMode.Legend}
+      <Legend />
+    {:else if $infoMode === InfoMode.Story}
+      <Story />
+    {/if}
+  </section>
 {/if}
 
 <style lang="sass">

@@ -12,7 +12,9 @@ export const playback = writable(PlaybackMode.Pause);
 export const storyDirection = writable(StoryDirection.Up);
 export const isMobile = writable(false, (set) => {
   if (browser) {
-    set(window.matchMedia("only screen and (max-width: 1500px)").matches || window.matchMedia("only screen and (max-height: 750px)").matches);
+    set(
+      window.matchMedia("only screen and (max-width: 1500px)").matches || window.matchMedia("only screen and (max-height: 750px)").matches
+    );
   }
   return () => {};
 });
@@ -24,12 +26,12 @@ export const mapData = writable({
   dates: [0],
   limits: {
     min: 0,
-    max: 0
-  }
+    max: 0,
+  },
 });
-export const countTotal = writable(new Map)
-export const countRegion = writable(new Map)
-export const infoMode = writable(InfoMode.Legend)
-export const displayReference = writable(false)
+export const countTotal = writable(new Map());
+export const countRegion = writable(new Map());
+export const infoMode = writable(InfoMode.Legend);
+export const displayReference = writable(false);
 export const firstLoad = writable(true);
 export const mapLoaded = writable(false);

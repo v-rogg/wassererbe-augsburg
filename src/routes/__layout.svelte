@@ -9,37 +9,47 @@
 
   function recheck(w, h) {
     if (browser) {
-      const c = window.matchMedia("only screen and (max-width: 1300px)").matches || window.matchMedia("only screen and (max-height: 650px)").matches
-      isMobile.set(c)
-      return c
+      const c =
+        window.matchMedia("only screen and (max-width: 1300px)").matches ||
+        window.matchMedia("only screen and (max-height: 650px)").matches;
+      isMobile.set(c);
+      return c;
     } else {
-      return false
+      return false;
     }
   }
 
-  $: check = recheck(innerWidth, innerHeight)
+  $: check = recheck(innerWidth, innerHeight);
 
   onMount(() => {
     setTimeout(() => {
       $firstLoad = false;
     }, 2000);
-  })
+  });
 </script>
 
 <svelte:head>
+  <meta name="description" content="Wir sind Nadine Keller und Valentin Rogg – Masterstudenten im Bereich Interaktive Mediensysteme an der Hochschule Augsburg.
+    Für den Kurs Datenvisualisierung haben wir es uns zur Aufgabe gemacht, die Veränderung der Stadt Augsburg über die Jahre 1980 bis 2022
+    darzustellen. Augsburg hat durch seine vielen Flüsse und Kanäle ein besonderes Relikt, welches die Stadtveränderung maßgeblich beeinflusst hat.
+    So entstand unser Projekt unter dem Namen Wassererbe Augsburg." />
   {#if $mode === DisplayMode.Map}
-    <link rel="icon" href="favicon.svg" />
+    <link rel="icon" type="image/svg" href="favicon.svg" />
   {:else if $mode === DisplayMode.Percent}
-    <link rel="icon" href="favicon-green.svg" />
+    <link rel="icon" type="image/svg" href="favicon-green.svg" />
   {/if}
 </svelte:head>
 
 <svelte:window bind:innerHeight bind:innerWidth />
 
 <span style="color: var(--c-black); position: absolute;">
-{$displayReference} {innerWidth} {innerHeight} {check} {$firstLoad}
+  {$displayReference}
+  {innerWidth}
+  {innerHeight}
+  {check}
+  {$firstLoad}
 </span>
-<slot/>
+<slot />
 
 <style lang="sass">
   @import "src/styles/theme"

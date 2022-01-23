@@ -13,25 +13,26 @@
   function checkDirectionOut() {
     return $storyDirection === StoryDirection.Down ? -movementAmount : movementAmount;
   }
-
 </script>
+
 <div class="stories" transition:fly={{ duration: 200, x: 10 }}>
   {#each $stories as story, index}
     {#if $selectedStory === index}
-      <div class="story"
-           in:fly={{
-              duration: 900,
-              y: checkDirectionIn(),
-              delay: $infoMode === InfoMode.Story ? 400 : 0,
-              easing: sineOut,
-              opacity: -0.2
-            }}
-           out:fly={{
-              duration: 600,
-              y: checkDirectionOut(),
-              easing: sineIn,
-              opacity: -0.5
-           }}
+      <div
+        class="story"
+        in:fly={{
+          duration: 900,
+          y: checkDirectionIn(),
+          delay: $infoMode === InfoMode.Story ? 400 : 0,
+          easing: sineOut,
+          opacity: -0.2,
+        }}
+        out:fly={{
+          duration: 600,
+          y: checkDirectionOut(),
+          easing: sineIn,
+          opacity: -0.5,
+        }}
       >
         <div class="header">
           <div class="index number">
@@ -43,7 +44,7 @@
         </div>
         <div class="text">
           {#each story.usage as usage}
-            <p class="{usage.usage}">
+            <p class={usage.usage}>
               {@html usage.description}
             </p>
           {/each}
@@ -56,8 +57,8 @@
             <div class="agricultural">
               <div class="svg number">
                 <img src="/legend/agricultural.svg" height="20px" width="auto" alt="" />
-                {#if $countRegion.get('a') !== undefined}
-                  <span>{$countRegion.get('a')}</span>
+                {#if $countRegion.get("a") !== undefined}
+                  <span>{$countRegion.get("a")}</span>
                 {/if}
               </div>
               Landwirtschaft
@@ -65,8 +66,8 @@
             <div class="grassland">
               <div class="svg number">
                 <img src="/legend/grassland.svg" height="20px" width="auto" alt="" />
-                {#if $countRegion.get('g') !== undefined}
-                  <span>{$countRegion.get('g')}</span>
+                {#if $countRegion.get("g") !== undefined}
+                  <span>{$countRegion.get("g")}</span>
                 {/if}
               </div>
               Grasland
@@ -74,8 +75,8 @@
             <div class="forest">
               <div class="svg number">
                 <img src="/legend/forest.svg" height="20px" width="auto" alt="" />
-                {#if $countRegion.get('f') !== undefined}
-                  <span>{$countRegion.get('f')}</span>
+                {#if $countRegion.get("f") !== undefined}
+                  <span>{$countRegion.get("f")}</span>
                 {/if}
               </div>
               Wald
@@ -83,8 +84,8 @@
             <div class="residential">
               <div class="svg number">
                 <img src="/legend/residential.svg" height="20px" width="auto" alt="" />
-                {#if $countRegion.get('r') !== undefined}
-                  <span>{$countRegion.get('r')}</span>
+                {#if $countRegion.get("r") !== undefined}
+                  <span>{$countRegion.get("r")}</span>
                 {/if}
               </div>
               Wohnraum
@@ -92,8 +93,8 @@
             <div class="industrial">
               <div class="svg number">
                 <img src="/legend/industrial.svg" height="20px" width="auto" alt="" />
-                {#if $countRegion.get('i') !== undefined}
-                  <span>{$countRegion.get('i')}</span>
+                {#if $countRegion.get("i") !== undefined}
+                  <span>{$countRegion.get("i")}</span>
                 {/if}
               </div>
               Industrie

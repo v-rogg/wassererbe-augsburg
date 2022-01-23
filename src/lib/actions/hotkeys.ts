@@ -11,6 +11,6 @@ export function hotkey(node) {
   return {
     destroy() {
       hotkeys.unbind(hotkey);
-    }
+    },
   };
 }

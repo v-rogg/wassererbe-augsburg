@@ -26,7 +26,7 @@
             y: checkDirectionIn(),
             delay: 400,
             easing: sineOut,
-            opacity: -0.2
+            opacity: -0.2,
           }}
           out:fly={{ duration: 600, y: checkDirectionOut(), easing: sineIn, opacity: -0.5 }}
         >

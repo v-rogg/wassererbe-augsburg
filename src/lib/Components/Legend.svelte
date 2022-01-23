@@ -4,61 +4,59 @@
   import { onDestroy } from "svelte";
   import { sineIn, sineOut } from "svelte/easing";
 
-  let count = new Map;
-  const unsubCountTotal = countTotal.subscribe((x) => count = x)
+  let count = new Map();
+  const unsubCountTotal = countTotal.subscribe((x) => (count = x));
 
   onDestroy(() => {
-    unsubCountTotal
-  })
+    unsubCountTotal;
+  });
 </script>
 
-<div class="legend"
-     in:fly={{ duration: 600, x: 30, ease: sineOut }}
-     out:fly={{ duration: 600, x: 30, ease: sineIn }}>
+<div class="legend" in:fly={{ duration: 600, x: 30, ease: sineOut }} out:fly={{ duration: 600, x: 30, ease: sineIn }}>
   <div>
     <p>Nutzung der Zonen</p>
     <div class="icons">
       <div>
         <div class="svg number">
-          <img width="44" height="44"  src="/legend/agricultural.svg" alt="" />
-          {#if count.get('a') !== undefined}
-            <span>{count.get('a')}</span>
+          <img width="44" height="44" src="/legend/agricultural.svg" alt="" />
+          {#if count.get("a") !== undefined}
+            <span>{count.get("a")}</span>
           {/if}
         </div>
         Landwirtschaft
       </div>
       <div>
         <div class="svg number">
-          <img width="44" height="44"  src="/legend/grassland.svg" alt="" />
-          {#if count.get('g') !== undefined}
-            <span>{count.get('g')}</span>
+          <img width="44" height="44" src="/legend/grassland.svg" alt="" />
+          {#if count.get("g") !== undefined}
+            <span>{count.get("g")}</span>
           {/if}
         </div>
         Grasland
       </div>
       <div>
         <div class="svg number">
-          <img width="44" height="44"  src="/legend/forest.svg" alt="" />
-          {#if count.get('f') !== undefined}
-            <span>{count.get('f')}</span>
+          <img width="44" height="44" src="/legend/forest.svg" alt="" />
+          {#if count.get("f") !== undefined}
+            <span>{count.get("f")}</span>
           {/if}
         </div>
         Wald
       </div>
       <div>
         <div class="svg number">
-          <img width="44" height="44"  src="/legend/residential.svg" alt="" />
-          {#if count.get('r') !== undefined}
-            <span>{count.get('r')}</span>
+          <img width="44" height="44" src="/legend/residential.svg" alt="" />
+          {#if count.get("r") !== undefined}
+            <span>{count.get("r")}</span>
           {/if}
         </div>
         Wohnraum
       </div>
       <div>
         <div class="svg number">
-          <img width="44" height="44"  src="/legend/industrial.svg" alt="" />
-          {#if count.get('i') !== undefined}
-            <span>{count.get('i')}</span>
+          <img width="44" height="44" src="/legend/industrial.svg" alt="" />
+          {#if count.get("i") !== undefined}
+            <span>{count.get("i")}</span>
           {/if}
         </div>
         Industrie

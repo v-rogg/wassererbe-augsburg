@@ -3,35 +3,35 @@
   import { SliderState } from "$lib/enums";
   import Button from "$lib/Primitives/Button.svelte";
 
-  export let title = '';
-	export let hotkey = '';
-	export let active = false;
+  export let title = "";
+  export let hotkey = "";
+  export let active = false;
   $: state = active ? SliderState.On : SliderState.Off;
 
-	const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher();
 </script>
 
 <div class="slider">
-	<span class:on={state === SliderState.On}>
-		<Button
-			{title}
-			{hotkey}
-			on:click={() => {
-				switch (state) {
-					case SliderState.Off:
-						state = SliderState.On;
-						dispatch('click', { state });
-						break;
-					case SliderState.On:
-						state = SliderState.Off;
-						dispatch('click', { state });
-						break;
-				}
-			}}
-		>
-			<slot />
-		</Button>
-	</span>
+  <span class:on={state === SliderState.On}>
+    <Button
+      {title}
+      {hotkey}
+      on:click={() => {
+        switch (state) {
+          case SliderState.Off:
+            state = SliderState.On;
+            dispatch("click", { state });
+            break;
+          case SliderState.On:
+            state = SliderState.Off;
+            dispatch("click", { state });
+            break;
+        }
+      }}
+    >
+      <slot />
+    </Button>
+  </span>
 </div>
 
 <style lang="sass">

@@ -109,7 +109,7 @@
       const duration = ((timeDifference - ($year - $yearLimits.min)) / timeDifference) * default_duration;
       console.log(duration);
       year.update((n) => (n = $yearLimits.max), {
-        duration: duration > 0 ? duration : default_duration
+        duration: duration > 0 ? duration : default_duration,
       });
       setTimeout(() => {
         $playback = PlaybackMode.Pause;

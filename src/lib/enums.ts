@@ -5,25 +5,25 @@ export enum PlaybackMode {
   FastForward,
   FastBackward,
   StepForward,
-  StepBackward
+  StepBackward,
 }
 
 export enum StoryDirection {
   Up,
-  Down
+  Down,
 }
 
 export enum SliderState {
   Off,
-  On
+  On,
 }
 
 export enum DisplayMode {
   Map,
-  Percent
+  Percent,
 }
 
 export enum InfoMode {
   Legend,
-  Story
+  Story,
 }

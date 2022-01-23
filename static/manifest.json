@@ -1,0 +1,25 @@
+{
+	"background_color": "#ffffff",
+	"theme_color": "#18A0FB",
+	"name": "Wassererbe Augsburg",
+	"short_name": "Wassererbe",
+	"display": "minimal-ui",
+	"start_url": "/",
+	"icons": [
+		{
+			"src": "favicon.png",
+			"sizes": "128x128",
+			"type": "image/png"
+		},
+		{
+			"src": "favicon.svg",
+			"sizes": "128x128",
+			"type": "image/svg"
+		},
+		{
+			"src": "favicon.webp",
+			"sizes": "128x128",
+			"type": "image/webp"
+		}
+	]
+}

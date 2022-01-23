@@ -1,0 +1,3 @@
+user-agent: *
+disallow: /legend/
+sitemap: https://wassererbe.de/sitemap.xml
