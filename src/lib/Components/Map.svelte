@@ -121,7 +121,9 @@
 
     switch ($mode) {
       case DisplayMode.Map:
-        waterAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-river)"));
+        if (!$displayReference) {
+          waterAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-river)"));
+        }
         waterBGAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-white)"));
         waterAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
         waterBGAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
@@ -139,6 +141,8 @@
               // waterBGAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
 
               if ($selectedStory >= 0) {
+                waterAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-river-dull)"));
+
                 if (!$stories[$selectedStory].zones.includes(`${combined}`)) {
                   _(`[id*='_${combined}']`).style.opacity = "0.2";
                 }

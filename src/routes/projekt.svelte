@@ -25,27 +25,21 @@
 
     <h2>Quellen</h2>
     <p>
-      Martin Kluger (2019). Welterbe Wasser. Context Verlag Augsburg.<br />
+      Martin Kluger (2019). Welterbe Wasser. Context Verlag Augsburg<br />
       <br />
-      Christoph Emmendörffer (2018). Wasser Kunst Augsburg: Die Reichsstadt in ihrem Element. 	Schnell & Steiner.<br />
+      Christoph Emmendörffer (2018). Wasser Kunst Augsburg: Die Reichsstadt in ihrem Element. 	Schnell & Steiner<br />
       <br />
-      Das Augsburger Wassermanagement-System (2022). <a href="https://wassersystem-augsburg.de/">https://wassersystem-augsburg.de/</a>.<br />
+      Das Augsburger Wassermanagement-System (2022). <a href="https://wassersystem-augsburg.de/">https://wassersystem-augsburg.de/</a><br />
       <br />
-      Geoportal Bayern (2022). <a href="https://geoportal.bayern.de/bayernatlas/?lang=de&topic=zeitr&bgLayer=atkis&E=640114.21&N=5359400.70&zoom=9&layers=zeitreihe_tk,zeitreihe_tk&layers_timestamp=18911231,18911231&layers_opacity=1,0&time=1891.">https://geoportal.bayern.de/bayernatlas/?lang=de&topic=zeitr&bgLayer=atkis&E=640114.21&N=5359400.70&zoom=9&layers=zeitreihe_tk,zeitreihe_tk&layers_timestamp=18911231,18911231&layers_opacity=1,0&time=1891.</a>.<br />
+      Geoportal Bayern (2022). <a href="https://geoportal.bayern.de/bayernatlas/?lang=de&topic=zeitr&bgLayer=atkis&E=640114.21&N=5359400.70&zoom=9&layers=zeitreihe_tk,zeitreihe_tk&layers_timestamp=18911231,18911231&layers_opacity=1,0&time=1891.">https://geoportal.bayern.de/bayernatlas/?lang=de&topic=zeitr&bgLayer=atkis&E=640114.21&N=5359400.70&zoom=9&layers=zeitreihe_tk,zeitreihe_tk&layers_timestamp=18911231,18911231&layers_opacity=1,0&time=1891.</a><br />
       <br />
-      Wikipedia (2022). Hauptstadtbach. https://de.wikipedia.org/wiki/Hauptstadtbach.<br />
-      <br />
-      Wikipedia (2022). Hochablass. https://de.wikipedia.org/wiki/Hochablass.<br />
-      <br />
-      Wikipedia (2022). Lechviertel. https://de.wikipedia.org/wiki/Augsburg-Lechviertel.<br />
-      <br />
-      Wikipedia (2022). Textilviertel. https://de.wikipedia.org/wiki/Augsburger_Textilviertel.<br />
-      <br />
-      Wikipedia (2022). Proviantbachquartier. https://de.wikipedia.org/wiki/Proviantbachquartier.<br />
-      <br />
-      Wikipedia (2022). Herrenbachviertel. https://de.wikipedia.org/wiki/Augsburg-Wolfram-_und_Herrenbachviertel<br />
-      <br />
-      Wikipedia (2022). Hochfeld. https://de.wikipedia.org/wiki/Augsburg-Hochfeld.<br />
+      Wikipedia (2022). Hauptstadtbach. <a href="https://de.wikipedia.org/wiki/Hauptstadtbach">https://de.wikipedia.org/wiki/Hauptstadtbach</a><br />
+      Wikipedia (2022). Hochablass. <a href="https://de.wikipedia.org/wiki/Hochablass">https://de.wikipedia.org/wiki/Hochablass</a><br />
+      Wikipedia (2022). Lechviertel. <a href="https://de.wikipedia.org/wiki/Augsburg-Lechviertel">https://de.wikipedia.org/wiki/Augsburg-Lechviertel</a><br />
+      Wikipedia (2022). Textilviertel. <a href="https://de.wikipedia.org/wiki/Augsburger_Textilviertel">https://de.wikipedia.org/wiki/Augsburger_Textilviertel</a><br />
+      Wikipedia (2022). Proviantbachquartier. <a href="https://de.wikipedia.org/wiki/Proviantbachquartier">https://de.wikipedia.org/wiki/Proviantbachquartier</a><br />
+      Wikipedia (2022). Herrenbachviertel. <a href="https://de.wikipedia.org/wiki/Augsburg-Wolfram-_und_Herrenbachviertel">https://de.wikipedia.org/wiki/Augsburg-Wolfram-_und_Herrenbachviertel</a><br />
+      Wikipedia (2022). Hochfeld. <a href="https://de.wikipedia.org/wiki/Augsburg-Hochfeld">https://de.wikipedia.org/wiki/Augsburg-Hochfeld</a>
     </p>
   </div>
 

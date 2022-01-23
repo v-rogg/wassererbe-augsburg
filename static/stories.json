@@ -1,6 +1,120 @@
 {
   "stories": [
     {
+      "name": "Hochablass und Hauptstadtbach",
+      "zones": [
+        "33-00",
+        "32-01",
+        "32-02",
+        "33-01",
+        "34-01",
+        "35-00",
+        "32-03",
+        "33-02",
+        "34-02",
+        "35-01",
+        "36-01",
+        "37-00",
+        "32-04",
+        "33-03",
+        "34-03",
+        "35-02",
+        "36-02",
+        "37-01",
+        "38-01",
+        "32-05",
+        "33-04",
+        "34-04",
+        "35-03",
+        "36-03",
+        "37-02",
+        "34-05",
+        "35-04",
+        "36-04",
+        "37-03",
+        "36-05",
+        "37-04",
+        "38-04"
+      ],
+      "references": [
+        "ref-wasserwerkhochablass",
+        "ref-hochablass",
+        "ref-hauptstadtbach",
+        "ref-neubach",
+        "ref-eiskanal"
+      ],
+      "usage": [
+        {
+          "start": 1500,
+          "end": 1878,
+          "usage": "none",
+          "description": "Der Hochablass ist ein Stauwehr im Lech und der Ursprung der Augsburger Kanäle und der damit verbunden Veränderungen. Von ihm zweigt der Hauptstadtbach ab, der die Kanäle im Lechviertel und im Textilviertel versorgt. Er wurde seit dem <span class='bold'>Mittelalter</span> genutzt, um die Region mit Waren und Rohstoffen zu versorgen und lieferte die Wasserkraft für Mühlen und Betriebe."
+        },
+        {
+          "start": 1878,
+          "end": 1971,
+          "usage": "industrial",
+          "description": "Zunächst zweigt der Hauptstadtbach zum Neubach ab und versorgt ab <span class='number bold'>1878</span> das Wasserwerk am Hochablass. Mit ihm begann die moderne Wasserversorgung und es löst die anderen Wasserwerke in Augsburg ab.<br /><br /> Rechts zweigt der Eiskanal ab, der als Umgehungskanal für Treibeis diente, damit dieses im Winter nicht die Turbinen des Wasserwerks am Hochablass beschädigte. Im Jahr <span class='number bold'>1971</span> wurde er in eine Kanustrecke für die Olympischen Sommerspiele umgebaut."
+        },
+        {
+          "start": 1973,
+          "end": 2022,
+          "usage": "residential",
+          "description": "Nach der Stilllegung <span class='number bold'>1973</span> wurde das Wasserwerk am Hochablass es zum heutigen Technikmuseum und Trinkwasserinformationszentrum.<br /><br /> <span class='number bold'>2019</span> wurde das Wasserwerk als ein wichtiger Teil der historischen Wasserwirtschaft in Augsburg zum UNESCO Welterbe ernannt."
+        }
+      ]
+    },
+    {
+      "name": "Lechviertel",
+      "zones": [
+        "04-08",
+        "05-07",
+        "04-09",
+        "05-08",
+        "06-08",
+        "07-07",
+        "04-10",
+        "05-09",
+        "06-09",
+        "07-08",
+        "08-08",
+        "04-11",
+        "05-10",
+        "06-10",
+        "07-09",
+        "08-09",
+        "09-08",
+        "05-11",
+        "06-11",
+        "07-10",
+        "08-10",
+        "09-09",
+        "06-12",
+        "07-11",
+        "08-11",
+        "09-10",
+        "08-12"
+      ],
+      "references": [
+        "ref-lechkanaele",
+        "ref-rotestor"
+      ],
+      "usage": [
+        {
+          "start": 1500,
+          "end": 1806,
+          "usage": "industrial",
+          "description": "Das Lechviertel ist geprägt von den drei Lechkanälen Vorderer, Mittlerer und Hinterer Lech. Sie dienten im <span class='bold'>Mittelalter</span> der Wasser- und Energieversorgung für die vielen Handwerksbetriebe (Feilenhauer, Weber und Gerber sowie Gold- und Silberschmieden), die mithilfe von Wasserrädern ihre Maschinen antrieben."
+        },
+        {
+          "start": 1806,
+          "end": 2022,
+          "usage": "residential",
+          "description": "Nach dem Verlust der Reichsfreiheit wurde ab <span class='number bold'>1806</span> aus dem Handwerkszentrum ein Wohnviertel für arme Bürger. Die Kanäle erfüllten dort bis <span class='number bold'>1910</span> die Aufgabe der Abwasserbeseitigung. Zwischen <span class='bold'><span class='number'>1930</span> bis <span class='number'>1960</span></span> wurden die Kanäle weitestgehend abgedeckt.<br /><br />Anfang der <span class='number bold'>1980er</span> Jahre wurde das Lechviertel umfassend saniert. Den alten Gassen bekamen ihr historisches Kopfsteinpflaster zurück und überdeckten Kanäle wurden wieder freigelegt.<br /><br />Viele der alten Handwerkerhäuser sind <span class='bold'>heute</span> begehrte Wohnadresse und in den verwinkelten Straßenzügen haben sich zahlreiche Boutiquen, Bars und Kneipen angesiedelt. Aus dem verrufenen Lechviertel ist eines von Augsburg beliebtesten Stadtviertel geworden."
+        }
+      ]
+    },
+    {
       "name": "Textilviertel",
       "zones": [
         "10-11",
@@ -100,7 +214,7 @@
           "start": 1820,
           "end": 1957,
           "usage": "industrial",
-          "description": "Im <span class='bold'>19. Jahrhundert</span> verlagerte sich die Textilindustrie, aufgrund von Platzmangel, außerhalb der Stadtmauern. Die dort verlaufenden Lechkanäle lieferten Wasserkraft, Brauchwasser und Abwasser. Auch Arbeiterwohnungen und Soziale Einrichtungen wurden hier geschaffen. Ab <span class='bold number'>1957</span> begann, durch die Globalisierung, der Niedergang der inländischen Textilindustrie"
+          "description": "Im <span class='bold'>19. Jahrhundert</span> verlagerte sich die Textilindustrie, aufgrund von Platzmangel, außerhalb der Stadtmauern. Die dort verlaufenden Lechkanäle lieferten Wasserkraft, Brauchwasser und Abwasser. Auch Arbeiterwohnungen und Soziale Einrichtungen wurden hier geschaffen.<br /><br /> Ab <span class='bold number'>1957</span> begann, durch die Globalisierung, der Niedergang der inländischen Textilindustrie"
         },
         {
           "start": 1957,
@@ -149,6 +263,96 @@
           "end": 2022,
           "usage": "residential",
           "description": "Die Häuser kamen in den darauffolgenden Jahrzehnten zunehmend herunter. Daher wurde das Quartier <span class='bold'>seit <span class='number'>2009</span></span> umfassend saniert und neuer Wohnraum geschaffen."
+        }
+      ]
+    },
+    {
+      "name": "Herrenbachviertel",
+      "zones": [
+        "09-07",
+        "10-07",
+        "10-08",
+        "11-07",
+        "12-07",
+        "11-08",
+        "12-08",
+        "13-07",
+        "14-07",
+        "15-06",
+        "13-08",
+        "14-08",
+        "15-07",
+        "16-07",
+        "17-06",
+        "16-08",
+        "17-07",
+        "18-07",
+        "19-06",
+        "20-06",
+        "18-08",
+        "19-07",
+        "20-07",
+        "21-06",
+        "22-06",
+        "21-07",
+        "22-07",
+        "23-06",
+        "24-06",
+        "25-05",
+        "23-07",
+        "24-07",
+        "25-06",
+        "26-06",
+        "27-05",
+        "23-08",
+        "24-08",
+        "25-07",
+        "26-07",
+        "27-06",
+        "28-06",
+        "29-05",
+        "25-08",
+        "26-08",
+        "27-07",
+        "28-07",
+        "29-06",
+        "30-06",
+        "31-05",
+        "26-09",
+        "27-08",
+        "28-08",
+        "29-07",
+        "30-07",
+        "31-06",
+        "32-06",
+        "33-05",
+        "28-09",
+        "29-08",
+        "30-08",
+        "31-07",
+        "32-07",
+        "33-06",
+        "34-06",
+        "35-05",
+        "31-08",
+        "32-08",
+        "33-07"
+      ],
+      "references": [
+        "ref-herrenbach"
+      ],
+      "usage": [
+        {
+          "start": 1500,
+          "end": 1955,
+          "usage": "grassland",
+          "description": "Der Stadtbezirk wurde nach dem gleichnamigen Kanal Herrenbach benannt. Dieser führt etwa 21 Kubikmeter Wasser pro Sekunde und speist die Kanäle des Textilviertels.<br /><br /> Bis in die <span class='bold'><span class='number'>1950</span>er</span> Jahre waren hier vor allem Gärtnereien zu finden"
+        },
+        {
+          "start": 1955,
+          "end": 2022,
+          "usage": "residential",
+          "description": "Ab <span class='number bold'>1960</span> wurden diese durch große Wohnanlagen verdrängt. Sie wurden im Zuge der Planung einer Trabantenstadt errichtet und prägen bis heute das Viertel. Parallel zum Herrenbach verläuft die Herrenbachstraße, dazwischen befindet sich die Kleingartenanlage Herrenbach."
         }
       ]
     }

@@ -8,7 +8,7 @@
 
   function recheck(w, h) {
     if (browser) {
-      const c = window.matchMedia("only screen and (max-width: 1500px)").matches || window.matchMedia("only screen and (max-height: 750px)").matches
+      const c = window.matchMedia("only screen and (max-width: 1300px)").matches || window.matchMedia("only screen and (max-height: 650px)").matches
       isMobile.set(c)
       return c
     } else {
@@ -29,9 +29,9 @@
 
 <svelte:window bind:innerHeight bind:innerWidth />
 
-<!--<span style="color: var(&#45;&#45;c-black)">-->
-<!--{$displayReference} {$isDarkMode}-->
-<!--</span>-->
+<span style="color: var(--c-black); position: absolute;">
+{$displayReference} {$isDarkMode} {innerWidth} {innerHeight} {check}
+</span>
 <slot/>
 
 <style lang="sass">
