@@ -10,10 +10,17 @@ export const stories = writable([]);
 export const selectedStory = writable(-1);
 export const playback = writable(PlaybackMode.Pause);
 export const storyDirection = writable(StoryDirection.Up);
-export const isMobile = readable(false, (set) => {
+export const isMobile = writable(false, (set) => {
   if (browser) {
-    set(window.matchMedia("only screen and (max-width: 760px)").matches);
+    set(window.matchMedia("only screen and (max-width: 1500px)").matches || window.matchMedia("only screen and (max-height: 750px)").matches);
   }
+  return () => {};
+});
+export const isDarkMode = writable(false, (set) => {
+  if (browser) {
+    set(window.matchMedia("only screen and (prefers-color-scheme: dark)").matches);
+  }
+  return () => {};
 });
 export const showTooltip = readable(true);
 export const mode = writable(DisplayMode.Map);

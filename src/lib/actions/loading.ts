@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import { _ } from "$lib/actions/helpers";
 
 export default function() {
   const waterSpeed = .1;
@@ -70,7 +71,15 @@ export default function() {
   for (let i = 0; i < zones; i++) {
     setTimeout(() => {
       const paddedStep = i.toString().padStart(3, "0");
-      gsap.to(`[id*='-${paddedStep}']`, {opacity: 1, duration: 1})
-    },  i + Math.random() * 10 / zones * 50000 + 3000)
+      const fill = _(`[id*='-${paddedStep}']`).style.fill;
+      console.log(fill);
+      _(`[id*='-${paddedStep}']`).style.fill = "var(--c-grey-10)";
+
+      setTimeout(() => {
+        _(`[id*='-${paddedStep}']`).style.fill = fill;
+      }, (i * 2 + 1000) * (Math.random()/10 + 1))
+
+      gsap.to(`[id*='-${paddedStep}']`, {opacity: 1, duration: 0, delay: .3})
+    },  (i) * (Math.random()/10 + 1) * 3)
   }
 }

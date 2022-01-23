@@ -1,7 +1,7 @@
 <script lang="ts">
   import Button from "$lib/Primitives/Button.svelte";
   import Slider from "$lib/Primitives/Slider.svelte";
-  import { playback, year, yearLimits, mode, infoMode } from "$lib/../stores";
+  import { playback, year, yearLimits, mode, infoMode, displayReference } from "$lib/../stores";
   import { PlaybackMode, DisplayMode, InfoMode } from "$lib/enums.ts";
   import { goto } from "$lib/actions/helpers";
   import { fade } from "svelte/transition";
@@ -188,7 +188,11 @@
   </div>
 
   <div class="legend">
-    <Button hotkey="R" title="Referenzkarten">
+    <Button hotkey="R" title="Referenzkarten" active={$displayReference}
+      on:click={() => {
+        $displayReference = !$displayReference
+      }}
+    >
       <svg height="1em"
            aria-hidden="true" focusable="false" data-prefix="fas" data-icon="signs-post"
            class="svg-inline--fa fa-signs-post" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">

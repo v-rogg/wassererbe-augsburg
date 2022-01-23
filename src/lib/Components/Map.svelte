@@ -1,7 +1,17 @@
 <script lang="ts">
   import { onDestroy, onMount } from "svelte";
   import { _ } from "$lib/actions/helpers";
-  import { countRegion, countTotal, mapData, mode, selectedStory, stories, year, yearChanges } from "$lib/../stores";
+  import {
+    countRegion,
+    countTotal,
+    displayReference,
+    mapData,
+    mode,
+    selectedStory,
+    stories,
+    year,
+    yearChanges
+  } from "$lib/../stores";
   import { DisplayMode } from "$lib/enums";
   import loading from "$lib/actions/loading";
   import { infoMode } from "../../stores";
@@ -9,8 +19,9 @@
   import { sineIn } from "svelte/easing";
 
   export let mapSVG;
-  let waterAll, waterBGAll;
-  let yearUnsub, modeUnsub, selectedStoryUnsub;
+  let waterAll, waterBGAll, referenceAll;
+  let yearUnsub, modeUnsub, selectedStoryUnsub, displayReferenceUnsub;
+  let loaded = false;
 
   let redrawHash = null;
 
@@ -87,7 +98,7 @@
 
     switch ($mode) {
       case DisplayMode.Map:
-        waterAll.forEach((e: HTMLElement) => (e.style.stroke = blue));
+        waterAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-river)"));
         waterBGAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-white)"));
         waterAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
         waterBGAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
@@ -101,8 +112,8 @@
               // console.log(`_${row_index}-${column_index}`);
 
               // _(`[id*='_${combined}']`).style.opacity = "1";
-              waterAll.forEach((e: HTMLElement) => (e.style.opacity = '1'));
-              waterBGAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
+              // waterAll.forEach((e: HTMLElement) => (e.style.opacity = '1'));
+              // waterBGAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
 
               if ($selectedStory >= 0) {
                 if (!$stories[$selectedStory].zones.includes(`${combined}`)) {
@@ -140,12 +151,49 @@
         });
         break;
     }
+    console.log('hello', loaded);
+
+    if (loaded) {
+      if ($displayReference) {
+        waterAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-river-dull)"));
+        referenceAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
+
+        $mapData.map.forEach((row, r_index) => {
+          row.forEach((entry, c_index) => {
+            try {
+              const column_index = c_index.toString().padStart(2, "0");
+              const row_index = r_index.toString().padStart(2, "0");
+              const combined = `${row_index}-${column_index}`
+
+              _(`[id*='_${combined}']`).style.opacity = "0.2";
+            } catch (e) {
+            }
+          });
+        });
+      } else {
+        waterAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-river)"));
+        referenceAll.forEach((e: HTMLElement) => (e.style.opacity = "0"));
+
+        $mapData.map.forEach((row, r_index) => {
+          row.forEach((entry, c_index) => {
+            try {
+              const column_index = c_index.toString().padStart(2, "0");
+              const row_index = r_index.toString().padStart(2, "0");
+              const combined = `${row_index}-${column_index}`
+
+              _(`[id*='_${combined}']`).style.opacity = "1";
+            } catch (e) {
+            }
+          });
+        });
+      }
+    }
   }
 
   function redraw() {
     const colorYear = findNextSmallerYear();
 
-    let newHash = String(colorYear)+String($infoMode)+String($mode)+String($selectedStory);
+    let newHash = String(colorYear)+String($infoMode)+String($mode)+String($selectedStory)+String($displayReference);
 
     if (newHash !== redrawHash) {
       recolor(colorYear)
@@ -159,6 +207,7 @@
     ready = true;
     waterAll = document.querySelectorAll(`[id*="_w"]`);
     waterBGAll = document.querySelectorAll(`[id*="_bgw"]`);
+    referenceAll = document.querySelectorAll(`[id*="ref"]`)
 
     waterAll.forEach((el) => {
       const len = el.getTotalLength();
@@ -178,12 +227,16 @@
     yearUnsub = year.subscribe(() => redraw());
     modeUnsub = mode.subscribe(() => redraw());
     selectedStoryUnsub = selectedStory.subscribe(() => redraw());
+    displayReferenceUnsub = displayReference.subscribe(() => redraw());
+
+    setTimeout(() => loaded = true, 5000)
   });
 
   onDestroy(() => {
     yearUnsub;
     modeUnsub;
     selectedStoryUnsub;
+    displayReferenceUnsub;
   });
 </script>
 
@@ -199,8 +252,11 @@
     width: 100%
     opacity: 1
 
+  :global(#map g)
+    transition: .2s linear
+    transition-property: fill, stroke, opacity
+
   :global(#map path)
-    opacity: 0
     transition: .2s linear
     transition-property: fill, stroke, opacity
 </style>

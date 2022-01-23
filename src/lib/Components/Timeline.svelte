@@ -453,9 +453,8 @@
 
   .reference_description
     position: absolute
-    bottom: 0
     left: 50%
-    transform: translateX(calc(-50% + 1rem))
+    transform: translate(calc(-50% + 1rem), 1.75em)
     font-size: $fs-micro
 
     &:before

@@ -38,6 +38,7 @@
 
 <script lang="ts">
   import Layout from "$lib/_Layout.svelte";
+  import LayoutMobile from "$lib/_LayoutMobile.svelte";
   import Map from "$lib/Components/Map.svelte";
   import { mapData, playback, stories, year, yearChanges, yearLimits, isMobile } from "../stores";
   import { onDestroy } from "svelte";
@@ -93,9 +94,6 @@
     }
   });
 
-  let innerHeight;
-  let innerWidth;
-
   onDestroy(() => unsubPlayback());
 </script>
 
@@ -103,9 +101,7 @@
   <title>Wassererbe Augsburg</title>
 </svelte:head>
 
-<svelte:window bind:innerHeight bind:innerWidth />
-{innerWidth} {innerHeight}
-
+{#if !$isMobile}
 <Layout>
   <Map {mapSVG} slot="center" />
   <Brand slot="top_left" />
@@ -116,3 +112,12 @@
   <StorySelector slot="mid_left" />
   <RightSide slot="mid_right" />
 </Layout>
+{:else}
+<LayoutMobile>
+  <Brand slot="header_left" />
+  <Map {mapSVG} slot="center"/>
+  <RightSide slot="lower_center" />
+  <Timeline slot="4th" />
+  <Controls slot="5th" />
+</LayoutMobile>
+{/if}
