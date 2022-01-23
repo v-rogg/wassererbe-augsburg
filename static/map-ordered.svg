@@ -668,7 +668,36 @@
     <path id="_w-s" d="M125.5,638.147L134.167,656.416L157.167,656.416L165.833,674.685L188.833,674.685" style="fill:none;stroke:none;stroke-width:5px;stroke-miterlimit:1.1;"/>
     <path id="_w-t" d="M188.833,674.685L197.5,656.416" style="fill:none;stroke:none;stroke-width:5px;stroke-miterlimit:1.1;"/>
     <path id="_w-u" d="M188.833,674.685L197.5,692.954" style="fill:none;stroke:none;stroke-width:5px;stroke-miterlimit:1.1;"/>
-    <g id="ref-hs" style="opacity: 0">
+    <g id="_hw-1" style="opacity: 0">
+        <path d="M39.166,638.109L62.166,638.109L70.834,656.378L93.834,656.378L102.5,674.647L125.5,674.647L134.167,692.916L157.166,692.916L165.833,711.185L188.833,711.185L197.5,692.916L220.5,692.916L229.166,711.185L252.166,711.185L260.833,729.454L283.833,729.454L292.5,711.193L315.5,711.185L324.166,692.916L347.166,692.916" style="fill:none;stroke:#18a0fb;stroke-width:10px;"/>
+        <path d="M62.166,638.109L70.834,619.84L93.834,619.84L102.5,638.109L125.5,638.109L134.167,619.84L157.166,619.84L165.833,638.109L188.833,638.109L197.5,656.378L220.5,656.378L229.166,638.109L252.166,638.109L260.833,656.378L283.833,656.378L292.5,638.109L315.5,638.109L324.166,619.84L315.5,601.571L324.166,583.302L347.166,583.302" style="fill:none;stroke:#18a0fb;stroke-width:5px;"/>
+        <path d="M125.5,638.109L134.167,656.378L157.166,656.378L165.833,674.647L188.833,674.647L197.5,656.378" style="fill:none;stroke:#18a0fb;stroke-width:5px;"/>
+        <path d="M188.833,674.647L197.5,692.916" style="fill:none;stroke:#18a0fb;stroke-width:5px;"/>
+    </g>
+    <g id="_hw-4" style="opacity: 0">
+        <path d="M632.166,528.495L640.833,510.226L663.833,510.226L672.5,491.957L695.5,491.957L704.166,510.226L727.166,510.226L735.833,491.957L758.833,491.957" style="fill:none;stroke:#18a0fb;stroke-width:5px;"/>
+    </g>
+    <g id="_hw-2" style="opacity: 0">
+        <path d="M482.778,126.577L505.778,126.577L514.167,108.308L537.167,108.308L545.833,126.578L568.833,126.578L577.5,144.846L600.5,144.847L609.166,163.116L632.166,163.116L640.833,144.846L663.833,144.846L672.5,126.577L695.499,126.577L704.166,108.308L727.166,108.308L735.833,126.577L758.833,126.578L767.5,108.308L790.5,108.308" style="fill:none;stroke:#18a0fb;stroke-width:5px;"/>
+        <path d="M473.833,108.065L482.778,126.578L473.833,144.847L482.778,163.116L505.778,163.116L514.167,181.384L537.167,181.384L545.833,199.654L568.833,199.654L577.5,181.384L600.5,181.384L609.166,163.116L632.166,163.116L640.833,181.384L663.833,181.384L672.5,163.116L695.5,163.116L704.166,181.385L727.166,181.385L735.833,163.116L758.833,163.116L767.5,181.385L790.5,181.384L799.166,163.116" style="fill:none;stroke:#18a0fb;stroke-width:5px;"/>
+        <path d="M695.5,163.116L704.053,144.846L727.166,144.604L735.833,126.577L758.833,126.576L767.5,144.846L790.5,144.847L799.166,126.578" style="fill:none;stroke:#18a0fb;stroke-width:5px;"/>
+    </g>
+    <g id="_hw-3" style="opacity: 0">
+        <path d="M632.166,236.192L640.833,217.922L663.833,217.922L672.5,199.654L695.5,199.654L704.166,181.384L727.166,181.384L735.833,199.654L727.166,217.922L735.718,235.949L758.833,235.949L767.5,254.46L758.833,272.729L767.5,290.998L790.5,290.998L799.166,272.729L822.166,272.729L830.833,290.998L853.833,290.998L862.5,272.729L885.5,272.729L894.167,254.46L917.167,254.46" style="fill:none;stroke:#18a0fb;stroke-width:5px;"/>
+        <path d="M577.5,327.536L600.5,327.536L609.166,345.805L632.166,345.805L640.833,327.536L663.833,327.536L672.5,345.805L695.5,345.805L704.166,327.536L727.166,327.536L735.833,309.268L758.833,309.267L767.5,327.536L790.5,327.536L799.166,345.805L822.166,345.805L830.833,327.536L853.833,327.536L862.5,309.267L885.5,309.267L894.167,290.999L917.167,290.999" style="fill:none;stroke:#18a0fb;stroke-width:5px;"/>
+        <path d="M577.5,400.612L600.5,400.612L609.166,382.343L632.166,382.343L640.833,364.074L663.833,364.073L672.5,345.806L695.5,345.805L704.166,364.073L727.166,364.074L735.833,345.806L758.833,345.806L767.5,364.073L790.5,364.074L799.166,345.806L822.166,345.805L830.833,364.074L853.833,364.074L862.5,345.806L885.5,345.806L894.167,327.536" style="fill:none;stroke:#18a0fb;stroke-width:5px;"/>
+        <path d="M577.5,400.612L568.833,418.881L577.5,437.15L600.5,437.15L609.166,418.881L632.166,418.881L640.833,400.613L663.833,400.613L672.5,382.343L695.5,382.343L704.166,400.612L727.166,400.612L735.833,382.344L758.833,382.343L767.5,364.073L790.501,364.074L799.166,382.343L822.166,382.343L830.833,364.074" style="fill:none;stroke:#18a0fb;stroke-width:5px;"/>
+        <path d="M577.5,437.15L568.833,455.424L577.5,473.688" style="fill:none;stroke:#18a0fb;stroke-width:5px;"/>
+        <path d="M600.5,510.226L609.166,528.495L632.166,528.495L640.833,510.226L663.833,510.226L672.5,491.957L695.5,491.957L704.166,510.226L727.166,510.226L735.833,491.957L758.833,491.957L767.5,473.688L790.501,473.687L799.166,455.424L822.166,455.424L830.833,437.15L853.833,437.15L862.5,418.881L853.833,400.612L862.5,382.343L885.5,382.343L894.167,364.073" style="fill:none;stroke:#18a0fb;stroke-width:5px;"/>
+    </g>
+    <g id="_hw-5" style="opacity: 0">
+        <path d="M450.833,217.922L473.833,217.922L482.778,199.655L473.833,181.384L482.778,163.116L505.778,163.116L514.167,181.384L537.167,181.384L545.833,199.654L568.833,199.654L577.5,217.922" style="fill:none;stroke:#18a0fb;stroke-width:5px;"/>
+        <path d="M347.166,583.302L355.83,565.039L347.166,546.764L355.83,528.501L347.166,510.226L355.833,491.957L347.166,473.688L355.83,455.43L378.833,455.424L387.5,437.15L378.833,418.882L387.5,400.612L378.833,382.343L387.5,364.074L410.5,364.074L419.166,345.805L410.5,327.536L419.166,309.267L410.5,290.999L419.166,272.729L442.166,272.729L450.833,254.46L473.833,254.46L482.778,236.191L505.778,236.192L514.167,217.923L537.167,217.922L545.833,199.654" style="fill:none;stroke:#18a0fb;stroke-width:5px;"/>
+        <path d="M387.5,437.15L410.5,437.15L419.166,418.881L442.166,418.881L450.833,400.612L473.833,400.612L482.778,382.343L505.778,382.343L514.167,364.074L537.167,364.112L545.833,345.805" style="fill:none;stroke:#18a0fb;stroke-width:5px;"/>
+        <path d="M355.83,565.039L378.833,565.033L387.5,546.764L410.5,546.764L419.166,565.039L442.166,565.033L450.833,546.764L473.833,546.764L482.778,528.495L505.778,528.495L514.167,546.764L537.167,546.764L545.833,528.495L568.833,528.495L577.5,510.226L600.5,510.226" style="fill:none;stroke:#18a0fb;stroke-width:5px;"/>
+        <path d="M577.5,510.226L568.833,491.957L577.5,473.688L568.833,455.424L577.5,437.15L568.833,418.881" style="fill:none;stroke:#18a0fb;stroke-width:5px;"/>
+    </g>
+    <g id="_ref-hs" style="opacity: 0">
         <path d="M496.941,181.18C496.941,182.803 495.624,184.12 494,184.12C492.376,184.12 491.059,182.803 491.059,181.18C491.059,179.556 492.376,178.239 494,178.239C495.624,178.239 496.941,179.556 496.941,181.18" style="fill:none;fill-rule:nonzero;stroke:var(--c-black);stroke-width:1px;"/>
         <path id="Auge1" d="M470.35,154.156C470.35,154.86 470.923,155.433 471.628,155.433C472.333,155.433 472.905,154.86 472.905,154.156C472.905,153.451 472.333,152.878 471.628,152.878C470.923,152.878 470.35,153.451 470.35,154.156" style="fill:#ff5e00;fill-rule:nonzero;"/>
         <path id="Nase1" d="M477.588,148.319C477.169,148.447 476.898,148.833 476.898,149.251C476.898,149.344 476.911,149.44 476.941,149.534C476.941,149.534 480.857,162.406 481.51,164.548C479.712,164.548 475.242,164.547 475.242,164.547C474.703,164.547 474.267,164.983 474.267,165.521C474.267,166.059 474.703,166.494 475.241,166.496L482.825,166.497C483.134,166.497 483.424,166.351 483.607,166.103C483.791,165.854 483.848,165.534 483.756,165.238L478.806,148.967C478.648,148.452 478.104,148.162 477.588,148.319" style="fill:#ff5e00;fill-rule:nonzero;"/>
@@ -682,103 +711,103 @@
         <path id="Nase3" d="M510.307,148.319C510.727,148.447 510.998,148.833 510.998,149.251C510.998,149.344 510.984,149.44 510.955,149.534C510.955,149.534 507.038,162.406 506.385,164.548C508.183,164.548 512.654,164.547 512.654,164.547C513.193,164.547 513.628,164.983 513.628,165.521C513.628,166.059 513.193,166.494 512.655,166.496L505.071,166.497C504.762,166.497 504.472,166.351 504.288,166.103C504.105,165.854 504.048,165.534 504.138,165.238L509.09,148.967C509.247,148.452 509.791,148.162 510.307,148.319" style="fill:#ff5e00;fill-rule:nonzero;"/>
         <path id="Auge4" d="M515.094,154.156C515.094,154.86 515.668,155.433 516.372,155.433C517.076,155.433 517.65,154.86 517.65,154.156C517.65,153.451 517.076,152.878 516.372,152.878C515.668,152.878 515.094,153.451 515.094,154.156" style="fill:#ff5e00;fill-rule:nonzero;"/>
     </g>
-    <g id="ref-siebentischwald" style="opacity: 0">
+    <g id="_ref-siebentischwald" style="opacity: 0">
         <text x="94.035px" y="484.875px" style="font-family:'IBM Plex Sans', sans-serif;font-size:14px;fill:var(--c-black);">Siebentischwald</text>
         <path d="M148.608,492C148.608,493.624 147.291,494.941 145.667,494.941C144.043,494.941 142.726,493.624 142.726,492C142.726,490.376 144.043,489.059 145.667,489.059C147.291,489.059 148.608,490.376 148.608,492" style="fill:none;fill-rule:nonzero;stroke:var(--c-black);stroke-width:1px;"/>
     </g>
-    <g id="ref-rathaus" style="opacity: 0">
+    <g id="_ref-rathaus" style="opacity: 0">
         <text x="753.296px" y="46.414px" style="font-family:'IBM Plex Sans', sans-serif;font-size:14px;fill:var(--c-black);">Rathaus</text>
         <path d="M781.941,53.538C781.941,55.162 780.624,56.479 779,56.479C777.376,56.479 776.059,55.162 776.059,53.538C776.059,51.915 777.376,50.598 779,50.598C780.624,50.598 781.941,51.915 781.941,53.538" style="fill:none;fill-rule:nonzero;stroke:var(--c-black);stroke-width:1px;"/>
     </g>
-    <g id="ref-fuggerei" style="opacity: 0">
+    <g id="_ref-fuggerei" style="opacity: 0">
         <text x="751.952px" y="192.568px" style="font-family:'IBM Plex Sans', sans-serif;font-size:14px;fill:var(--c-black);">Fuggerei</text>
         <path d="M781.941,199.693C781.941,201.316 780.624,202.633 779,202.633C777.376,202.633 776.059,201.316 776.059,199.693C776.059,198.069 777.376,196.752 779,196.752C780.624,196.752 781.941,198.069 781.941,199.693" style="fill:none;fill-rule:nonzero;stroke:var(--c-black);stroke-width:1px;"/>
     </g>
-    <g id="ref-unteresbrunnenwerk" style="opacity: 0">
+    <g id="_ref-unteresbrunnenwerk" style="opacity: 0">
         <text x="808.683px" y="100.978px" style="font-family:'IBM Plex Sans', sans-serif;font-size:14px;fill:var(--c-black);">Untere Brunnenwerk</text>
         <path d="M876.941,108.102C876.941,109.726 875.624,111.043 874,111.043C872.376,111.043 871.059,109.726 871.059,108.102C871.059,106.479 872.376,105.162 874,105.162C875.624,105.162 876.941,106.479 876.941,108.102" style="fill:none;fill-rule:nonzero;stroke:var(--c-black);stroke-width:1px;"/>
     </g>
-    <g id="ref-lech" style="opacity: 0">
+    <g id="_ref-lech" style="opacity: 0">
         <text x="827.143px" y="502.901px" style="font-family:'IBM Plex Sans', sans-serif;font-weight:600;font-size:14px;fill:var(--c-black);">Lech</text>
         <path d="M845.274,510.026C845.274,511.649 843.957,512.966 842.333,512.966C840.709,512.966 839.392,511.649 839.392,510.026C839.392,508.402 840.709,507.085 842.333,507.085C843.957,507.085 845.274,508.402 845.274,510.026" style="fill:var(--c-black);fill-rule:nonzero;"/>
     </g>
-    <g id="ref-kaufbach" style="opacity: 0">
+    <g id="_ref-kaufbach" style="opacity: 0">
         <text x="320.14px" y="474.741px" style="font-family:'IBM Plex Sans', sans-serif;font-weight:600;font-size:14px;fill:var(--c-black);">Kaufbach</text>
         <path d="M354.048,481.866C354.048,483.49 352.732,484.807 351.107,484.807C349.484,484.807 348.167,483.49 348.167,481.866C348.167,480.242 349.484,478.925 351.107,478.925C352.732,478.925 354.048,480.242 354.048,481.866" style="fill:var(--c-black);fill-rule:nonzero;"/>
     </g>
-    <g id="ref-stadtbach" style="opacity: 0">
+    <g id="_ref-stadtbach" style="opacity: 0">
         <text x="967.249px" y="156.029px" style="font-family:'IBM Plex Sans', sans-serif;font-weight:600;font-size:14px;fill:var(--c-black);">Stadtbach</text>
         <path d="M1003.61,163.153C1003.61,164.777 1002.29,166.094 1000.67,166.094C999.043,166.094 997.727,164.777 997.727,163.153C997.727,161.529 999.043,160.212 1000.67,160.212C1002.29,160.212 1003.61,161.529 1003.61,163.153" style="fill:var(--c-black);fill-rule:nonzero;"/>
     </g>
-    <g id="ref-stadtgraben" style="opacity: 0">
+    <g id="_ref-stadtgraben" style="opacity: 0">
         <text x="805.281px" y="265.645px" style="font-family:'IBM Plex Sans', sans-serif;font-weight:600;font-size:14px;fill:var(--c-black);">Äußerer Stadtgraben</text>
         <path d="M876.941,272.77C876.941,274.393 875.624,275.71 874,275.71C872.376,275.71 871.059,274.393 871.059,272.77C871.059,271.146 872.376,269.829 874,269.829C875.624,269.829 876.941,271.146 876.941,272.77" style="fill:var(--c-black);fill-rule:nonzero;"/>
     </g>
-    <g id="ref-lochbach" style="opacity: 0">
+    <g id="_ref-lochbach" style="opacity: 0">
         <text x="146.288px" y="119.491px" style="font-family:'IBM Plex Sans', sans-serif;font-weight:600;font-size:14px;fill:var(--c-black);">Lochbach</text>
         <path d="M180.274,126.616C180.274,128.239 178.957,129.556 177.333,129.556C175.709,129.556 174.392,128.239 174.392,126.616C174.392,124.992 175.709,123.675 177.333,123.675C178.957,123.675 180.274,124.992 180.274,126.616" style="fill:var(--c-black);fill-rule:nonzero;"/>
     </g>
-    <g id="ref-brunnenbach" style="opacity: 0">
+    <g id="_ref-brunnenbach" style="opacity: 0">
         <text x="260.418px" y="192.568px" style="font-family:'IBM Plex Sans', sans-serif;font-weight:600;font-size:14px;fill:var(--c-black);">Brunnenbach</text>
         <path d="M306.941,199.693C306.941,201.316 305.624,202.633 304,202.633C302.376,202.633 301.059,201.316 301.059,199.693C301.059,198.069 302.376,196.752 304,196.752C305.624,196.752 306.941,198.069 306.941,199.693" style="fill:var(--c-black);fill-rule:nonzero;"/>
     </g>
-    <g id="ref-neubach" style="opacity: 0">
+    <g id="_ref-neubach" style="opacity: 0">
         <text x="116.792px" y="612.517px" style="font-family:'IBM Plex Sans', sans-serif;font-weight:600;font-size:14px;fill:var(--c-black);">Neubach</text>
         <path d="M148.608,619.641C148.608,621.265 147.291,622.582 145.667,622.582C144.043,622.582 142.726,621.265 142.726,619.641C142.726,618.018 144.043,616.701 145.667,616.701C147.291,616.701 148.608,618.018 148.608,619.641" style="fill:var(--c-black);fill-rule:nonzero;"/>
     </g>
-    <g id="ref-hochablass" style="opacity: 0">
+    <g id="_ref-hochablass" style="opacity: 0">
         <text x="25.584px" y="630.614px" style="font-family:'IBM Plex Sans', sans-serif;font-size:14px;fill:var(--c-black);">Hochablass</text>
         <path d="M65.107,637.739C65.107,639.363 63.791,640.679 62.166,640.679C60.542,640.679 59.226,639.363 59.226,637.739C59.226,636.115 60.542,634.798 62.166,634.798C63.791,634.798 65.107,636.115 65.107,637.739" style="fill:none;fill-rule:nonzero;stroke:var(--c-black);stroke-width:1px;"/>
     </g>
-    <g id="ref-hauptstadtbach" style="opacity: 0">
+    <g id="_ref-hauptstadtbach" style="opacity: 0">
         <text x="267.339px" y="622.062px" style="font-family:'IBM Plex Sans', sans-serif;font-weight:600;font-size:14px;fill:var(--c-black);">Hauptstadtbach</text>
         <path d="M322.723,629.187C322.723,630.811 321.407,632.127 319.782,632.127C318.158,632.127 316.842,630.811 316.842,629.187C316.842,627.563 318.158,626.246 319.782,626.246C321.407,626.246 322.723,627.563 322.723,629.187" style="fill:var(--c-black);fill-rule:nonzero;"/>
     </g>
-    <g id="ref-eiskanal" style="opacity: 0">
+    <g id="_ref-eiskanal" style="opacity: 0">
         <text x="138.686px" y="690.583px" style="font-family:'IBM Plex Sans', sans-serif;font-weight:600;font-size:14px;fill:var(--c-black);">Eiskanal</text>
         <path d="M169.179,674.685C169.179,676.308 167.863,677.625 166.238,677.625C164.614,677.625 163.298,676.308 163.298,674.685C163.298,673.061 164.614,671.744 166.238,671.744C167.863,671.744 169.179,673.061 169.179,674.685" style="fill:var(--c-black);fill-rule:nonzero;"/>
     </g>
-    <g id="ref-rotestor" style="opacity: 0">
+    <g id="_ref-rotestor" style="opacity: 0">
         <text x="464.334px" y="100.978px" style="font-family:'IBM Plex Sans', sans-serif;font-size:14px;fill:var(--c-black);">Rotes Tor</text>
         <path d="M496.941,108.102C496.941,109.726 495.624,111.043 494,111.043C492.376,111.043 491.059,109.726 491.059,108.102C491.059,106.479 492.376,105.162 494,105.162C495.624,105.162 496.941,106.479 496.941,108.102" style="fill:none;fill-rule:nonzero;stroke:var(--c-black);stroke-width:1px;"/>
     </g>
-    <g id="ref-lechkanaele" style="opacity: 0">
+    <g id="_ref-lechkanaele" style="opacity: 0">
         <text x="710.31px" y="119.491px" style="font-family:'IBM Plex Sans', sans-serif;font-weight:600;font-size:14px;fill:var(--c-black);">Lechkanäle</text>
         <path d="M750.274,126.616C750.274,128.239 748.957,129.556 747.333,129.556C745.709,129.556 744.392,128.239 744.392,126.616C744.392,124.992 745.709,123.675 747.333,123.675C748.957,123.675 750.274,124.992 750.274,126.616" style="fill:var(--c-black);fill-rule:nonzero;"/>
     </g>
-    <g id="ref-glaspalast" style="opacity: 0">
+    <g id="_ref-glaspalast" style="opacity: 0">
         <text x="650.826px" y="466.363px" style="font-family:'IBM Plex Sans', sans-serif;font-size:14px;fill:var(--c-black);">Glaspalast</text>
         <path d="M686.941,473.488C686.941,475.111 685.624,476.428 684,476.428C682.376,476.428 681.059,475.111 681.059,473.488C681.059,471.864 682.376,470.547 684,470.547C685.624,470.547 686.941,471.864 686.941,473.488" style="fill:none;fill-rule:nonzero;stroke:var(--c-black);stroke-width:1px;"/>
     </g>
-    <g id="ref-proviantbach" style="opacity: 0">
+    <g id="_ref-proviantbach" style="opacity: 0">
         <text x="672.582px" y="502.901px" style="font-family:'IBM Plex Sans', sans-serif;font-weight:600;font-size:14px;fill:var(--c-black);">Proviantbach</text>
         <path d="M718.608,510.026C718.608,511.649 717.291,512.966 715.667,512.966C714.043,512.966 712.726,511.649 712.726,510.026C712.726,508.402 714.043,507.085 715.667,507.085C717.291,507.085 718.608,508.402 718.608,510.026" style="fill:var(--c-black);fill-rule:nonzero;"/>
     </g>
-    <g id="ref-herrenbach" style="opacity: 0">
+    <g id="_ref-herrenbach" style="opacity: 0">
         <text x="424.085px" y="539.44px" style="font-family:'IBM Plex Sans', sans-serif;font-weight:600;font-size:14px;fill:var(--c-black);">Herrenbach</text>
         <path d="M465.274,546.564C465.274,548.188 463.957,549.505 462.333,549.505C460.709,549.505 459.392,548.188 459.392,546.564C459.392,544.941 460.709,543.624 462.333,543.624C463.957,543.624 465.274,544.941 465.274,546.564" style="fill:var(--c-black);fill-rule:nonzero;"/>
     </g>
-    <g id="ref-hanreibach" style="opacity: 0">
+    <g id="_ref-hanreibach" style="opacity: 0">
         <text x="678.231px" y="392.744px" style="font-family:'IBM Plex Sans', sans-serif;font-weight:600;font-size:14px;fill:var(--c-black);">Hanreibach</text>
         <path d="M718.608,400.411C718.608,402.034 717.291,403.351 715.667,403.351C714.043,403.351 712.726,402.034 712.726,400.411C712.726,398.787 714.043,397.47 715.667,397.47C717.291,397.47 718.608,398.787 718.608,400.411" style="fill:var(--c-black);fill-rule:nonzero;"/>
     </g>
-    <g id="ref-fichtelbach" style="opacity: 0">
+    <g id="_ref-fichtelbach" style="opacity: 0">
         <text x="582.615px" y="375.26px" style="font-family:'IBM Plex Sans', sans-serif;font-weight:600;font-size:14px;fill:var(--c-black);">Fichtelbach</text>
         <path d="M623.608,382.385C623.608,384.008 622.291,385.325 620.667,385.325C619.043,385.325 617.726,384.008 617.726,382.385C617.726,380.761 619.043,379.444 620.667,379.444C622.291,379.444 623.608,380.761 623.608,382.385" style="fill:var(--c-black);fill-rule:nonzero;"/>
     </g>
-    <g id="ref-textilmuseum" style="opacity: 0">
+    <g id="_ref-textilmuseum" style="opacity: 0">
         <text x="576.273px" y="320.209px" style="font-family:'IBM Plex Sans', sans-serif;font-size:14px;fill:var(--c-black);">Textilmuseum</text>
         <path d="M623.608,327.334C623.608,328.957 622.291,330.274 620.667,330.274C619.043,330.274 617.726,328.957 617.726,327.334C617.726,325.71 619.043,324.393 620.667,324.393C622.291,324.393 623.608,325.71 623.608,327.334" style="fill:none;fill-rule:nonzero;stroke:var(--c-black);stroke-width:1px;"/>
     </g>
-    <g id="ref-fabrikschloss" style="opacity: 0">
+    <g id="_ref-fabrikschloss" style="opacity: 0">
         <text x="577.792px" y="539.44px" style="font-family:'IBM Plex Sans', sans-serif;font-size:14px;fill:var(--c-black);">Fabrikschloss</text>
         <path d="M623.608,546.564C623.608,548.188 622.291,549.505 620.667,549.505C619.043,549.505 617.726,548.188 617.726,546.564C617.726,544.941 619.043,543.624 620.667,543.624C622.291,543.624 623.608,544.941 623.608,546.564" style="fill:none;fill-rule:nonzero;stroke:var(--c-black);stroke-width:1px;"/>
     </g>
-    <g id="ref-schaefflerbach" style="opacity: 0">
+    <g id="_ref-schaefflerbach" style="opacity: 0">
         <text x="686.146px" y="311.08px" style="font-family:'IBM Plex Sans', sans-serif;font-weight:600;font-size:14px;fill:var(--c-black);">Schäfflerbach</text>
         <path d="M734.439,318.204C734.439,319.828 733.122,321.145 731.498,321.145C729.874,321.145 728.558,319.828 728.558,318.204C728.558,316.58 729.874,315.264 731.498,315.264C733.122,315.264 734.439,316.58 734.439,318.204" style="fill:var(--c-black);fill-rule:nonzero;"/>
     </g>
-    <g id="ref-wasserwerkhochablass" style="opacity: 0">
+    <g id="_ref-wasserwerkhochablass" style="opacity: 0">
         <path d="M148.608,637.739C148.608,639.363 147.291,640.679 145.667,640.679C144.043,640.679 142.726,639.363 142.726,637.739C142.726,636.115 144.043,634.798 145.667,634.798C147.291,634.798 148.608,636.115 148.608,637.739" style="fill:none;fill-rule:nonzero;stroke:var(--c-black);stroke-width:1px;"/>
         <text x="68.863px" y="653.777px" style="font-family:'IBM Plex Sans', sans-serif;font-size:14px;fill:var(--c-black);">Wasserwerk Hochablass</text>
     </g>

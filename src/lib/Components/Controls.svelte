@@ -1,7 +1,7 @@
 <script lang="ts">
   import Button from "$lib/Primitives/Button.svelte";
   import Slider from "$lib/Primitives/Slider.svelte";
-  import { playback, year, yearLimits, mode, infoMode, displayReference, yearChanges } from "$lib/../stores";
+  import { playback, year, yearLimits, mode, infoMode, displayReference, firstLoad } from "$lib/../stores";
   import { PlaybackMode, DisplayMode, InfoMode } from "$lib/enums.ts";
   import { findNextBiggerYear, findNextSmallerYear, goto } from "$lib/actions/helpers";
   import { fade } from "svelte/transition";
@@ -15,7 +15,7 @@
 </script>
 
 {#if ready}
-<section  in:fade={{ duration: 10, delay: 4500, ease: sineOut }} out:fade={{ duration: 500, ease: sineIn }}>
+<section  in:fade={{ duration: 1000, delay: $firstLoad ? 4500 : 0, ease: sineOut }} out:fade={{ duration: 500, ease: sineIn }}>
   <div class="slider">
     <Slider
       title="%-Ansicht"

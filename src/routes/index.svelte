@@ -40,7 +40,14 @@
   import Layout from "$lib/_Layout.svelte";
   import LayoutMobile from "$lib/_LayoutMobile.svelte";
   import Map from "$lib/Components/Map.svelte";
-  import { mapData, playback, stories, year, yearChanges, yearLimits, isMobile } from "../stores";
+  import {
+    mapData,
+    playback,
+    stories,
+    year,
+    yearChanges,
+    yearLimits,
+  } from "../stores";
   import { onDestroy } from "svelte";
   import { PlaybackMode } from "$lib/enums";
   import Timeline from "$lib/Components/Timeline.svelte";

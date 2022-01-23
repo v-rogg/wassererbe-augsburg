@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import { mapLoaded } from "../../stores";
 
 export default function() {
   const waterSpeed = .1;
@@ -74,4 +75,6 @@ export default function() {
       gsap.to(`[id*='-${paddedStep}']`, {opacity: 1, duration: 0.2})
     },  i + Math.random() * 10 / zones * 50000 + 3000)
   }
+
+  setTimeout(() => mapLoaded.set(true), 5000)
 }

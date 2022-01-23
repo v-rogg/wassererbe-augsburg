@@ -16,12 +16,6 @@ export const isMobile = writable(false, (set) => {
   }
   return () => {};
 });
-export const isDarkMode = writable(false, (set) => {
-  if (browser) {
-    set(window.matchMedia("only screen and (prefers-color-scheme: dark)").matches);
-  }
-  return () => {};
-});
 export const showTooltip = readable(true);
 export const mode = writable(DisplayMode.Map);
 export const defaultYearChangeDuration = 2500;
@@ -37,3 +31,5 @@ export const countTotal = writable(new Map)
 export const countRegion = writable(new Map)
 export const infoMode = writable(InfoMode.Legend)
 export const displayReference = writable(false)
+export const firstLoad = writable(true);
+export const mapLoaded = writable(false);

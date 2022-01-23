@@ -1,7 +1,8 @@
 <script lang="ts">
   import { DisplayMode } from "$lib/enums";
-  import { mode, isMobile, displayReference, isDarkMode } from "../stores";
+  import { mode, isMobile, displayReference, firstLoad } from "../stores";
   import { browser } from "$app/env";
+  import { onMount } from "svelte";
 
   let innerHeight;
   let innerWidth;
@@ -17,6 +18,12 @@
   }
 
   $: check = recheck(innerWidth, innerHeight)
+
+  onMount(() => {
+    setTimeout(() => {
+      $firstLoad = false;
+    }, 2000);
+  })
 </script>
 
 <svelte:head>
@@ -30,7 +37,7 @@
 <svelte:window bind:innerHeight bind:innerWidth />
 
 <span style="color: var(--c-black); position: absolute;">
-{$displayReference} {$isDarkMode} {innerWidth} {innerHeight} {check}
+{$displayReference} {innerWidth} {innerHeight} {check} {$firstLoad}
 </span>
 <slot/>
 

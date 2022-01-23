@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { selectedStory, stories, storyDirection, infoMode, displayReference } from "$lib/../stores";
+  import { selectedStory, stories, storyDirection, infoMode, displayReference, firstLoad } from "$lib/../stores";
   import { onDestroy, onMount } from "svelte";
   import { fade } from "svelte/transition";
   import { StoryDirection, InfoMode } from "$lib/enums";
@@ -18,7 +18,7 @@
 </script>
 
 {#if ready}
-<section  in:fade={{ duration: 1000, delay: 4500, ease: sineOut }} out:fade={{ duration: 500, ease: sineIn }}>
+<section  in:fade={{ duration: 1000, delay: $firstLoad ? 4500 : 0, ease: sineOut }} out:fade={{ duration: 500, ease: sineIn }}>
   <p class="description">
     Erfahre wie sich die Stadt seit Ende der Neuzeit dank intensiver Wassernutzung verändert hat.
   </p>

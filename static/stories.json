@@ -37,11 +37,12 @@
         "38-04"
       ],
       "references": [
-        "ref-wasserwerkhochablass",
-        "ref-hochablass",
-        "ref-hauptstadtbach",
-        "ref-neubach",
-        "ref-eiskanal"
+        "_ref-wasserwerkhochablass",
+        "_ref-hochablass",
+        "_ref-hauptstadtbach",
+        "_ref-neubach",
+        "_ref-eiskanal",
+        "_hw-1"
       ],
       "usage": [
         {
@@ -96,8 +97,9 @@
         "08-12"
       ],
       "references": [
-        "ref-lechkanaele",
-        "ref-rotestor"
+        "_ref-lechkanaele",
+        "_ref-rotestor",
+        "_hw-2"
       ],
       "usage": [
         {
@@ -195,13 +197,14 @@
         "31-10"
       ],
       "references": [
-        "ref-fabrikschloss",
-        "ref-textilmuseum",
-        "ref-glaspalast",
-        "ref-proviantbach",
-        "ref-hanreibach",
-        "ref-fichtelbach",
-        "ref-schaefflerbach"
+        "_ref-fabrikschloss",
+        "_ref-textilmuseum",
+        "_ref-glaspalast",
+        "_ref-proviantbach",
+        "_ref-hanreibach",
+        "_ref-fichtelbach",
+        "_ref-schaefflerbach",
+        "_hw-3"
       ],
       "usage": [
         {
@@ -242,8 +245,9 @@
         "29-11"
       ],
       "references": [
-        "ref-proviantbach",
-        "ref-glaspalast"
+        "_ref-proviantbach",
+        "_ref-glaspalast",
+        "_hw-4"
       ],
       "usage": [
         {
@@ -339,7 +343,8 @@
         "33-07"
       ],
       "references": [
-        "ref-herrenbach"
+        "_ref-herrenbach",
+        "_hw-5"
       ],
       "usage": [
         {

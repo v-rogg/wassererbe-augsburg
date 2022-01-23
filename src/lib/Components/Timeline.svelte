@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { playback, year, yearChanges, yearLimits, selectedStory, stories } from "../../stores";
+  import { playback, year, yearChanges, yearLimits, selectedStory, stories, firstLoad } from "../../stores";
   import { PlaybackMode } from "$lib/enums";
   import { _, goto, gotoElement } from "$lib/actions/helpers";
   import { onMount } from "svelte";
@@ -63,7 +63,7 @@
 </script>
 
 {#if ready}
-<div class="timeline" in:fade={{ duration: 1000, delay: 4500, ease: sineOut }} out:fade={{ duration: 500, ease: sineIn }}>
+<div class="timeline" in:fade={{ duration: 1000, delay: $firstLoad ? 4500 : 0, ease: sineOut }} out:fade={{ duration: 500, ease: sineIn }}>
   <!--Story Usage-->
   {#each $stories as story, index}
     {#if $selectedStory === index}

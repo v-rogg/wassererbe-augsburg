@@ -4,22 +4,22 @@
   import {
     countRegion,
     countTotal,
-    displayReference,
+    displayReference, firstLoad,
     mapData,
     mode,
     selectedStory,
     stories,
     year,
+    infoMode, mapLoaded
   } from "$lib/../stores";
   import { DisplayMode } from "$lib/enums";
   import loading from "$lib/actions/loading";
-  import { infoMode } from "../../stores";
   import { fade } from "svelte/transition";
   import { sineIn } from "svelte/easing";
   import gsap from "gsap";
 
   export let mapSVG;
-  let waterAll, waterBGAll, referenceAll;
+  let waterAll, waterBGAll, referenceAll, waterHelpers;
   let yearUnsub, modeUnsub, selectedStoryUnsub, displayReferenceUnsub;
   let loaded = false;
   let riverShow = false;
@@ -83,7 +83,7 @@
   async function recolor(colorYear: number) {
     const count = countZones();
 
-    if (loaded) {
+    if ($mapLoaded) {
       if ($displayReference) {
         waterAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-river-dull)"));
         referenceAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
@@ -124,9 +124,20 @@
         if (!$displayReference) {
           waterAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-river)"));
         }
+
+        if ($mapLoaded) {
+          waterAll.forEach((el) => {
+            el.style.strokeDashoffset = 0;
+          });
+          waterBGAll.forEach((el) => {
+            el.style.strokeDashoffset = 0;
+          });
+        }
+
         waterBGAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-white)"));
         waterAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
         waterBGAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
+        waterHelpers.forEach((e: HTMLElement) => (e.style.opacity = "0"));
 
         $mapData.map.forEach((row, r_index) => {
           row.forEach((entry, c_index) => {
@@ -139,9 +150,14 @@
               // _(`[id*='_${combined}']`).style.opacity = "1";
               // waterAll.forEach((e: HTMLElement) => (e.style.opacity = '1'));
               // waterBGAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
+              if ($mapLoaded) {
+                _(`[id*='_${combined}']`).style.opacity = "1";
+                console.log(loaded);
+              }
 
               if ($selectedStory >= 0) {
                 waterAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-river-dull)"));
+
 
                 if (!$stories[$selectedStory].zones.includes(`${combined}`)) {
                   _(`[id*='_${combined}']`).style.opacity = "0.2";
@@ -225,7 +241,8 @@
     ready = true;
     waterAll = document.querySelectorAll(`[id*="_w"]`);
     waterBGAll = document.querySelectorAll(`[id*="_bgw"]`);
-    referenceAll = document.querySelectorAll(`[id*="ref"]`)
+    referenceAll = document.querySelectorAll(`[id*="_ref"]`);
+    waterHelpers = document.querySelectorAll(`[id*="_hw"]`);
 
     waterAll.forEach((el) => {
       const len = el.getTotalLength();
@@ -239,15 +256,23 @@
       el.style.strokeDasharray = len;
       el.style.strokeDashoffset = len;
       el.style.stroke = "var(--c-white)"
-    })
+    });
 
-    loading();
+    referenceAll.forEach((el) => {
+      el.style.opacity = "0"
+    });
+
+    waterHelpers.forEach((el) => {
+      el.style.opacity = "0"
+    });
+
+    if ($firstLoad) {
+      loading();
+    }
     yearUnsub = year.subscribe(() => redraw());
     modeUnsub = mode.subscribe(() => redraw());
     selectedStoryUnsub = selectedStory.subscribe(() => redraw());
     displayReferenceUnsub = displayReference.subscribe(() => redraw());
-
-    setTimeout(() => loaded = true, 5000)
   });
 
   onDestroy(() => {
