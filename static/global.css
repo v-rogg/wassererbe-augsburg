@@ -114,3 +114,11 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+a:active {
+  color: var(--c-black);
+}
+
+a:visited {
+  color: var(--active);
+}
