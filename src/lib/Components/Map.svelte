@@ -126,12 +126,6 @@
         }
 
         if ($mapLoaded) {
-          waterAll.forEach((el) => {
-            el.style.strokeDashoffset = 0;
-          });
-          waterBGAll.forEach((el) => {
-            el.style.strokeDashoffset = 0;
-          });
         }
 
         waterBGAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-white)"));
@@ -150,10 +144,9 @@
               // _(`[id*='_${combined}']`).style.opacity = "1";
               // waterAll.forEach((e: HTMLElement) => (e.style.opacity = '1'));
               // waterBGAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
-              if ($mapLoaded) {
-                _(`[id*='_${combined}']`).style.opacity = "1";
-                console.log(loaded);
-              }
+              // if ($mapLoaded) {
+              //   _(`[id*='_${combined}']`).style.opacity = "1";
+              // }
 
               if ($selectedStory >= 0) {
                 waterAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-river-dull)"));
@@ -268,6 +261,23 @@
 
     if ($firstLoad) {
       loading();
+    } else {
+      waterAll.forEach((el) => {
+        el.style.strokeDashoffset = 0;
+      });
+      waterBGAll.forEach((el) => {
+        el.style.strokeDashoffset = 0;
+      });
+
+      for (let i = 0; i < 625; i++) {
+        let paddedStep = i.toString().padStart(3, "0");
+
+        try {
+          _(`[id*='-${paddedStep}']`).style.opacity = "1";
+        } catch (e) {
+          console.log(e, paddedStep);
+        }
+      }
     }
     yearUnsub = year.subscribe(() => redraw());
     modeUnsub = mode.subscribe(() => redraw());

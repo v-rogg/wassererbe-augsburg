@@ -45,9 +45,6 @@
   @import "src/styles/theme"
 
   .center
-    //display: flex
-    //flex-direction: column
-    //justify-content: center
     height: 100%
     padding-right: 2rem
     overflow-y: auto

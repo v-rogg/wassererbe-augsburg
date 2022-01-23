@@ -24,7 +24,7 @@
     </p>
 
     <h2>Quellen</h2>
-    <p>
+    <p class="sources">
       Martin Kluger (2019). Welterbe Wasser. Context Verlag Augsburg<br />
       <br />
       Christoph Emmendörffer (2018). Wasser Kunst Augsburg: Die Reichsstadt in ihrem Element. 	Schnell & Steiner<br />
@@ -56,9 +56,6 @@
     margin: .5rem 0
 
   .center
-    display: flex
-    flex-direction: column
-    justify-content: center
     height: 100%
     padding-right: 2rem
     overflow-y: auto
@@ -75,4 +72,7 @@
     &::-webkit-scrollbar-thumb
       height: 30px
       background-color: var(--c-grey-30)
+
+  .sources
+    font-size: $fs-small
 </style>
