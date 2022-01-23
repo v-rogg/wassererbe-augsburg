@@ -10,18 +10,19 @@
     selectedStory,
     stories,
     year,
-    yearChanges, yearLimits
   } from "$lib/../stores";
   import { DisplayMode } from "$lib/enums";
   import loading from "$lib/actions/loading";
   import { infoMode } from "../../stores";
   import { fade } from "svelte/transition";
   import { sineIn } from "svelte/easing";
+  import gsap from "gsap";
 
   export let mapSVG;
   let waterAll, waterBGAll, referenceAll;
   let yearUnsub, modeUnsub, selectedStoryUnsub, displayReferenceUnsub;
   let loaded = false;
+  let riverShow = false;
 
   let redrawHash = null;
 
@@ -179,6 +180,30 @@
     const colorYear = findNextSmallerYear();
 
     let newHash = String(colorYear)+String($infoMode)+String($mode)+String($selectedStory)+String($displayReference);
+
+
+
+    if ($year >= 1972 && !riverShow) {
+      riverShow = true;
+      gsap.to('#_w-s', { 'stroke-dashoffset': 0, duration: 4 * .1, delay: 0, ease: 'none' });
+      gsap.to('#_bgw-s', { 'stroke-dashoffset': 0, duration: 4 * .1, delay: 0, ease: 'none' });
+
+      gsap.to('#_w-u', { 'stroke-dashoffset': 0, duration: 1.5 * .1, delay: 0.3, ease: 'none' });
+      gsap.to('#_bgw-u', { 'stroke-dashoffset': 0, duration: 1.5 * .1, delay: 0.3, ease: 'none' });
+
+      gsap.to('#_w-t', { 'stroke-dashoffset': 0, duration: 1.5 * .1, delay: 0.3, ease: 'none' });
+      gsap.to('#_bgw-t', { 'stroke-dashoffset': 0, duration: 1.5 * .1, delay: 0.3, ease: 'none' });
+    } else if ($year < 1972 && riverShow) {
+      riverShow = false;
+      gsap.to('#_w-s', { 'stroke-dashoffset': _('#_w-s').getTotalLength(), duration: 4 * .1, delay: 0.3, ease: 'none' });
+      gsap.to('#_bgw-s', { 'stroke-dashoffset': _('#_bgw-s').getTotalLength(), duration: 4 * .1, delay: 0.3, ease: 'none' });
+
+      gsap.to('#_w-u', { 'stroke-dashoffset': _('#_w-u').getTotalLength() + 1, duration: 1.5 * .1, delay: 0, ease: 'none' });
+      gsap.to('#_bgw-u', { 'stroke-dashoffset': _('#_bgw-u').getTotalLength() + 1, duration: 1.5 * .1, delay: 0, ease: 'none' });
+
+      gsap.to('#_w-t', { 'stroke-dashoffset': _('#_w-t').getTotalLength() + 1, duration: 1.5 * .1, delay: 0, ease: 'none' });
+      gsap.to('#_bgw-t', { 'stroke-dashoffset': _('#_bgw-t').getTotalLength() + 1, duration: 1.5 * .1, delay: 0, ease: 'none' });
+    }
 
     if (newHash !== redrawHash) {
       recolor(colorYear)
