@@ -14,7 +14,7 @@
     justify-content: flex-end
     width: 100%
     height: 100%
-    font-size: $fs-micro
+    font-size: $fs-small
 
     a
       color: var(--c-black)

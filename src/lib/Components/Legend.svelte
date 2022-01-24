@@ -1,6 +1,6 @@
 <script lang="ts">
   import { fly } from "svelte/transition";
-  import { countTotal } from "../../stores";
+  import { countTotal, isMobile } from "../../stores";
   import { onDestroy } from "svelte";
   import { sineIn, sineOut } from "svelte/easing";
 
@@ -61,6 +61,7 @@
         </div>
         Industrie
       </div>
+      {#if !isMobile}
       <div>
         <img width="44" height="10" src="/legend/river.svg" alt="" />
         Lech
@@ -69,6 +70,7 @@
         <img width="44" height="5" src="/legend/channel.svg" alt="" />
         Kanal
       </div>
+      {/if}
     </div>
   </div>
 </div>
@@ -78,7 +80,7 @@
   p
     font-weight: $fw-semibold
     margin-bottom: 1.5em
-    font-size: $fs-micro
+    font-size: $fs-small
 
   .legend
     position: absolute
@@ -87,12 +89,20 @@
     margin-bottom: 3rem
     //width: 80%
     width: 100%
+    height: max-content
+
+    @media (max-width: 1300px), (max-height: 650px)
+      margin-bottom: 0
 
   .icons
     display: grid
     grid-template-rows: repeat(7, 1fr)
     gap: .5em
     transition: 100ms cubic-bezier(0.645, 0.045, 0.355, 1)
+
+    @media (max-width: 1300px), (max-height: 650px)
+      grid-template-rows: repeat(5, 1fr)
+      gap: 0
 
     div
       display: flex
@@ -106,6 +116,6 @@
         position: absolute
         text-align: center
         width: 100%
-        font-size: $fs-micro
+        font-size: $fs-small
         color: $c-white
 </style>

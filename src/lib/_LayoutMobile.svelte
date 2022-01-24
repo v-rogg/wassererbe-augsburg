@@ -7,7 +7,7 @@
     <header>
       <slot name="header_left" />
 
-      <div class="hamburger">X</div>
+<!--      <div claass="hamburger">X</div>-->
     </header>
     <div class="center">
       <slot name="center" />
@@ -29,10 +29,13 @@
 
   .container
     height: 100%
+    width: 100%
+    position: absolute
+    background: var(--c-white)
 
   .app
     display: grid
-    grid-template-rows: 1fr 3fr 3fr 1fr 1fr
+    grid-template-rows: 1fr 200px 4fr 1fr 1fr
     margin: 1rem 3rem
     height: 100%
 
@@ -50,7 +53,11 @@
 
   .fourth, .fifth
     display: flex
-    align-items: center
+    //align-items: center
+
+  .fifth
+    padding-top: .5rem
+    align-items: flex-start
 
   :global(.active-0)
     --active: #{$c-blue}

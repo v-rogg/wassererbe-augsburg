@@ -9,10 +9,8 @@
 
   function recheck(w, h) {
     if (browser) {
-      const c =
-        window.matchMedia("only screen and (max-width: 1300px)").matches ||
-        window.matchMedia("only screen and (max-height: 650px)").matches;
-      isMobile.set(c);
+      const c = window.matchMedia("only screen and (max-width: 1300px)").matches || window.matchMedia("only screen and (max-height: 650px)").matches
+      isMobile.set(window.matchMedia("only screen and (max-width: 1300px)").matches || window.matchMedia("only screen and (max-height: 650px)").matches);
       return c;
     } else {
       return false;
@@ -43,7 +41,6 @@
 <svelte:window bind:innerHeight bind:innerWidth />
 
 <span style="color: var(--c-black); position: absolute;">
-  {$displayReference}
   {innerWidth}
   {innerHeight}
   {check}

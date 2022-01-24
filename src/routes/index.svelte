@@ -40,7 +40,7 @@
   import Layout from "$lib/_Layout.svelte";
   import LayoutMobile from "$lib/_LayoutMobile.svelte";
   import Map from "$lib/Components/Map.svelte";
-  import { mapData, playback, stories, year, yearChanges, yearLimits } from "../stores";
+  import { mapData, playback, stories, year, yearChanges, yearLimits, isMobile } from "../stores";
   import { onDestroy } from "svelte";
   import { PlaybackMode } from "$lib/enums";
   import Timeline from "$lib/Components/Timeline.svelte";
@@ -101,23 +101,27 @@
   <title>Wassererbe Augsburg</title>
 </svelte:head>
 
-<!--{#if !$isMobile}-->
-<Layout>
-  <Map {mapSVG} slot="center" />
-  <Brand slot="top_left" />
-  <Timeline slot="bottom_mid" />
-  <Controls slot="top_mid" />
-  <Legal slot="bottom_right" />
-  <About slot="bottom_left" />
-  <StorySelector slot="mid_left" />
-  <RightSide slot="mid_right" />
-</Layout>
-<!--{:else}-->
-<!--<LayoutMobile>-->
-<!--  <Brand slot="header_left" />-->
-<!--  <Map {mapSVG} slot="center"/>-->
-<!--  <RightSide slot="lower_center" />-->
-<!--  <Timeline slot="4th" />-->
-<!--  <Controls slot="5th" />-->
-<!--</LayoutMobile>-->
-<!--{/if}-->
+<span style="position: absolute; bottom: 0">
+{$isMobile}
+</span>
+
+{#if $isMobile}
+  <LayoutMobile>
+    <Brand slot="header_left" />
+    <Map {mapSVG} slot="center"/>
+    <RightSide slot="lower_center" />
+    <Timeline slot="4th" />
+    <Controls slot="5th" />
+  </LayoutMobile>
+{:else}
+  <Layout>
+    <Map {mapSVG} slot="center" />
+    <Brand slot="top_left" />
+    <Timeline slot="bottom_mid" />
+    <Controls slot="top_mid" />
+    <Legal slot="bottom_right" />
+    <About slot="bottom_left" />
+    <StorySelector slot="mid_left" />
+    <RightSide slot="mid_right" />
+  </Layout>
+{/if}

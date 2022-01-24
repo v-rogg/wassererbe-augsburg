@@ -12,18 +12,18 @@
     stories,
     year,
     infoMode,
-    mapLoaded,
+    mapLoaded, isMobile
   } from "$lib/../stores";
   import { DisplayMode } from "$lib/enums";
   import loading from "$lib/actions/loading";
   import { fade } from "svelte/transition";
   import { sineIn } from "svelte/easing";
   import gsap from "gsap";
+  import { load } from "../../routes/index.svelte";
 
   export let mapSVG;
   let waterAll, waterBGAll, referenceAll, waterHelpers;
-  let yearUnsub, modeUnsub, selectedStoryUnsub, displayReferenceUnsub;
-  let loaded = false;
+  let yearUnsub, modeUnsub, selectedStoryUnsub, displayReferenceUnsub, isMobileUnsub;
   let riverShow = false;
 
   let redrawHash = null;
@@ -125,9 +125,6 @@
           waterAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-river)"));
         }
 
-        if ($mapLoaded) {
-        }
-
         waterBGAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-white)"));
         waterAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
         waterBGAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
@@ -148,15 +145,17 @@
               //   _(`[id*='_${combined}']`).style.opacity = "1";
               // }
 
-              if ($selectedStory >= 0) {
-                waterAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-river-dull)"));
+              if (!$displayReference) {
+                if ($selectedStory >= 0) {
+                  waterAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-river-dull)"));
 
-                if (!$stories[$selectedStory].zones.includes(`${combined}`)) {
-                  _(`[id*='_${combined}']`).style.opacity = "0.2";
-                }
+                  if (!$stories[$selectedStory].zones.includes(`${combined}`)) {
+                    _(`[id*='_${combined}']`).style.opacity = "0.2";
+                  }
 
-                for (let ref of $stories[$selectedStory].references) {
-                  _(`[id=${ref}]`).style.opacity = "1";
+                  for (let ref of $stories[$selectedStory].references) {
+                    _(`[id=${ref}]`).style.opacity = "1";
+                  }
                 }
               }
 
@@ -168,6 +167,7 @@
       case DisplayMode.Percent:
         waterAll.forEach((e: HTMLElement) => (e.style.opacity = "0"));
         waterBGAll.forEach((e: HTMLElement) => (e.style.opacity = "0"));
+        waterHelpers.forEach((e: HTMLElement) => (e.style.opacity = "0"));
 
         let step = 0;
         count.forEach((value, key) => {
@@ -193,7 +193,7 @@
   function redraw() {
     const colorYear = findNextSmallerYear();
 
-    let newHash = String(colorYear) + String($infoMode) + String($mode) + String($selectedStory) + String($displayReference);
+    let newHash = String(colorYear) + String($infoMode) + String($mode) + String($selectedStory) + String($displayReference) + String($isMobile);
 
     if ($year >= 1972 && !riverShow) {
       riverShow = true;
@@ -274,10 +274,20 @@
         }
       }
     }
+
     yearUnsub = year.subscribe(() => redraw());
     modeUnsub = mode.subscribe(() => redraw());
     selectedStoryUnsub = selectedStory.subscribe(() => redraw());
     displayReferenceUnsub = displayReference.subscribe(() => redraw());
+    isMobileUnsub = isMobile.subscribe(() => {
+      // waterAll.forEach((el) => {
+      //   el.style.opacity = "0";
+      // })
+      // waterBGAll.forEach((el) => {
+      //   el.style.opacity = "0";
+      // })
+      setTimeout(() => redraw(), 1000);
+    });
   });
 
   onDestroy(() => {
@@ -285,6 +295,7 @@
     modeUnsub;
     selectedStoryUnsub;
     displayReferenceUnsub;
+    isMobileUnsub;
   });
 </script>
 
@@ -295,18 +306,24 @@
 </section>
 
 <style lang="sass">
+  @import "src/styles/theme"
+
   #map
     height: 100%
     width: 100%
     opacity: 1
 
+    @media (max-width: 1300px), (max-height: 650px)
+      max-height: 220px
+
   :global(#map g)
     transition: .2s linear
     transition-property: fill, stroke, opacity
 
-  :global(#map g)
-    text-shadow: 0 0 3px var(--c-white)
-
+  :global(#map text)
+    text-shadow: 0 -1px 0 var(--c-white), 0 1px 0 var(--c-white), 1px 0 0 var(--c-white), -1px 0 0 var(--c-white)
+    position: absolute
+    left: -50%
 
   :global(#map path)
     transition: .2s linear

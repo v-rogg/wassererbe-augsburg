@@ -12,9 +12,7 @@ export const playback = writable(PlaybackMode.Pause);
 export const storyDirection = writable(StoryDirection.Up);
 export const isMobile = writable(false, (set) => {
   if (browser) {
-    set(
-      window.matchMedia("only screen and (max-width: 1500px)").matches || window.matchMedia("only screen and (max-height: 750px)").matches
-    );
+    set(window.matchMedia("only screen and (max-width: 1300px)").matches || window.matchMedia("only screen and (max-height: 650px)").matches);
   }
   return () => {};
 });

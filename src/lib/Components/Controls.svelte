@@ -24,6 +24,10 @@
         hotkey="a"
         on:click={(e) => {
           $mode = e.detail.state;
+
+          if ($mode === DisplayMode.Percent) {
+            $displayReference = false;
+          }
         }}
         active={$mode === DisplayMode.Percent}
       >
@@ -207,6 +211,7 @@
         hotkey="R"
         title="Referenzkarten"
         active={$displayReference}
+        disabled={$mode === DisplayMode.Percent}
         on:click={() => {
           $displayReference = !$displayReference;
         }}
@@ -322,7 +327,7 @@
     display: flex
     align-items: center
     justify-content: flex-end
-    font-size: $fs-micro
+    font-size: $fs-small
     color: var(--c-black)
 
     span

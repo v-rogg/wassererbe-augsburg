@@ -68,6 +68,8 @@
     display: flex
     justify-content: center
     align-items: center
+    position: absolute
+    background: var(--c-white)
 
   .app
     max-width: 1920px

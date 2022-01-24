@@ -151,7 +151,7 @@
           width: 100%
           display: flex
           align-items: center
-          font-size: $fs-micro
+          font-size: $fs-small
 
       .agricultural
           color: $c-agricultural

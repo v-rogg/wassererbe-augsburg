@@ -337,10 +337,13 @@
 
   .displayYear
     position: absolute
-    font-size: .875em
+    font-size: $fs-small
     transform: translate(-50%, 1.75em)
     transition: 200ms cubic-bezier(0.645, 0.045, 0.355, 1)
     transition-delay: 200ms
+
+    @media (max-width: 1300px), (max-height: 650px)
+      font-size: $fs-micro
 
     &:before
       content: ""
@@ -385,7 +388,7 @@
 
   .currentPlaybackMode
     position: absolute
-    font-size: $fs-micro
+    font-size: $fs-small
     display: flex
     align-items: center
     height: 100%
@@ -466,7 +469,10 @@
     position: absolute
     left: 50%
     transform: translate(calc(-50% + 1rem), 1.75em)
-    font-size: $fs-micro
+    font-size: $fs-small
+
+    @media (max-width: 1300px), (max-height: 650px)
+      font-size: $fs-micro
 
     &:before
       position: absolute
