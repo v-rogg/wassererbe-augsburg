@@ -1,4 +1,8 @@
-<section>
+<script lang="ts">
+  import { firstLoad } from "../../stores";
+</script>
+
+<section class:load={$firstLoad}>
   <a href="/projekt"> Übers Projekt </a>
   <div class="brand">Wassererbe Augsburg</div>
   <div class="copy number">
@@ -34,6 +38,11 @@
     height: 100%
     font-size: $fs-small
     color: var(--c-black)
+    transition: 1s
+    transition-delay: 2.5s
+
+  .load
+    opacity: 0
 
   .brand
     font-weight: $fw-semibold

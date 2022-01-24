@@ -1,13 +1,14 @@
 <script lang="ts">
-  import { mode, showHamburger } from "../stores.ts";
+  import { mode, showHamburger, firstLoad } from "../stores.ts";
   import HamburgerButton from "$lib/Primitives/HamburgerButton.svelte";
   import { fade } from "svelte/transition";
   import StorySelector from "$lib/Components/StorySelector.svelte";
+  import Legal from "$lib/Components/Legal.svelte";
+  import About from "$lib/Components/About.svelte";
 </script>
 
-<header class="active-{$mode}">
+<header class="active-{$mode}" class:load={$firstLoad}>
   <slot name="header_left" />
-
   <HamburgerButton />
 </header>
 
@@ -31,6 +32,11 @@
 {#if $showHamburger}
 <div class="hamburger active-{$mode}" transition:fade>
   <StorySelector/>
+
+  <div>
+    <About />
+    <Legal />
+  </div>
 </div>
 {/if}
 
@@ -45,9 +51,10 @@
 
   .app
     display: grid
-    grid-template-rows: 2fr 4fr 1fr 1fr
-    margin: 10rem 3rem
-    height: calc(100% - 13rem)
+    grid-template-rows: 2fr 4fr 1fr 2rem
+    gap: 2rem
+    margin: 10rem 3rem 5rem
+    height: calc(100% - 15rem)
 
   header
     display: flex
@@ -58,9 +65,11 @@
     position: absolute
     width: calc(100% - 6rem)
     z-index: 1090
+    transition: 1s
+    transition-delay: 2.5s
 
-  .center
-    //height: 200px
+  .load
+    opacity: 0
 
   .lower_center
     overflow-y: auto
@@ -100,9 +109,15 @@
     width: calc(100% - 6rem)
     padding: 10rem 3rem
     display: flex
+    flex-direction: column
     justify-content: center
     align-items: center
     position: absolute
     z-index: 1080
+
+    >div
+      display: flex
+      justify-content: space-between
+      width: 100%
 
 </style>

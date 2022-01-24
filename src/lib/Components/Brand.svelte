@@ -1,4 +1,8 @@
-<a class="brand" href="/">
+<script lang="ts">
+  import { firstLoad } from "../../stores";
+</script>
+
+<a class="brand" class:load={$firstLoad} href="/">
   <svg
     class="logo"
     viewBox="0 0 132 118"
@@ -34,6 +38,11 @@
     align-items: center
     color: var(--c-black)
     text-decoration: none
+    transition: 1s
+    transition-delay: 2.5s
+
+  .load
+    opacity: 0
 
   .logo
     height: 2.7rem

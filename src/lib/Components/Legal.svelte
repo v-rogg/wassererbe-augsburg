@@ -1,4 +1,8 @@
-<section>
+<script lang="ts">
+  import { firstLoad } from "../../stores";
+</script>
+
+<section class:load={$firstLoad}>
   <a href="/impressum"> Impressum </a>
   <a href="/datenschutz"> Datenschutz </a>
 </section>
@@ -15,11 +19,16 @@
     width: 100%
     height: 100%
     font-size: $fs-small
+    transition: 1s
+    transition-delay: 2.5s
 
-    a
-      color: var(--c-black)
-      text-decoration: none
+  a
+    color: var(--c-black)
+    text-decoration: none
 
-      &:hover
-        text-decoration: underline
+    &:hover
+      text-decoration: underline
+
+  .load
+    opacity: 0
 </style>

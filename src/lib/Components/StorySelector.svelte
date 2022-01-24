@@ -62,21 +62,19 @@
   @import "../../styles/theme"
 
   .description
-    //position: absolute
-    //top: clamp(1rem, 2.5vh, 2rem)
     width: 80%
 
-    //@media (max-height: 790px)
-    //  display: none
-    //
-    //@media (max-width: 1320px)
-    //  display: none
+    @media (max-width: 1300px), (max-height: 650px)
+      width: 100%
 
   section
     display: grid
-    top: 5%
     grid-template-rows: 1fr auto 1fr
     height: 90%
+
+    @media (max-width: 1300px), (max-height: 650px)
+      height: 100%
+      width: 100%
 
   .choose
     font-weight: $fw-semibold
@@ -86,6 +84,9 @@
     width: 100%
     margin-bottom: 2rem
     padding: 0
+
+    @media (max-width: 1300px), (max-height: 650px)
+      font-size: $fs-big
 
     ul
       list-style: none
@@ -107,6 +108,9 @@
       gap: 1rem
       margin: .25em 0
       transition: 100ms cubic-bezier(0.645, 0.045, 0.355, 1)
+
+      @media (max-width: 1300px), (max-height: 650px)
+        margin: .75em 0
 
       &:hover
         cursor: pointer

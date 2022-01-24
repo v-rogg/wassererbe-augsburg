@@ -10,7 +10,7 @@ export const stories = writable([]);
 export const selectedStory = writable(-1);
 export const playback = writable(PlaybackMode.Pause);
 export const storyDirection = writable(StoryDirection.Up);
-export const isMobile = writable(false, (set) => {
+export const isMobile = writable(true, (set) => {
   if (browser) {
     set(window.matchMedia("only screen and (max-width: 1300px)").matches || window.matchMedia("only screen and (max-height: 650px)").matches);
   }

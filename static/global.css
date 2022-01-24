@@ -84,9 +84,6 @@ html {
   font-size: 1rem;
   overflow: hidden;
   background: var(--c-white);
-}
-
-main {
   color: var(--c-black);
 }
 
