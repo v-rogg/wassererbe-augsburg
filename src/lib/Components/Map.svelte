@@ -328,4 +328,5 @@
   :global(#map path)
     transition: .2s linear
     transition-property: fill, stroke, opacity
+    box-shadow: 2px 0 0 0 var(--c-black)
 </style>

@@ -178,6 +178,7 @@
     width: 2rem
     height: 2rem
     font-size: $fs-normal
+    font-weight: $fw-semibold
     border-radius: $bor-normal
     display: flex
     justify-content: center

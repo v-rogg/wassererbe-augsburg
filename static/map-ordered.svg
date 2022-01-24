@@ -756,7 +756,7 @@
         <path d="M148.608,619.641C148.608,621.265 147.291,622.582 145.667,622.582C144.043,622.582 142.726,621.265 142.726,619.641C142.726,618.018 144.043,616.701 145.667,616.701C147.291,616.701 148.608,618.018 148.608,619.641" style="fill:var(--c-black);fill-rule:nonzero;"/>
     </g>
     <g id="_ref-hochablass" style="opacity: 0">
-        <text x="25.584px" y="630.614px" style="font-family:'IBM Plex Sans', sans-serif;font-size:14px;fill:var(--c-black);">Hochablass</text>
+        <text x="25.584px" y="630.614px" style="font-family:'IBM Plex Sans', sans-serif;font-weight:600;font-size:14px;fill:var(--c-black);">Hochablass</text>
         <path d="M65.107,637.739C65.107,639.363 63.791,640.679 62.166,640.679C60.542,640.679 59.226,639.363 59.226,637.739C59.226,636.115 60.542,634.798 62.166,634.798C63.791,634.798 65.107,636.115 65.107,637.739" style="fill:none;fill-rule:nonzero;stroke:var(--c-black);stroke-width:1px;"/>
     </g>
     <g id="_ref-hauptstadtbach" style="opacity: 0">
@@ -804,7 +804,7 @@
         <path d="M623.608,546.564C623.608,548.188 622.291,549.505 620.667,549.505C619.043,549.505 617.726,548.188 617.726,546.564C617.726,544.941 619.043,543.624 620.667,543.624C622.291,543.624 623.608,544.941 623.608,546.564" style="fill:none;fill-rule:nonzero;stroke:var(--c-black);stroke-width:1px;"/>
     </g>
     <g id="_ref-schaefflerbach" style="opacity: 0">
-        <text x="686.146px" y="311.08px" style="font-family:'IBM Plex Sans', sans-serif;font-weight:600;font-size:14px;fill:var(--c-black);">Schäfflerbach</text>
+        <text x="686.146px" y="311.08px" style="font-family:'IBM Plex Sans', sans-serif;font-size:14px;fill:var(--c-black);">Schäfflerbach</text>
         <path d="M734.439,318.204C734.439,319.828 733.122,321.145 731.498,321.145C729.874,321.145 728.558,319.828 728.558,318.204C728.558,316.58 729.874,315.264 731.498,315.264C733.122,315.264 734.439,316.58 734.439,318.204" style="fill:var(--c-black);fill-rule:nonzero;"/>
     </g>
     <g id="_ref-wasserwerkhochablass" style="opacity: 0">
