@@ -2,9 +2,6 @@
   import { mode, showHamburger, firstLoad } from "../stores.ts";
   import HamburgerButton from "$lib/Primitives/HamburgerButton.svelte";
   import { fade } from "svelte/transition";
-  import StorySelector from "$lib/Components/StorySelector.svelte";
-  import Legal from "$lib/Components/Legal.svelte";
-  import About from "$lib/Components/About.svelte";
 </script>
 
 <header class="active-{$mode}" class:load={$firstLoad}>
@@ -114,6 +111,7 @@
     align-items: center
     position: absolute
     z-index: 1080
+    color: var(--c-black)
 
     >div
       display: flex

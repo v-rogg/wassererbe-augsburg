@@ -87,12 +87,11 @@
     display: flex
     justify-content: center
     margin-bottom: 3rem
-    //width: 80%
     width: 100%
     height: max-content
 
     @media (max-width: 1300px), (max-height: 650px)
-      display: block
+      height: 100%
       margin-bottom: 0
 
   .icons
