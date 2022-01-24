@@ -101,10 +101,6 @@
   <title>Wassererbe Augsburg</title>
 </svelte:head>
 
-<span style="position: absolute; bottom: 0; z-index: 1900">
-{$isMobile}
-</span>
-
 {#if $isMobile}
   <LayoutMobile>
     <Brand slot="header_left" />
@@ -112,6 +108,7 @@
     <RightSide slot="lower_center" />
     <Timeline slot="4th" />
     <Controls slot="5th" />
+    <StorySelector slot="hamburger"/>
   </LayoutMobile>
 {:else}
   <Layout>

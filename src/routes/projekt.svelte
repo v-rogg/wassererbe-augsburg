@@ -1,10 +1,12 @@
 <script lang="ts">
   import Layout from "$lib/_Layout.svelte";
+  import LayoutMobile from "$lib/_LayoutMobile.svelte";
   import Brand from "$lib/Components/Brand.svelte";
   import Legal from "$lib/Components/Legal.svelte";
   import About from "$lib/Components/About.svelte";
   import { fly } from "svelte/transition";
   import { sineIn, sineOut } from "svelte/easing";
+  import { isMobile } from "../stores";
 </script>
 
 <svelte:head>

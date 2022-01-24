@@ -112,7 +112,7 @@
 
   .active
     background: var(--active)
-    color: var(--c-white)
+    color: $c-white
     font-weight: $fw-semibold
 
     &:hover

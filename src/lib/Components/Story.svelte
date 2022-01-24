@@ -188,7 +188,7 @@
     justify-content: center
     align-items: center
     position: relative
-    color: var(--c-white)
+    color: $c-white
     flex-shrink: 0
 
   h3

@@ -31,12 +31,12 @@
 
 {#if $showHamburger}
 <div class="hamburger active-{$mode}" transition:fade>
-  <StorySelector/>
+  <slot name="hamburger" />
 
-  <div>
-    <About />
-    <Legal />
-  </div>
+<!--  <div>-->
+<!--    <About />-->
+<!--    <Legal />-->
+<!--  </div>-->
 </div>
 {/if}
 
