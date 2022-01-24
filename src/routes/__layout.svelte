@@ -62,16 +62,16 @@
     --c-river: #{$c-blue}
     --c-river-dull: #d0ecfe
 
-    @media (prefers-color-scheme: dark)
-      --c-black: #{$c-white}
-      --c-grey-90: #{$c-grey-10}
-      --c-grey-70: #{$c-grey-30}
-      --c-grey-50: #{$c-grey-50}
-      --c-grey-30: #{$c-grey-70}
-      --c-grey-10: #{$c-grey-90}
-      --c-white: #{$c-black}
-      --c-river: #{$c-blue}
-      --c-river-dull: #103044
+    //@media (prefers-color-scheme: dark)
+    //  --c-black: #{$c-white}
+    //  --c-grey-90: #{$c-grey-10}
+    //  --c-grey-70: #{$c-grey-30}
+    //  --c-grey-50: #{$c-grey-50}
+    //  --c-grey-30: #{$c-grey-70}
+    //  --c-grey-10: #{$c-grey-90}
+    //  --c-white: #{$c-black}
+    //  --c-river: #{$c-blue}
+    //  --c-river-dull: #103044
 
     @media (max-height: 960px)
       font-size: clamp(13px, 1.6vh, 16px)
