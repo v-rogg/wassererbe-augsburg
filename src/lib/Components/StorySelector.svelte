@@ -37,8 +37,8 @@
                   $displayReference = false;
                   $selectedStory = index;
                   $infoMode = InfoMode.Story;
-                  $showHamburger = false;
                 }
+                $showHamburger = false;
               }}
             >
               <Button active={$selectedStory === index}>

@@ -92,6 +92,7 @@
     height: max-content
 
     @media (max-width: 1300px), (max-height: 650px)
+      display: block
       margin-bottom: 0
 
   .icons
