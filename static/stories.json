@@ -36,7 +36,7 @@
         "37-04",
         "38-04"
       ],
-      "references": ["_ref-wasserwerkhochablass", "_ref-hochablass", "_ref-hauptstadtbach", "_ref-neubach", "_ref-eiskanal", "_hw-1"],
+      "references": ["_ref-wasserwerkhochablass", "_ref-hochablass", "_ref-hauptstadtbach", "_ref-neubach", "_ref-eiskanal", "_hw-6"],
       "usage": [
         {
           "start": 1500,

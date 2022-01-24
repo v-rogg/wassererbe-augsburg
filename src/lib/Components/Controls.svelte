@@ -79,10 +79,11 @@
 
       <Button
         hotkey="left"
-        title="Vorherige Etappe"
+        title="Vorherige Referenzkarte"
         active={$playback === PlaybackMode.StepBackward}
+        disabled={$year === $yearLimits.min}
         on:click={() => {
-          goto(findNextSmallerYear(1));
+          goto(findNextSmallerYear(1), true);
         }}
       >
         <svg
@@ -155,10 +156,11 @@
 
       <Button
         hotkey="right"
-        title="Nächste Etappe"
+        title="Nächste Referenzkarte"
         active={$playback === PlaybackMode.StepForward}
+        disabled={$year === $yearLimits.max}
         on:click={() => {
-          goto(findNextBiggerYear(1));
+          goto(findNextBiggerYear(1), true);
         }}
       >
         <svg
@@ -296,6 +298,10 @@
     justify-content: space-between
     width: 100%
 
+    @media (max-width: 1300px), (max-height: 650px)
+      display: flex
+      justify-content: space-between
+
   .slider
     display: flex
     grid-area: 1/1/2/3
@@ -322,6 +328,9 @@
     grid-area: 1/4/2/5
     width: 100%
     justify-content: flex-end
+
+    @media (max-width: 1300px), (max-height: 650px)
+      width: max-content
 
   .north
     display: flex

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { playback, year, yearChanges, yearLimits, selectedStory, stories, firstLoad } from "../../stores";
+  import { playback, year, yearChanges, yearLimits, selectedStory, stories, firstLoad, isMobile } from "../../stores";
   import { PlaybackMode } from "$lib/enums";
   import { _, goto, gotoElement } from "$lib/actions/helpers";
   import { onMount } from "svelte";
@@ -124,9 +124,11 @@
 
     <!--Every Century-->
     {#each displayYears as year}
-      <div class="displayYear number" style="left: {calculateOffset(year)}%">
-        {year}
-      </div>
+      {#if !($isMobile && year === 1900)}
+        <div class="displayYear number" style="left: {calculateOffset(year)}%">
+          {year}
+        </div>
+      {/if}
     {/each}
 
     <!-- Year Array  -->

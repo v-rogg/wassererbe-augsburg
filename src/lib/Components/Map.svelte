@@ -19,7 +19,6 @@
   import { fade } from "svelte/transition";
   import { sineIn } from "svelte/easing";
   import gsap from "gsap";
-  import { load } from "../../routes/index.svelte";
 
   export let mapSVG;
   let waterAll, waterBGAll, referenceAll, waterHelpers;
@@ -121,48 +120,46 @@
 
     switch ($mode) {
       case DisplayMode.Map:
-        if (!$displayReference) {
-          waterAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-river)"));
-        }
-
+        waterHelpers.forEach((e: HTMLElement) => (e.style.opacity = "0"));
         waterBGAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-white)"));
         waterAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
         waterBGAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
-        waterHelpers.forEach((e: HTMLElement) => (e.style.opacity = "0"));
+
+        if (!$displayReference) {
+          if ($selectedStory >= 0) {
+            waterAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-river-dull)"));
+            for (let ref of $stories[$selectedStory].references) {
+              _(`[id=${ref}]`).style.opacity = "1";
+            }
+          } else {
+            waterAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-river)"));
+          }
+
+          if ($selectedStory === 0) {
+            _(`#_w-s`).style.stroke = "var(--c-river)";
+            _(`#_w-u`).style.stroke = "var(--c-river)";
+            _(`#_w-t`).style.stroke = "var(--c-river)";
+          }
+        }
 
         $mapData.map.forEach((row, r_index) => {
           row.forEach((entry, c_index) => {
+            const column_index = c_index.toString().padStart(2, "0");
+            const row_index = r_index.toString().padStart(2, "0");
+            const combined = `${row_index}-${column_index}`;
             try {
-              const column_index = c_index.toString().padStart(2, "0");
-              const row_index = r_index.toString().padStart(2, "0");
-              const combined = `${row_index}-${column_index}`;
-              // console.log(`_${row_index}-${column_index}`);
-
-              // _(`[id*='_${combined}']`).style.opacity = "1";
-              // waterAll.forEach((e: HTMLElement) => (e.style.opacity = '1'));
-              // waterBGAll.forEach((e: HTMLElement) => (e.style.opacity = "1"));
-              // if ($mapLoaded) {
-              //   _(`[id*='_${combined}']`).style.opacity = "1";
-              // }
-
-              if (!$displayReference) {
-                if ($selectedStory >= 0) {
-                  waterAll.forEach((e: HTMLElement) => (e.style.stroke = "var(--c-river-dull)"));
-
-                  if (!$stories[$selectedStory].zones.includes(`${combined}`)) {
-                    _(`[id*='_${combined}']`).style.opacity = "0.2";
-                  }
-
-                  for (let ref of $stories[$selectedStory].references) {
-                    _(`[id=${ref}]`).style.opacity = "1";
-                  }
+              if (!$displayReference && $selectedStory >= 0) {
+                if (!$stories[$selectedStory].zones.includes(`${combined}`)) {
+                  _(`[id*='_${combined}']`).style.opacity = "0.2";
                 }
               }
 
               _(`[id*='_${combined}']`).style.fill = color[$mapData.map[r_index][c_index][colorYear].toLowerCase()];
-            } catch (e) {}
+            } catch (e) {
+            }
           });
         });
+
         break;
       case DisplayMode.Percent:
         waterAll.forEach((e: HTMLElement) => (e.style.opacity = "0"));
@@ -279,14 +276,25 @@
     modeUnsub = mode.subscribe(() => redraw());
     selectedStoryUnsub = selectedStory.subscribe(() => redraw());
     displayReferenceUnsub = displayReference.subscribe(() => redraw());
-    isMobileUnsub = isMobile.subscribe(() => {
-      // waterAll.forEach((el) => {
-      //   el.style.opacity = "0";
-      // })
-      // waterBGAll.forEach((el) => {
-      //   el.style.opacity = "0";
-      // })
-      setTimeout(() => redraw(), 1000);
+    isMobileUnsub = isMobile.subscribe((isMobile) => {
+      if (isMobile) {
+        waterAll.forEach((el) => {
+          el.style.opacity = "0";
+        })
+        waterBGAll.forEach((el) => {
+          el.style.opacity = "0";
+        })
+      }
+      setTimeout(() => {
+        waterAll.forEach((el) => {
+          el.style.opacity = "1";
+        })
+        waterBGAll.forEach((el) => {
+          el.style.opacity = "1";
+        })
+        redraw()
+      }, 2500);
+      // redraw();
     });
   });
 
@@ -300,9 +308,11 @@
 </script>
 
 <section id="map" out:fade={{ duration: 500, ease: sineIn }}>
-  {#if mapSVG}
-    {@html mapSVG}
-  {/if}
+  <span class:story={$selectedStory >= 0 && !$displayReference}>
+    {#if mapSVG}
+      {@html mapSVG}
+    {/if}
+  </span>
 </section>
 
 <style lang="sass">
@@ -320,10 +330,9 @@
     transition: .2s linear
     transition-property: fill, stroke, opacity
 
-  :global(#map text)
-    text-shadow: 0 -1px 0 var(--c-white), 0 1px 0 var(--c-white), 1px 0 0 var(--c-white), -1px 0 0 var(--c-white)
-    position: absolute
-    left: -50%
+  :global(#map .story text)
+    font-weight: $fw-semibold !important
+    text-shadow: 0 -.5px .5px var(--c-white), 0 .5px .5px var(--c-white), .5px 0 .5px var(--c-white), -.5px 0 .5px var(--c-white) !important
 
   :global(#map path)
     transition: .2s linear

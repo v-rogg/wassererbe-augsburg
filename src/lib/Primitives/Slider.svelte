@@ -12,7 +12,7 @@
 </script>
 
 <div class="slider">
-  <span class:on={state === SliderState.On}>
+  <span class="slider-button" class:on={state === SliderState.On}>
     <Button
       {title}
       {hotkey}
@@ -35,44 +35,51 @@
 </div>
 
 <style lang="sass">
-	@import "src/styles/theme"
+  @import "src/styles/theme"
 
-	.slider
-		width: 4rem
-		height: 2rem
-		background: var(--c-grey-10)
-		border-radius: $bor-normal
-		overflow: hidden
+  .slider
+    width: 4rem
+    height: 2rem
+    background: var(--c-grey-10)
+    border-radius: $bor-normal
+    overflow: hidden
 
-	button
-		position: absolute
-		border: none
-		background: var(--c-grey-30)
-		width: 2rem
-		height: 2rem
-		border-radius: $bor-normal
-		display: flex
-		justify-content: center
-		align-items: center
-		font-size: $fs-normal
-		color: var(--c-black)
-		transition: 400ms transform cubic-bezier(0.645, 0.045, 0.355, 1)
+  button
+    position: absolute
+    border: none
+    background: var(--active)
+    width: 2rem
+    height: 2rem
+    border-radius: $bor-normal
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: $fs-normal
+    color: var(--c-black)
+    transition: 400ms transform cubic-bezier(0.645, 0.045, 0.355, 1)
 
-		&:hover
-			cursor: pointer
-			background: var(--c-grey-10)
+    &:hover
+      cursor: pointer
+      background: var(--c-grey-10)
 
-		&:active
-			background: var(--c-white)
+    &:active
+      background: var(--c-white)
 
+  :global(.slider-button button)
+    background: var(--active)
+    color: $c-white
 
-	:global(.on button)
-		display: block
-		color: var(--c-white)
-		transform: translateX(100%)
-		background: var(--active)
+    &:hover
+      color: var(--not-active)
 
-		&:hover
-			color: var(--active)
+  :global(.on button)
+    display: block
+    color: $c-white
+    transform: translateX(100%)
+    background: var(--active)
+
+    &:hover
+      //color: var(--active)
+      color: var(--not-active)
 
 </style>

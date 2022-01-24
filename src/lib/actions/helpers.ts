@@ -16,12 +16,20 @@ function run(goToYear) {
   return true;
 }
 
-export function goto(goToYear: number): boolean {
+export function goto(goToYear: number, step = false): boolean {
   if (goToYear > get(year)) {
-    playback.set(PlaybackMode.FastForward);
+    if (step) {
+      playback.set(PlaybackMode.StepForward);
+    } else {
+      playback.set(PlaybackMode.FastForward);
+    }
     run(goToYear);
   } else if (goToYear < get(year)) {
-    playback.set(PlaybackMode.FastBackward);
+    if (step) {
+      playback.set(PlaybackMode.StepBackward);
+    } else {
+      playback.set(PlaybackMode.FastBackward);
+    }
     run(goToYear);
   }
 
