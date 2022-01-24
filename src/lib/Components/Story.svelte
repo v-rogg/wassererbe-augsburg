@@ -173,6 +173,10 @@
     max-height: 100%
     width: 90%
 
+    @media (max-width: 1300px), (max-height: 650px)
+      display: block
+      width: 100%
+
   .index
     background: var(--active)
     width: 2rem
@@ -197,6 +201,9 @@
     scrollbar-width: thin
     scrollbar-color: var(--c-grey-30) var(--c-grey-10)
     scrollbar-gutter: stable
+
+    @media (max-width: 1300px), (max-height: 650px)
+      overflow-y: visible
 
     &::-webkit-scrollbar
       width: 4px

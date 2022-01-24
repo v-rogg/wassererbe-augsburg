@@ -33,3 +33,5 @@ export const infoMode = writable(InfoMode.Legend);
 export const displayReference = writable(false);
 export const firstLoad = writable(true);
 export const mapLoaded = writable(false);
+export const showHamburger = writable(false);
+

@@ -101,7 +101,7 @@
   <title>Wassererbe Augsburg</title>
 </svelte:head>
 
-<span style="position: absolute; bottom: 0">
+<span style="position: absolute; bottom: 0; z-index: 1900">
 {$isMobile}
 </span>
 

@@ -267,7 +267,7 @@
         try {
           _(`[id*='-${paddedStep}']`).style.opacity = "1";
         } catch (e) {
-          console.log(e, paddedStep);
+          console.log(e, paddedStep, "not first load");
         }
       }
     }
@@ -324,7 +324,7 @@
     opacity: 1
 
     @media (max-width: 1300px), (max-height: 650px)
-      max-height: 220px
+      max-height: 300px
 
   :global(#map g)
     transition: .2s linear

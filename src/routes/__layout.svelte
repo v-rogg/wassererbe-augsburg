@@ -41,10 +41,10 @@
 <svelte:window bind:innerHeight bind:innerWidth />
 
 <span style="color: var(--c-black); position: absolute;">
-  {innerWidth}
-  {innerHeight}
-  {check}
-  {$firstLoad}
+  <!--{innerWidth}-->
+  <!--{innerHeight}-->
+  <!--{check}-->
+  <!--{$firstLoad}-->
 </span>
 <slot />
 

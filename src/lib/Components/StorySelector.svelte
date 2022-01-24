@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { selectedStory, stories, storyDirection, infoMode, displayReference, firstLoad } from "$lib/../stores";
+  import { selectedStory, stories, storyDirection, infoMode, displayReference, firstLoad, showHamburger } from "$lib/../stores";
   import { onDestroy, onMount } from "svelte";
   import { fade } from "svelte/transition";
   import { StoryDirection, InfoMode } from "$lib/enums";
@@ -37,6 +37,7 @@
                   $displayReference = false;
                   $selectedStory = index;
                   $infoMode = InfoMode.Story;
+                  $showHamburger = false;
                 }
               }}
             >
