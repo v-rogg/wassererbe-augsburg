@@ -63,6 +63,10 @@
       Wikipedia (2022). Hochfeld.
       <a href="https://de.wikipedia.org/wiki/Augsburg-Hochfeld">https://de.wikipedia.org/wiki/Augsburg-Hochfeld</a>
     </p>
+    <p>
+      <br />
+      <a href="/">Zurück</a>
+    </p>
   </div>
 
   <Brand slot="top_left" />
