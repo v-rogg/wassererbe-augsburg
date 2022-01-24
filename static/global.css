@@ -105,20 +105,3 @@ main {
 .bold {
   font-weight: 600;
 }
-
-a {
-  color: var(--active);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-a:active {
-  color: var(--c-black);
-}
-
-a:visited {
-  color: var(--active);
-}

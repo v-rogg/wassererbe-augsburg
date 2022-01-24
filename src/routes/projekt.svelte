@@ -92,6 +92,20 @@
       height: 30px
       background-color: var(--c-grey-30)
 
+  a
+    color: var(--active)
+    text-decoration: none
+
+    &:hover
+      text-decoration: underline
+      color: var(--not-active) !important
+
+    &:active
+      color: var(--not-active) !important
+
+    &:visited
+      color: var(--active)
+
   .sources
     font-size: $fs-small
 </style>

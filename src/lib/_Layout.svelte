@@ -126,7 +126,9 @@
 
   :global(.active-0)
     --active: #{$c-blue}
+    --not-active: #{$c-green}
 
   :global(.active-1)
     --active: #{$c-green}
+    --not-active: #{$c-blue}
 </style>
