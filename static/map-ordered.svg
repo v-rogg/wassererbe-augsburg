@@ -808,7 +808,7 @@
         <path d="M623.608,546.564C623.608,548.188 622.291,549.505 620.667,549.505C619.043,549.505 617.726,548.188 617.726,546.564C617.726,544.941 619.043,543.624 620.667,543.624C622.291,543.624 623.608,544.941 623.608,546.564" style="fill:none;fill-rule:nonzero;stroke:var(--c-black);stroke-width:1px;"/>
     </g>
     <g id="_ref-schaefflerbach" style="opacity: 0">
-        <text x="686.146px" y="311.08px" style="font-family:'IBM Plex Sans', sans-serif;font-size:14px;fill:var(--c-black);">Schäfflerbach</text>
+        <text x="686.146px" y="311.08px" style="font-family:'IBM Plex Sans', sans-serif;font-weight:600;font-size:14px;fill:var(--c-black);">Schäfflerbach</text>
         <path d="M734.439,318.204C734.439,319.828 733.122,321.145 731.498,321.145C729.874,321.145 728.558,319.828 728.558,318.204C728.558,316.58 729.874,315.264 731.498,315.264C733.122,315.264 734.439,316.58 734.439,318.204" style="fill:var(--c-black);fill-rule:nonzero;"/>
     </g>
     <g id="_ref-wasserwerkhochablass" style="opacity: 0">
