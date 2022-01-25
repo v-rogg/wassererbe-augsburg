@@ -23,7 +23,7 @@
   <section in:fade={{ duration: 1000, delay: $firstLoad ? 4500 : 0, ease: sineOut }} out:fade={{ duration: 500, ease: sineIn }}>
     <p class="description">Erfahre wie sich die Stadt seit Ende der Neuzeit dank intensiver Wassernutzung verändert hat.</p>
     <div>
-      <p class="choose">Wähle ein Geschichte</p>
+      <p class="choose">Wähle eine Geschichte</p>
       <nav transition:fade>
         <ul>
           {#each $stories as story, index}
