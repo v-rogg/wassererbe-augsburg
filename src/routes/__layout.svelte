@@ -27,10 +27,9 @@
 </script>
 
 <svelte:head>
-  <meta name="description" content="Wir sind Nadine Keller und Valentin Rogg – Masterstudenten im Bereich Interaktive Mediensysteme an der Hochschule Augsburg.
-    Für den Kurs Datenvisualisierung haben wir es uns zur Aufgabe gemacht, die Veränderung der Stadt Augsburg über die Jahre 1980 bis 2022
-    darzustellen. Augsburg hat durch seine vielen Flüsse und Kanäle ein besonderes Relikt, welches die Stadtveränderung maßgeblich beeinflusst hat.
-    So entstand unser Projekt unter dem Namen Wassererbe Augsburg." />
+  <meta name="description" content="
+    Erfahre wie sich die Stadt Augsburg seit Ende der Neuzeit dank intensiver Wassernutzung verändert hat.
+    Augsburg hat durch seine vielen Flüsse und Kanäle ein besonderes Relikt, welches die Stadtveränderung maßgeblich beeinflusst hat." />
   {#if $mode === DisplayMode.Map}
     <link rel="icon" type="image/svg" href="favicon.svg" />
   {:else if $mode === DisplayMode.Percent}
